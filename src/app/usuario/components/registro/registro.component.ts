@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario.interface';
-import { UsuarioService } from '../../../login/services/usuario.service';
+import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-registro',
@@ -47,23 +47,4 @@ export class RegistroComponent implements OnInit{
 
   }
 
-
-  // emitUsuario(): void {
-  //   if ( this.usuario.nombre.length === 0 ) {
-  //     return;
-  //   } else if ( this.usuario.usuarioVar.length === 0 ) {
-  //     return;
-  //   } else if ( this.usuario.correo.length === 0 ) {
-  //     return;
-  //   } else if ( this.usuario.contrasena.length === 0 ) {
-  //     return;
-  //   } else {
-  //     this.usuarioNuevo.emit(this.usuario);
-  //   }
-
-  //   this.usuario.nombre = '';
-  //   this.usuario.usuarioVar = '';
-  //   this.usuario.correo = '';
-  //   this.usuario.contrasena = '';
-  // }
 }
