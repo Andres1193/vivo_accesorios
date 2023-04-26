@@ -1,9 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Karla);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
 
+h2 {
+  margin-bottom: 25px;
+  font-size: 40px;
+}
+
 .wrap{
   padding:120px 0;
-  font-size:62px;
   color:#39323B;
   width:400px;
   font-family:'Karla';
@@ -18,7 +22,7 @@ input{
   border-bottom:1px solid #AE837B;
   width:100%;
   height:36px;
-  font-size:26px;
+  font-size:20px;
   margin-top: 30px;
 }
 
@@ -40,31 +44,13 @@ button:hover {
   cursor: pointer;
 }
 
-.buttonafter:after{
-content:'';
-display:block;
-position:absolute;
-top:8px;
-left:100%; /*should be set to 100% */
-width:0;
-height:0;
-border-color: transparent transparent transparent #14a03d; /*border color should be same as div div background color*/
-border-style: solid;
-border-width: 5px;
-}
 
-.forgot{
+
+.registrar{
   background:#AE837B;
   color:#fff;
-  float:left;
+  font-size: 18px;
+  float:center;
+  margin-top: 20px;
+  border-radius: 5px;
 }
-
-.login{
-  background:#AE837B;
-  color:#fff;
-  float:right;
-}
-
-/* .login.buttonafter {
-    background:#14a03d;
-} */

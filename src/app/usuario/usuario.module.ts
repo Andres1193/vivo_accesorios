@@ -19,6 +19,9 @@ import { MainPageComponent } from './pages/main-page-usuario.component';
     CommonModule,
     FormsModule,
     HttpClientModule
+  ],
+  exports: [
+    MainPageComponent
   ]
 })
 export class UsuarioModule { }
