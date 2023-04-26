@@ -1,11 +1,10 @@
 <div class='wrap'>
-    Login
-      <form>
-          <input type='text' id='nombre' placeholder='Nombre'>
-          <input type='text' id='usuario' placeholder='Usuario'>
-          <input type='text' id='correo' placeholder='Correo'>
-          <input type='password' id='contrasena' placeholder='Contraseña'>
-          <input type='password' id='contrasena' placeholder='Confirmar Contraseña'>
+    <h4>Login</h4>
+      <form (ngSubmit)="crearUsuario()">
+          <input type='text' name="nombre" id='nombre' placeholder='Nombre' [(ngModel)]="usuario.nombre">
+          <input type='text' name="usuario" id='usuario' placeholder='Usuario' [(ngModel)]="usuario.usuarioVar">
+          <input type='text' name='correo' id='correo' placeholder='Correo' [(ngModel)]="usuario.correo">
+          <input type='password' name='contrasena' id='contrasena' placeholder='Contraseña' [(ngModel)]="usuario.contrasena">
       </form>
     <button class='login'>Registrar</button>
   </div>
