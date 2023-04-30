@@ -1,448 +1,542 @@
 * {
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
   *:focus {
     outline: none !important;
   }
-  body, html {
-    height: 100%;
-  }
-  body {
-    background: white;
-    margin: 0;
-    font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-    color: #857567;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-  }
-  main {
-    background: white;
-    height: 100%;
-  }
-  main aside {
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    height: calc(100% / 3);
-    padding: 12px;
-    background: #DFB72C url('https://images.unsplash.com/photo-1443131307017-4097c8ac7763?dpr=2&auto=format&fit=crop&w=1500&h=1909&q=80&cs=tinysrgb') no-repeat center center / cover;
-  }
-  main aside div:empty {
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #DFB72C url('https://images.unsplash.com/photo-1443131307017-4097c8ac7763?dpr=2&auto=format&fit=crop&w=1500&h=1909&q=80&cs=tinysrgb') no-repeat center center / cover;
-    background-blend-mode: screen;
-  }
-  main aside svg {
-    position: relative;
-    margin-top: -24px;
-    width: 150px;
-    height: 150px;
-  }
-  main aside div:not(:empty) {
-    position: relative;
-    width: 100%;
-    margin-top: -24px;
-  }
-  main aside p {
-    position: relative;
-    width: 100%;
-    margin: 0;
-    color: white;
-    font-size: 18px;
-    line-height: 1.2;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(133, 117, 103, 0.5);
-  }
-  main aside p strong {
-    font-weight: 700;
-  }
-  main aside p:nth-child(2) {
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  main aside p.active {
-    visibility: visible;
-    opacity: 1;
-    transform: none;
-  }
-  main aside p:not(.active) {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  main section {
-    position: relative;
-    height: calc(100% / 3 * 2);
-  }
-  main section h1 {
-    display: flex;
-    justify-content: center;
-    padding: 12px;
-    color: #DFB72C;
-    font-size: 28px;
-    line-height: 1;
-    text-align: center;
-    text-transform: lowercase;
-  }
-  main section h1 a {
-    display: block;
-    margin: 0 6px;
-    cursor: pointer;
-    transform: none;
-  }
-  main section h1 a:hover, main section h1 a:focus {
-    color: #976a36;
-  }
-  main section h1 a:active {
-    color: #857567;
-  }
-  main section h1 a.active {
-    font-weight: 500;
-  }
-  main section h1 a:not(.active) {
-    font-weight: 300;
-  }
-  main section form {
-    display: flex;
-    flex-flow: row wrap;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 40px);
-  }
-  main section form > div, main section form > ul {
-    width: 100%;
-    padding: 6px;
-  }
-  main section form fieldset {
-    padding: 6px;
-  }
-  main section form fieldset div {
-    display: flex;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  main section form fieldset div label {
-    display: block;
-    margin: 0;
-    padding: 6px 9px;
-    background: #DFB72C;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    line-height: 25px;
-  }
-  main section form fieldset div input {
-    display: block;
-    background: white;
-    border: 1px solid #DFB72C;
-    border-left: 0;
-    border-radius: 0 2px 2px 0;
-    box-shadow: none;
-    margin: 0;
-    padding: 6px 9px;
-    width: 100%;
-    color: #857567;
-    font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-  }
-  main section form fieldset div input::placeholder {
-    color: rgba(133, 117, 103, 0.4);
-  }
-  main section form fieldset div input:focus {
-    background: rgba(233, 226, 213, 0.5);
-  }
-  main section form fieldset div input:focus::placeholder {
-    color: rgba(133, 117, 103, 0.6);
-  }
-  main section form li {
-    padding: 6px;
-  }
-  main section form li button {
-    display: block;
-    margin: 0 auto;
-    appearance: none;
-    font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-    border: 0;
-    border-radius: 100px;
-    color: white;
-    font-size: 16px;
-    padding: 6px 12px;
-    cursor: pointer;
-  }
-  main section form li button.fb {
-    background: #3b5998;
-  }
-  main section form li button.fb:hover, main section form li button.fb:focus {
-    background: #5f7ec1;
-  }
-  main section form li button.fb:active {
-    background: #263961;
-  }
-  main section form li button.tw {
-    background: #00aced;
-  }
-  main section form li button.tw:hover, main section form li button.tw:focus {
-    background: #3bc9ff;
-  }
-  main section form li button.tw:active {
-    background: #0074a1;
-  }
-  main section form input[type="submit"] {
-    display: block;
-    align-self: flex-end;
-    appearance: none;
-    width: 100%;
-    margin: 0;
-    border: 0;
-    border-radius: 0;
-    font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 24px;
-    text-transform: lowercase;
-    line-height: 2;
-    background: #DFB72C;
-    color: white;
-    cursor: pointer;
-  }
-  main section form input[type="submit"]:hover, main section form input[type="submit"]:focus {
-    background: #976a36;
-  }
-  main section form input[type="submit"]:active {
-    background: #857567;
-  }
-  main section form.active {
-    opacity: 1;
-    z-index: 1;
-  }
-  main section form.active fieldset, main section form.active li, main section form.active input[type="submit"] {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-  main section form:not(.active) {
-    opacity: 0;
-    z-index: 0;
-  }
-  main section form:not(.active) fieldset, main section form:not(.active) li, main section form:not(.active) input[type="submit"] {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  main.with-hover aside p {
-    transition: all 250ms ease-out;
-  }
-  main.with-hover section h1 a {
-    transition: all 150ms ease-out;
-  }
-  main.with-hover section h1 a:hover, main.with-hover section h1 a:focus {
-    transition: all 300ms ease-out;
-  }
-  main.with-hover section h1 a:active {
-    transition: all 150ms ease-in;
-  }
-  main.with-hover section form {
-    transition: all 1000ms ease-out;
-  }
-  main.with-hover section form fieldset, main.with-hover section form li, main.with-hover section form input[type="submit"] {
-    transition: all 500ms ease-out;
-  }
-  main.with-hover section form button, main.with-hover section form input {
-    transition: all 150ms ease-out;
-  }
-  main.with-hover section form button:hover, main.with-hover section form input:hover, main.with-hover section form button:focus, main.with-hover section form input:focus {
-    transition: all 300ms ease-out;
-  }
-  main.with-hover section form button:active, main.with-hover section form input:active {
-    transition: all 150ms ease-in;
-  }
-  main.with-hover section form.active#form-signup fieldset:nth-child(2) {
-    transition-delay: 50ms;
-  }
-  main.with-hover section form.active#form-signup fieldset:nth-child(3) {
-    transition-delay: 100ms;
-  }
-  main.with-hover section form.active#form-signup li:nth-child(1) {
-    transition-delay: 150ms;
-  }
-  main.with-hover section form.active#form-signup li:nth-child(2) {
-    transition-delay: 200ms;
-  }
-  main.with-hover section form.active#form-signup input[type="submit"] {
-    transition-delay: 250ms;
-  }
-  main.with-hover section form.active#form-login fieldset:nth-child(2) {
-    transition-delay: 50ms;
-  }
-  main.with-hover section form.active#form-login li:nth-child(1) {
-    transition-delay: 100ms;
-  }
-  main.with-hover section form.active#form-login li:nth-child(2) {
-    transition-delay: 150ms;
-  }
-  main.with-hover section form.active#form-login input[type="submit"] {
-    transition-delay: 200ms;
-  }
-  main.with-hover section form:not(.active)#form-signup fieldset:nth-child(1) {
-    transition-delay: 250ms;
-  }
-  main.with-hover section form:not(.active)#form-signup fieldset:nth-child(2) {
-    transition-delay: 200ms;
-  }
-  main.with-hover section form:not(.active)#form-signup fieldset:nth-child(3) {
-    transition-delay: 150ms;
-  }
-  main.with-hover section form:not(.active)#form-signup li:nth-child(1) {
-    transition-delay: 100ms;
-  }
-  main.with-hover section form:not(.active)#form-signup li:nth-child(2) {
-    transition-delay: 50ms;
-  }
-  main.with-hover section form:not(.active)#form-login fieldset:nth-child(1) {
-    transition-delay: 200ms;
-  }
-  main.with-hover section form:not(.active)#form-login fieldset:nth-child(2) {
-    transition-delay: 150ms;
-  }
-  main.with-hover section form:not(.active)#form-login li:nth-child(1) {
-    transition-delay: 100ms;
-  }
-  main.with-hover section form:not(.active)#form-login li:nth-child(2) {
-    transition-delay: 50ms;
-  }
-  main.pre-enter aside {
-    transform-origin: center top;
-    transform: scaleY(0);
-    visibility: hidden;
-  }
-  main.pre-enter aside svg {
-    transform-origin: center center;
-    transform: scale(0) rotate(90deg);
-    visibility: hidden;
-  }
-  main.pre-enter aside p.active {
-    opacity: 0;
-    transform: translateY(100px);
-    visibility: hidden;
-  }
-  main.pre-enter section h1 a {
-    visibility: hidden;
-    opacity: 0;
-  }
-  main.pre-enter section h1 a:first-child {
-    transform-origin: right center;
-    transform: translateX(200px) scaleX(0);
-  }
-  main.pre-enter section h1 a:last-child {
-    transform-origin: left center;
-    transform: translateX(-200px) scaleX(0);
-  }
-  main.pre-enter section form fieldset, main.pre-enter section form li {
-    opacity: 0;
-    transform: translateY(100px);
-    visibility: hidden;
-  }
-  main.pre-enter section form input[type="submit"] {
-    transform-origin: center bottom;
-    transform: scaleY(0);
-    color: #DFB72C;
-    visibility: hidden;
-  }
-  main.on-enter aside {
-    animation: scaleYIn 1000ms linear forwards;
-    visibility: visible;
-  }
-  main.on-enter aside svg {
-    animation: bounceIn-rotate 1000ms linear forwards 250ms;
-    visibility: visible;
-  }
-  main.on-enter aside p.active {
-    animation: slideInUp-fadeIn 1000ms linear forwards 500ms;
-    visibility: visible;
-  }
-  main.on-enter section h1 a {
-    visibility: visible;
-  }
-  main.on-enter section h1 a:first-child {
-    animation: scaleX-slideInRight 1000ms linear forwards 750ms;
-  }
-  main.on-enter section h1 a:last-child {
-    animation: scaleX-slideInLeft 1000ms linear forwards 750ms;
-  }
-  main.on-enter section form fieldset, main.on-enter section form li {
-    animation: slideInUp-fadeIn 1000ms linear forwards;
-    visibility: visible;
-  }
-  main.on-enter section form fieldset:nth-child(1) {
-    animation-delay: 1250ms;
-  }
-  main.on-enter section form fieldset:nth-child(2) {
-    animation-delay: 1350ms;
-  }
-  main.on-enter section form fieldset:nth-child(3) {
-    animation-delay: 1450ms;
-  }
-  main.on-enter section form li:nth-child(1) {
-    animation-delay: 1550ms;
-  }
-  main.on-enter section form li:nth-child(2) {
-    animation-delay: 1650ms;
-  }
-  main.on-enter section form input[type="submit"] {
-    animation: scaleYIn 1000ms linear forwards 1750ms, lemon-white 250ms linear forwards 2150ms;
-    visibility: visible;
-  }
-  @media only screen and (min-width: 624px) {
+    body,
+    html {
+      height: 100%;
+    }
+
     body {
+      background: white;
+      margin: 0;
+      font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+      color: #857567;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      background: white;
+      height: 100%;
+    }
+
+    main aside {
+      position: relative;
       display: flex;
+      flex-flow: row wrap;
       align-items: center;
       align-content: center;
       justify-content: center;
-      background: #52504e;
+      height: calc(100% / 3);
+      padding: 12px;
+      background: #DFB72C url('https://images.unsplash.com/photo-1443131307017-4097c8ac7763?dpr=2&auto=format&fit=crop&w=1500&h=1909&q=80&cs=tinysrgb') no-repeat center center / cover;
     }
-    main {
+
+    main aside div:empty {
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #DFB72C url('https://images.unsplash.com/photo-1443131307017-4097c8ac7763?dpr=2&auto=format&fit=crop&w=1500&h=1909&q=80&cs=tinysrgb') no-repeat center center / cover;
+      background-blend-mode: screen;
+    }
+
+    main aside svg {
+      position: relative;
+      margin-top: -24px;
+      width: 150px;
+      height: 150px;
+    }
+
+    main aside div:not(:empty) {
+      position: relative;
+      width: 100%;
+      margin-top: -24px;
+    }
+
+    main aside p {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      color: white;
+      font-size: 18px;
+      line-height: 1.2;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(133, 117, 103, 0.5);
+    }
+
+    main aside p strong {
+      font-weight: 700;
+    }
+
+    main aside p:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    main aside p.active {
+      visibility: visible;
+      opacity: 1;
+      transform: none;
+    }
+
+    main aside p:not(.active) {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(100px);
+    }
+
+    main section {
+      position: relative;
+      height: calc(100% / 3 * 2);
+    }
+
+    main section h1 {
+      display: flex;
+      justify-content: center;
+      padding: 12px;
+      color: #DFB72C;
+      font-size: 28px;
+      line-height: 1;
+      text-align: center;
+      text-transform: lowercase;
+    }
+
+    main section h1 a {
+      display: block;
+      margin: 0 6px;
+      cursor: pointer;
+      transform: none;
+    }
+
+    main section h1 a:hover,
+    main section h1 a:focus {
+      color: black;
+    }
+
+    main section h1 a:active {
+      color: #857567;
+    }
+
+    main section h1 a.active {
+      font-weight: 500;
+    }
+
+    main section h1 a:not(.active) {
+      font-weight: 300;
+    }
+
+    main section form {
+      display: flex;
+      flex-flow: row wrap;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 40px);
+      padding-top: 40px;
+    }
+
+    main section form>div,
+    main section form>ul {
+      width: 100%;
+      padding: 6px;
+    }
+
+    main section form fieldset {
+      padding: 6px;
+    }
+
+    main section form fieldset div {
       display: flex;
       border-radius: 2px;
       overflow: hidden;
-      height: 100%;
-      max-height: 400px;
-      box-shadow: 0 0 10px rgba(56, 54, 53, 0.5);
     }
-    main aside, main section {
-      height: 100%;
-      width: 300px;
+
+    main section form fieldset div label {
+      display: block;
+      margin: 0;
+      padding: 6px 9px;
+      background: #DFB72C;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      line-height: 25px;
     }
-    main.pre-enter {
+
+    main section form fieldset div input {
+      display: block;
+      background: white;
+      border: 1px solid #DFB72C;
+      border-left: 0;
+      border-radius: 0 2px 2px 0;
+      box-shadow: none;
+      margin: 0;
+      padding: 6px 9px;
+      width: 100%;
+      color: #857567;
+      font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+    }
+
+    main section form fieldset div input::placeholder {
+      color: rgba(133, 117, 103, 0.4);
+    }
+
+    main section form fieldset div input:focus {
+      background: rgba(233, 226, 213, 0.5);
+    }
+
+    main section form fieldset div input:focus::placeholder {
+      color: rgba(133, 117, 103, 0.6);
+    }
+
+    main section form li {
+      padding: 6px;
+    }
+
+    main section form li button {
+      display: block;
+      margin: 0 auto;
+      appearance: none;
+      font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+      border: 0;
+      border-radius: 100px;
+      color: white;
+      font-size: 16px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    main section form input[type="submit"] {
+      display: block;
+      align-self: flex-end;
+      appearance: none;
+      width: 100%;
+      margin: 0;
+      border: 0;
+      border-radius: 0;
+      font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+      font-size: 24px;
+      text-transform: lowercase;
+      line-height: 2;
+      background: #DFB72C;
+      color: white;
+      cursor: pointer;
+    }
+
+    main section form input[type="submit"]:hover,
+    main section form input[type="submit"]:focus {
+      background: #976a36;
+    }
+
+    main section form input[type="submit"]:active {
+      background: #857567;
+    }
+
+    main section form.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    main section form.active fieldset,
+    main section form.active li,
+    main section form.active input[type="submit"] {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+
+    main section form:not(.active) {
       opacity: 0;
+      z-index: 0;
+    }
+
+    main section form:not(.active) fieldset,
+    main section form:not(.active) li,
+    main section form:not(.active) input[type="submit"] {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+
+    main.with-hover aside p {
+      transition: all 250ms ease-out;
+    }
+
+    main.with-hover section h1 a {
+      transition: all 150ms ease-out;
+    }
+
+    main.with-hover section h1 a:hover,
+    main.with-hover section h1 a:focus {
+      transition: all 300ms ease-out;
+    }
+
+    main.with-hover section h1 a:active {
+      transition: all 150ms ease-in;
+    }
+
+    main.with-hover section form {
+      transition: all 1000ms ease-out;
+    }
+
+    main.with-hover section form fieldset,
+    main.with-hover section form li,
+    main.with-hover section form input[type="submit"] {
+      transition: all 500ms ease-out;
+    }
+
+    main.with-hover section form button,
+    main.with-hover section form input {
+      transition: all 150ms ease-out;
+    }
+
+    main.with-hover section form button:hover,
+    main.with-hover section form input:hover,
+    main.with-hover section form button:focus,
+    main.with-hover section form input:focus {
+      transition: all 300ms ease-out;
+    }
+
+    main.with-hover section form button:active,
+    main.with-hover section form input:active {
+      transition: all 150ms ease-in;
+    }
+
+    main.with-hover section form.active#form-signup fieldset:nth-child(2) {
+      transition-delay: 50ms;
+    }
+
+    main.with-hover section form.active#form-signup fieldset:nth-child(3) {
+      transition-delay: 100ms;
+    }
+
+    main.with-hover section form.active#form-signup li:nth-child(1) {
+      transition-delay: 150ms;
+    }
+
+    main.with-hover section form.active#form-signup li:nth-child(2) {
+      transition-delay: 200ms;
+    }
+
+    main.with-hover section form.active#form-signup input[type="submit"] {
+      transition-delay: 250ms;
+    }
+
+    main.with-hover section form.active#form-login fieldset:nth-child(2) {
+      transition-delay: 50ms;
+    }
+
+    main.with-hover section form.active#form-login li:nth-child(1) {
+      transition-delay: 100ms;
+    }
+
+    main.with-hover section form.active#form-login li:nth-child(2) {
+      transition-delay: 150ms;
+    }
+
+    main.with-hover section form.active#form-login input[type="submit"] {
+      transition-delay: 200ms;
+    }
+
+    main.with-hover section form:not(.active)#form-signup fieldset:nth-child(1) {
+      transition-delay: 250ms;
+    }
+
+    main.with-hover section form:not(.active)#form-signup fieldset:nth-child(2) {
+      transition-delay: 200ms;
+    }
+
+    main.with-hover section form:not(.active)#form-signup fieldset:nth-child(3) {
+      transition-delay: 150ms;
+    }
+
+    main.with-hover section form:not(.active)#form-signup li:nth-child(1) {
+      transition-delay: 100ms;
+    }
+
+    main.with-hover section form:not(.active)#form-signup li:nth-child(2) {
+      transition-delay: 50ms;
+    }
+
+    main.with-hover section form:not(.active)#form-login fieldset:nth-child(1) {
+      transition-delay: 200ms;
+    }
+
+    main.with-hover section form:not(.active)#form-login fieldset:nth-child(2) {
+      transition-delay: 150ms;
+    }
+
+    main.with-hover section form:not(.active)#form-login li:nth-child(1) {
+      transition-delay: 100ms;
+    }
+
+    main.with-hover section form:not(.active)#form-login li:nth-child(2) {
+      transition-delay: 50ms;
+    }
+
+    main.pre-enter aside {
+      transform-origin: center top;
+      transform: scaleY(0);
       visibility: hidden;
     }
-    main.pre-enter aside {
-      transform: none;
+
+    main.pre-enter aside svg {
+      transform-origin: center center;
+      transform: scale(0) rotate(90deg);
+      visibility: hidden;
     }
-    main.on-enter {
-      animation: slideDown-fadeIn 1000ms linear forwards;
+
+    main.pre-enter aside p.active {
+      opacity: 0;
+      transform: translateY(100px);
+      visibility: hidden;
+    }
+
+    main.pre-enter section h1 a {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    main.pre-enter section h1 a:first-child {
+      transform-origin: right center;
+      transform: translateX(200px) scaleX(0);
+    }
+
+    main.pre-enter section h1 a:last-child {
+      transform-origin: left center;
+      transform: translateX(-200px) scaleX(0);
+    }
+
+    main.pre-enter section form fieldset,
+    main.pre-enter section form li {
+      opacity: 0;
+      transform: translateY(100px);
+      visibility: hidden;
+    }
+
+    main.pre-enter section form input[type="submit"] {
+      transform-origin: center bottom;
+      transform: scaleY(0);
+      color: #DFB72C;
+      visibility: hidden;
+    }
+
+    main.on-enter aside {
+      animation: scaleYIn 1000ms linear forwards;
       visibility: visible;
     }
-    main.on-enter aside {
-      animation: none;
+
+    main.on-enter aside svg {
+      animation: bounceIn-rotate 1000ms linear forwards 250ms;
+      visibility: visible;
     }
-  }
-  @keyframes lemon-white {
-    0% {
-      color: #DFB72C;
+
+    main.on-enter aside p.active {
+      animation: slideInUp-fadeIn 1000ms linear forwards 500ms;
+      visibility: visible;
     }
-    100% {
-      color: white;
+
+    main.on-enter section h1 a {
+      visibility: visible;
     }
-  }
+
+    main.on-enter section h1 a:first-child {
+      animation: scaleX-slideInRight 1000ms linear forwards 750ms;
+    }
+
+    main.on-enter section h1 a:last-child {
+      animation: scaleX-slideInLeft 1000ms linear forwards 750ms;
+    }
+
+    main.on-enter section form fieldset,
+    main.on-enter section form li {
+      animation: slideInUp-fadeIn 1000ms linear forwards;
+      visibility: visible;
+    }
+
+    main.on-enter section form fieldset:nth-child(1) {
+      animation-delay: 1250ms;
+    }
+
+    main.on-enter section form fieldset:nth-child(2) {
+      animation-delay: 1350ms;
+    }
+
+    main.on-enter section form fieldset:nth-child(3) {
+      animation-delay: 1450ms;
+    }
+
+    main.on-enter section form li:nth-child(1) {
+      animation-delay: 1550ms;
+    }
+
+    main.on-enter section form li:nth-child(2) {
+      animation-delay: 1650ms;
+    }
+
+    main.on-enter section form input[type="submit"] {
+      animation: scaleYIn 1000ms linear forwards 1750ms, lemon-white 250ms linear forwards 2150ms;
+      visibility: visible;
+    }
+
+    @media only screen and (min-width: 624px) {
+      body {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        background: #52504e;
+      }
+
+      main {
+        display: flex;
+        border-radius: 2px;
+        overflow: hidden;
+        height: 100%;
+        max-height: 400px;
+        box-shadow: 0 0 10px rgba(56, 54, 53, 0.5);
+      }
+
+      main aside,
+      main section {
+        height: 100%;
+        width: 300px;
+      }
+
+      main.pre-enter {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      main.pre-enter aside {
+        transform: none;
+      }
+
+      main.on-enter {
+        animation: slideDown-fadeIn 1000ms linear forwards;
+        visibility: visible;
+      }
+
+      main.on-enter aside {
+        animation: none;
+      }
+    }
+
+    @keyframes lemon-white {
+      0% {
+        color: #DFB72C;
+      }
+
+      100% {
+        color: white;
+      }
+    }
   /* https://goo.gl/U6p2Ra */
   @keyframes slideDown-fadeIn {
     0% {

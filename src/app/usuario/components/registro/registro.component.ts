@@ -4,13 +4,13 @@ import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  templateUrl: './registro.component00.html',
+  styleUrls: ['./registro.component00.css']
 })
 export class RegistroComponent implements OnInit{
-  
+
   ngOnInit(): void {
-      
+
   }
 
   public usuario: Usuario = {
@@ -48,3 +48,4 @@ export class RegistroComponent implements OnInit{
   }
 
 }
+
