@@ -28,7 +28,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/app/usuario/components/registro/cosa.js"
+
             ]
           },
           "configurations": {
