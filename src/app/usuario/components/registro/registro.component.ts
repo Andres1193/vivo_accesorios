@@ -18,7 +18,8 @@ export class RegistroComponent implements OnInit{
     nombre: '',
     nom_usuario: '',
     correo: '',
-    contrasena: ''
+    contrasena: '',
+    estado: ''
   };
 
   constructor (private usuarioService: UsuarioService) { }
@@ -39,9 +40,13 @@ export class RegistroComponent implements OnInit{
           nombre: '',
           nom_usuario: '',
           correo: '',
-          contrasena: ''
+          contrasena: '',
+          estado: ''
         }
       });
+
+      /* llama listado */
+
     }
 
   }
