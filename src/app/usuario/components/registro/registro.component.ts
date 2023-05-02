@@ -5,7 +5,7 @@ import { UsuarioService } from '../../services/usuario.service';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component00.html',
-  styleUrls: ['./registro.component00.css'],
+  styleUrls: ['./registro.component.css'],
 
 })
 export class RegistroComponent implements OnInit{
