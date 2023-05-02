@@ -1,0 +1,10 @@
+<div class='wrap'>
+    <h2>Registro</h2>
+      <form>
+          <input type='text' name="nombre" id='nombre' placeholder='Nombre' [(ngModel)]="usuario.nombre">
+          <input type='text' name="usuario" id='usuario' placeholder='Usuario' [(ngModel)]="usuario.usuarioVar">
+          <input type='text' name='correo' id='correo' placeholder='Correo' [(ngModel)]="usuario.correo">
+          <input type='password' name='contrasena' id='contrasena' placeholder='Contraseña' [(ngModel)]="usuario.contrasena">
+      </form>
+    <button class='registrar' (click)="crearUsuario()" >Registrar</button>
+  </div>
