@@ -1,58 +1,24 @@
-<div>
+<div *ngIf=" usuarios.length != 0; else noUsuarios">
   <table>
     <thead>
       <tr>
-        <th>Option</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>Nombre</th>
+        <th>Usuario</th>
+        <th>Correo</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><strong>showSpeed</strong></td>
-        <td>15</td>
-        <td>The speed of the show/reveal</td>
-      </tr>
-      <tr>
-        <td><strong>showEasing</strong></td>
-        <td>'linear'</td>
-        <td>The easing of the show/reveal</td>
-      </tr>
-      <tr>
-        <td><strong>hideSpeed</strong></td>
-        <td>50</td>
-        <td>The speed of the hide/conceal</td>
-      </tr>
-      <tr>
-        <td><strong>hideEasing</strong></td>
-        <td>'linear'</td>
-        <td>The easing of the hide/conceal</td>
-      </tr>					
-      <tr>
-        <td><strong>width</strong></td>
-        <td>'auto'</td>
-        <td>The width that the data will be truncated to - <em>('auto' or px amount)</em></td>
-      </tr>
-      <tr>
-        <td><strong>ellipsis</strong></td>
-        <td>true</td>
-        <td>Set to true to enable the ellipsis</td>
-      </tr>
-      <tr>
-        <td><strong>title</strong></td>
-        <td>false</td>
-        <td>Set to true to show the full data on hover</td>
-      </tr>
-      <tr>
-        <td><strong>afterShow</strong></td>
-        <td> $.noop</td>
-        <td>The callback fired after the show/reveal</td>
-      </tr>
-      <tr>
-        <td><strong>afterHide</strong></td>
-        <td>$.noop</td>
-        <td>The callback fired after the hide/conceal</td>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.nom_usuario}}</td>
+        <td>{{usuario.correo}}</td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<ng-template #noUsuarios>
+  <div class="msj">
+    <h3>No se ha registrado ningun administrador.</h3>
+  </div>
+</ng-template>
