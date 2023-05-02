@@ -16,7 +16,7 @@ export class RegistroComponent implements OnInit{
 
   public usuario: Usuario = {
     nombre: '',
-    usuarioVar: '',
+    nom_usuario: '',
     correo: '',
     contrasena: '',
     estado: 'Activo'
@@ -27,7 +27,7 @@ export class RegistroComponent implements OnInit{
   crearUsuario() {
     if ( this.usuario.nombre.length === 0 ) {
       return;
-    } else if ( this.usuario.usuarioVar.length === 0 ) {
+    } else if ( this.usuario.nom_usuario.length === 0 ) {
       return;
     } else if ( this.usuario.correo.length === 0 ) {
       return;
@@ -38,7 +38,7 @@ export class RegistroComponent implements OnInit{
       this.usuarioService.crearUsuario(this.usuario).subscribe(resp=>{
         this.usuario = {
           nombre: '',
-          usuarioVar: '',
+          nom_usuario: '',
           correo: '',
           contrasena: '',
           estado: 'Activo'
