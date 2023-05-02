@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
 import { Router } from '@angular/router';
@@ -11,11 +11,6 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit{
 
-  ngOnInit(): void {
-
-  }
-
-
   public usuario: Usuario = {
     nombre: '',
     nom_usuario: '',
@@ -26,6 +21,17 @@ export class RegistroComponent implements OnInit{
 
   constructor (private usuarioService: UsuarioService, private router: Router) { }
 
+  @Input() usuarios: Usuario[] = [];
+  
+  ngOnInit(): void {
+    this.usuarioService.getUsuarios().subscribe(
+      resp=> {
+        console.log(resp);
+        this.usuarios = resp;
+      }
+    );
+  }
+  
   crearUsuario() {
     if ( this.usuario.nombre.length === 0 ) {
       return ;
