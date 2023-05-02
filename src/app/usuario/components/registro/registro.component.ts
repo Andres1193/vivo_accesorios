@@ -45,12 +45,11 @@ export class RegistroComponent implements OnInit{
           contrasena: '',
           estado: ''
         };
-          this.router.navigate(['/usuario/components/listado', 'listado.component.html']);
+          this.router.navigate(['/usuario/components/listado']);
       });
 
 
     }
 
   }
-
 }
