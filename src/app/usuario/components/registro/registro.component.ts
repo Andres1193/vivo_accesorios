@@ -4,21 +4,22 @@ import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  templateUrl: './1.html',
+  styleUrls: ['./1.css'],
+
 })
 export class RegistroComponent implements OnInit{
-  
+
   ngOnInit(): void {
-      
+
   }
 
   public usuario: Usuario = {
     nombre: '',
-    usuarioVar: '',
+    nom_usuario: '',
     correo: '',
     contrasena: '',
-    estado: 'Activo'
+    estado: ''
   };
 
   constructor (private usuarioService: UsuarioService) { }
@@ -26,7 +27,7 @@ export class RegistroComponent implements OnInit{
   crearUsuario() {
     if ( this.usuario.nombre.length === 0 ) {
       return;
-    } else if ( this.usuario.usuarioVar.length === 0 ) {
+    } else if ( this.usuario.nom_usuario.length === 0 ) {
       return;
     } else if ( this.usuario.correo.length === 0 ) {
       return;
@@ -37,12 +38,15 @@ export class RegistroComponent implements OnInit{
       this.usuarioService.crearUsuario(this.usuario).subscribe(resp=>{
         this.usuario = {
           nombre: '',
-          usuarioVar: '',
+          nom_usuario: '',
           correo: '',
           contrasena: '',
-          estado: 'Activo'
+          estado: ''
         }
       });
+
+      /* llama listado */
+
     }
 
   }

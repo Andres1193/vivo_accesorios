@@ -2,7 +2,7 @@
 
 export interface Usuario {
     nombre: string;
-    usuarioVar: string;
+    nom_usuario: string;
     correo: string;
     contrasena: string;
     estado: string;
