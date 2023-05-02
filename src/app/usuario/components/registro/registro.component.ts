@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -14,6 +15,7 @@ export class RegistroComponent implements OnInit{
 
   }
 
+
   public usuario: Usuario = {
     nombre: '',
     nom_usuario: '',
@@ -22,17 +24,17 @@ export class RegistroComponent implements OnInit{
     estado: ''
   };
 
-  constructor (private usuarioService: UsuarioService) { }
+  constructor (private usuarioService: UsuarioService, private router: Router) { }
 
   crearUsuario() {
     if ( this.usuario.nombre.length === 0 ) {
-      return;
+      return ;
     } else if ( this.usuario.nom_usuario.length === 0 ) {
-      return;
+      return ;
     } else if ( this.usuario.correo.length === 0 ) {
-      return;
+      return ;
     } else if ( this.usuario.contrasena.length === 0 ) {
-      return;
+      return ;
     } else {
 
       this.usuarioService.crearUsuario(this.usuario).subscribe(resp=>{
@@ -42,10 +44,10 @@ export class RegistroComponent implements OnInit{
           correo: '',
           contrasena: '',
           estado: ''
-        }
+        };
+          this.router.navigate(['/usuario/components/listado', 'listado.component.html']);
       });
 
-      /* llama listado */
 
     }
 
