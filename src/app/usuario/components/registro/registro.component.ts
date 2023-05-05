@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -24,7 +23,7 @@ export class RegistroComponent implements OnInit{
     estado: ''
   };
 
-  constructor (private usuarioService: UsuarioService, private router: Router) { }
+  constructor (private usuarioService: UsuarioService) { }
 
   crearUsuario() {
     if ( this.usuario.nombre.length === 0 ) {
@@ -45,7 +44,6 @@ export class RegistroComponent implements OnInit{
           contrasena: '',
           estado: ''
         };
-          this.router.navigate(['/usuario/components/listado']);
       });
 
 
