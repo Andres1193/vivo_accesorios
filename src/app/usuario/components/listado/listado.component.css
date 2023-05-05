@@ -107,3 +107,10 @@ tbody:hover tr:hover td {
 	color: #444;
 	text-shadow: 0 1px 0 #fff;
 }
+
+.msj {
+    margin: 150px auto;
+    text-align: center;
+    color: #39323B;
+    text-transform: uppercase;
+}
