@@ -1,4 +1,4 @@
-<div *ngIf=" usuarios.length != 0; else noUsuarios">
+<div *ngIf=" usuarios.length != 0">
   <table>
     <thead>
       <tr>
@@ -16,9 +16,3 @@
     </tbody>
   </table>
 </div>
-
-<ng-template #noUsuarios>
-  <div class="msj">
-    <h3>No se ha registrado ningun administrador.</h3>
-  </div>
-</ng-template>
