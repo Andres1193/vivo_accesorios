@@ -21,7 +21,7 @@ export class RegistroComponent implements OnInit{
   constructor (private usuarioService: UsuarioService) { }
 
   @Input() usuarios: Usuario[] = [];
-  
+
   ngOnInit(): void {
     this.usuarioService.getUsuarios().subscribe(
       resp=> {
@@ -30,7 +30,7 @@ export class RegistroComponent implements OnInit{
       }
     );
   }
-  
+
   crearUsuario() {
     if ( this.usuario.nombre.length === 0 ) {
       return ;
