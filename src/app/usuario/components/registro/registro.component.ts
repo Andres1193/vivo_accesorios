@@ -4,8 +4,8 @@ import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-registro',
-  templateUrl: './1.html',
-  styleUrls: ['./1.css'],
+  templateUrl: './registro.component.html',
+  styleUrls: ['./registro.component.css'],
 
 })
 export class RegistroComponent implements OnInit{
@@ -21,7 +21,7 @@ export class RegistroComponent implements OnInit{
   constructor (private usuarioService: UsuarioService) { }
 
   @Input() usuarios: Usuario[] = [];
-  
+
   ngOnInit(): void {
     this.usuarioService.getUsuarios().subscribe(
       resp=> {
@@ -30,7 +30,7 @@ export class RegistroComponent implements OnInit{
       }
     );
   }
-  
+
   crearUsuario() {
     if ( this.usuario.nombre.length === 0 ) {
       return ;
