@@ -17,7 +17,9 @@ export class ListadoComponent {
     estado: ''
   };
 
-  @Input() usuarios: Usuario[] = [];
+  @Input() usuarios: Usuario[] = [
+    
+  ];
 
   constructor(public usuarioService: UsuarioService) {
 
