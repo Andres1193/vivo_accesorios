@@ -1,33 +1,74 @@
-<div >
-  <table>
-    <thead>
-      <tr>
-        <th>Nombre</th>
-        <th>Usuario</th>
-        <th>Correo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let usuario of usuarios">
-        <td>{{usuario.nombre}}</td>
-        <td>{{usuario.nom_usuario}}</td>
-        <td>{{usuario.correo}}</td>
-      </tr>
-      <tr>
-        <td>Frank Gil</td>
-        <td>Kratoris</td>
-        <td>frank.gil@gmail.com</td>
-      </tr>
-      <tr>
-        <td>Alejandra Yepes</td>
-        <td>aleja09</td>
-        <td>alejandra.yepes@gmail.com</td>
-      </tr>
-      <tr>
-        <td>Oscar Osorio</td>
-        <td>oscar291</td>
-        <td>oscar.osorio@gmail.com</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<div class="content">
+    
+  <div class="container">
+    <h2 class="mb-5">Table #9</h2>
+
+    <div class="table-responsive">
+
+      <table class="table custom-table">
+        <thead>
+          <tr>
+            <th scope="col">
+              <label class="control control--checkbox">
+                <input type="checkbox" class="js-check-all"/>
+                <div class="control__indicator"></div>
+              </label>
+            </th>
+            <th scope="col">Order</th>
+            <th scope="col">Sales</th>
+            <th scope="col">Description</th>
+            <th scope="col">Support</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">
+              <label class="control control--checkbox">
+                <input type="checkbox"/>
+                <div class="control__indicator"></div>
+              </label>
+            </th>
+            <td>
+              1392
+            </td>
+            <td>Sales Pitch - 2019</td>
+            <td>
+              Far far away, behind the word mountains
+              <small class="d-block">Far far away, behind the word mountains</small>
+            </td>
+            <td>+63 983 0962 971</td>
+            <td>
+              <ul class="persons">
+                <li>
+                  <a href="#">
+                    <img src="images/person_1.jpg" alt="Person" class="img-fluid">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="images/person_2.jpg" alt="Person" class="img-fluid">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="images/person_3.jpg" alt="Person" class="img-fluid">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="images/person_4.jpg" alt="Person" class="img-fluid">
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <img src="images/person_5.jpg" alt="Person" class="img-fluid">
+                  </a>
+                </li>
+              </ul>
+            </td>
+          </tr>             
+        </tbody>
+      </table>
+    </div>
+
+  </div>
