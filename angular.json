@@ -33,7 +33,12 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/@popperjs/core/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.js"
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "/src/app/usuario/js/bootstrap.min.js",
+              "/src/app/usuario/js/jquery-3.3.1.min.js",
+              "/src/app/usuario/js/main.js",
+              "/src/app/usuario/js/owl.carousel.min.js",
+              "/src/app/usuario/js/popper.min.js"
             ]
           },
           "configurations": {
