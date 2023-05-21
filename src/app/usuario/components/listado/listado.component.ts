@@ -53,6 +53,8 @@ export class ListadoComponent implements AfterViewInit {
     });
   }
 
+  // Funciona porque Dios es grande
+  
   ngOnInit(): void {
     this.usuarioService.getUsuarios().subscribe(
       resp=> {
