@@ -8,7 +8,7 @@ declare var $: any;
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css']
 })
-export class ListadoComponent implements AfterViewInit {
+export class ListadoComponent {
 
   private self: ListadoComponent = this;
 
@@ -21,37 +21,35 @@ export class ListadoComponent implements AfterViewInit {
   };
 
   @Input() usuarios: Usuario[] = [
-    
+
   ];
 
   constructor(public usuarioService: UsuarioService) {
 
   }
-  ngAfterViewInit() {
-    $(document).ready(function() {
-      $('.js-check-all').on('click', function() {
-        if ( $(self).prop('checked') ) {
-          console.log("Hola mundo");
-          $('th input[type="checkbox"]').each(function() {
-            $(self).prop('checked', true);
-            $(self).closest('tr').addClass('active');
-          })
-        } else {
-          $('th input[type="checkbox"]').each(function() {
-            $(self).prop('checked', false);
-            $(self).closest('tr').removeClass('active');
-          })
-        }
-      });
-      $('th[scope="row"] input[type="checkbox"]').on('click', function() {
-        if ( $(self).closest('tr').hasClass('active') ) {
-          $(self).closest('tr').removeClass('active');
-        } else {
-          $(self).closest('tr').addClass('active');
-        }
-      });
-    });
-  }
+  // ngAfterViewInit() {
+  //   $(document).ready(function() {
+  //     $('.js-check-all').on('click', function() {
+  //       if ( $(self).prop('checked') ) {
+  //         $('th input[type="checkbox"]').each(function() {
+  //           $(self).prop('checked', true);
+  //           $(self).closest('tr').addClass('active');
+  //         })
+  //       } else {
+  //         $('th input[type="checkbox"]').each(function() {
+  //           $(self).prop('checked', false);
+  //           $(self).closest('tr').removeClass('active');
+  //         })
+  //       }
+  //     });
+  //     $('th[scope="row"] input[type="checkbox"]').on('click', function() {
+  //       if ( $(self).closest('tr').hasClass('active') ) {
+  //         $(self).closest('tr').removeClass('active');
+  //       } else {
+  //         $(self).closest('tr').addClass('active');
+  //       }
+  //     });
+  //   });
 
   ngOnInit(): void {
     this.usuarioService.getUsuarios().subscribe(
@@ -60,5 +58,21 @@ export class ListadoComponent implements AfterViewInit {
         this.usuarios = resp;
       }
     );
+  }
+
+  getUsuarios(): void {
+    this.usuarioService
+      .getUsuarios()
+      .subscribe((usuarios) => (this.usuarios = usuarios));
+  }
+
+  //checkAllCheckBox(ev) { // Angular 9
+  checkAllCheckBox(ev: any) {
+    // Angular 13
+    this.usuarios.forEach((x) => (x.checked = ev.target.checked));
+  }
+
+  isAllCheckBoxChecked() {
+    return this.usuarios.every((p) => p.checked);
   }
 }
