@@ -30,4 +30,8 @@ export class UsuarioService {
 
      return this.http.get<Usuario[]>(url,{headers:header});
   }
+
+public getJson(){
+  
+}
 }

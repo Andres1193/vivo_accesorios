@@ -6,4 +6,5 @@ export interface Usuario {
     correo: string;
     contrasena: string;
     estado: string;
+    checked?: boolean;
 }
