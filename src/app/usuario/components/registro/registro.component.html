@@ -1,33 +1,15 @@
-<main ontouchstart class="with-hover">
-	<aside>
-
-	</aside>
-	<section>
-		<h1 class="options">
-			<a id="link-login" class="active">Log In</a>
-		</h1>
-
-		<form id="form-login" class="active">
-			<div>
-				<fieldset>
-					<div>
-						<label for="email">Email</label>
-						<input id="email" type="email" placeholder="correo@mail.com" />
-					</div>
-				</fieldset>
-				<fieldset>
-					<div>
-						<label for="password">Password</label>
-						<input id="password" type="password" placeholder="••••••••" />
-					</div>
-				</fieldset>
-			</div>
-<!--<button type="submit" value="Log In"  (click)="crearUsuario()" >Log In</button>-->
-			<input type="submit" value="Log In"  (click)="crearUsuario()" />
-		</form>
-	</section>
-	<section>
-		<div *ngIf=" usuarios.length != 0; else noUsuarios">
+<div class='wrap'>
+    <h2>Registro</h2>
+      <form>
+          <input type='text' name="nombre" id='nombre' placeholder='Nombre' [(ngModel)]="usuario.nombre">
+          <input type='text' name="usuario" id='usuario' placeholder='Usuario' [(ngModel)]="usuario.nom_usuario">
+          <input type='text' name='correo' id='correo' placeholder='Correo' [(ngModel)]="usuario.correo">
+          <input type='password' name='contrasena' id='contrasena' placeholder='Contraseña' [(ngModel)]="usuario.contrasena">
+      </form>
+    <button class='registrar' (click)="crearUsuario()">Registrar</button>
+  </div>
+ 
+	<div *ngIf=" usuarios.length != 0; else noUsuarios">
 			<table>
 			  <thead>
 				<tr>
@@ -45,11 +27,9 @@
 			  </tbody>
 			</table>
 		  </div>
-
-		  <ng-template #noUsuarios>
+		  
+		<ng-template #noUsuarios>
 			<div class="msj">
 			  <h3>No se ha registrado ningun administrador.</h3>
 			</div>
-		  </ng-template>
-	</section>
-</main>
+		</ng-template>
