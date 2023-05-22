@@ -5,7 +5,7 @@ import { ListadoComponent } from './components/listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './pages/main-page-usuario.component';
-
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -13,6 +13,7 @@ import { MainPageComponent } from './pages/main-page-usuario.component';
   declarations: [
     RegistroComponent,
     ListadoComponent,
+    LoginComponent,
     MainPageComponent
   ],
   imports: [
