@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './pages/main-page-usuario.component';
 import { EditarComponent } from './components/editar/editar.component';
 
+import { LoginComponent } from './components/login/login.component';
 
 
 
@@ -15,7 +16,9 @@ import { EditarComponent } from './components/editar/editar.component';
     RegistroComponent,
     ListadoComponent,
     MainPageComponent,
-    EditarComponent
+    EditarComponent,
+    LoginComponent,
+    MainPageComponent
   ],
   imports: [
     CommonModule,
