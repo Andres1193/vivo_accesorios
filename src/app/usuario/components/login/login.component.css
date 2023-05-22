@@ -6,23 +6,13 @@
   outline: none !important;
 }
 
-body,
-html {
-  height: 100%;
-}
-
-body {
-  background: white;
-  margin: 0;
-  font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-  color: #857567;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
-
 main {
-  background: white;
+  background: #f7f7f7;
+  padding-top: 30px;
   height: 100%;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 main aside {
@@ -34,20 +24,15 @@ main aside {
   justify-content: center;
   height: calc(100% / 3);
   padding: 12px;
-  background: #F8F3EF url('../../../../img/logo.png') no-repeat center center / cover;
+  background: #f7f7f7 url('../../../../img/logo.png') no-repeat center center / cover;
   background-size: 95% 90%;
 }
 
-main aside div:empty {
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #F8F3EF url('../../../../img/logo.png') no-repeat center center / cover;
-  background-size: 95% 90%;
-  background-blend-mode: screen;
+main aside svg {
+  position: relative;
+  margin-top: -24px;
+  width: 150px;
+  height: 150px;
 }
 
 main aside p {
@@ -65,23 +50,6 @@ main aside p strong {
   font-weight: 700;
 }
 
-main aside p:nth-child(2) {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-main aside p.active {
-  visibility: visible;
-  opacity: 1;
-  transform: none;
-}
-
-main aside p:not(.active) {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(100px);
-}
 
 main section {
   position: relative;
@@ -116,7 +84,7 @@ main section form>ul {
 }
 
 main section form fieldset {
-  padding: 6px;
+  padding: 20px;
 }
 
 main section form fieldset div {
@@ -138,7 +106,7 @@ main section form fieldset div label {
 
 main section form fieldset div input {
   display: block;
-  background: white;
+  background: #f7f7f7;
   border: 1px solid #DFB72C;
   border-left: 0;
   border-radius: 0 2px 2px 0;
@@ -166,7 +134,6 @@ main section form fieldset div input:focus::placeholder {
 main section form li button {
   display: block;
   margin: 0 auto;
-  appearance: none;
   font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   border: 0;
   border-radius: 100px;
@@ -179,40 +146,47 @@ main section form li button {
 main section form input[type="submit"] {
   display: block;
   align-self: flex-end;
-  appearance: none;
   width: 100%;
   margin: 0;
   border: 0;
-  border-radius: 0;
+  border-radius: 10px;
   font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 24px;
+  text-transform: lowercase;
   line-height: 2;
   background: #DFB72C;
   color: white;
   cursor: pointer;
+  transition: 200ms;
 }
 
-@media only screen and (min-width: 624px) {
-  body {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    background: #52504e;
-  }
+main section form input[type="submit"]:hover,
+main section form input[type="submit"]:focus {
+  background: #976a36;
+  transition: 200ms;
+}
 
+main section form input[type="submit"]:active {
+  background: #857567;
+  transition: 300ms;
+}
+
+@media only screen {
   main {
     display: flex;
-    border-radius: 2px;
-    overflow: hidden;
-    height: 100%;
-    max-height: 400px;
-    box-shadow: 0 0 10px rgba(56, 54, 53, 0.5);
+    border-radius: 10px;
+    height: 400px;
+    max-height: 800px;
+
   }
 
-  main aside,
+  main aside{
+    height: 100%;
+    width: 300px;
+  }
   main section {
     height: 100%;
     width: 300px;
+    border-left: 1px solid #AE837B;
   }
 }
