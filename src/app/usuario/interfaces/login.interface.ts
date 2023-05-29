@@ -1,6 +1,6 @@
 
 
 export interface Login {
-    usuario: string;
+    correo: string;
     contrasena: string;
 }

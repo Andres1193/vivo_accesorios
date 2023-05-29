@@ -13,7 +13,8 @@ import { UsuarioModule } from './usuario/usuario.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    UsuarioModule
+    UsuarioModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

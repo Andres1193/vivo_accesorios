@@ -12,18 +12,32 @@
 				<fieldset>
 					<div>
 						<label for="email">Email</label>
-						<input id="email" type="email" placeholder="correo@mail.com" />
+						<input
+							name="email" 
+							id="email" 
+							type="email" 
+							placeholder="correo@mail.com" 
+							[(ngModel)]="login.correo"
+							required="required"
+						/>
 					</div>
 				</fieldset>
 				<fieldset>
 					<div>
 						<label for="password">Password</label>
-						<input id="password" type="password" placeholder="••••••••" />
+						<input
+							name="password"
+							id="password" 
+							type="password" 
+							placeholder="Password" 
+							[(ngModel)]="login.contrasena"
+							required="required"
+						/>
 					</div>
 				</fieldset>
 			</div>
 <!--<button type="submit" value="Log In"  (click)="crearUsuario()" >Log In</button>-->
-			<input type="submit" value="Log In"  />
+			<input type="submit" value="Log in"  (click)="autinticarUsuario()"/>
 		</form>
 	</section>
 </main>
