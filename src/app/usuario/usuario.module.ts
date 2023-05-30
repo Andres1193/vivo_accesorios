@@ -8,6 +8,7 @@ import { MainPageComponent } from './pages/main-page-usuario.component';
 import { EditarComponent } from './components/editar/editar.component';
 
 import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -18,7 +19,8 @@ import { LoginComponent } from './components/login/login.component';
     MainPageComponent,
     EditarComponent,
     LoginComponent,
-    MainPageComponent
+    MainPageComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
