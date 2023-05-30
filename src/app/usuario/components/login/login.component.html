@@ -1,44 +1,37 @@
+
 <main ontouchstart class="with-hover">
-	<aside>
-
-	</aside>
-	<section>
-		<h1 class="options">
-      Login
-		</h1>
-
-		<form id="form-login" class="active">
-			<div>
-				<fieldset>
-					<div>
-						<label for="email">Email</label>
-						<input
-							name="email"
-							id="email"
-							type="email"
-							placeholder="correo@mail.com"
-							[(ngModel)]="login.correo"
-							required="required"
-						/>
-					</div>
-				</fieldset>
-				<fieldset>
-					<div>
-						<label for="password">Password</label>
-						<input
-							name="password"
-							id="password"
-							type="password"
-							placeholder="Password"
-							[(ngModel)]="login.contrasena"
-							required="required"
-						/>
-					</div>
-				</fieldset>
-			</div>
-        <!--<button type="submit" value="Log In"  (click)="crearUsuario()" >Log In</button>-->
-			<input type="submit" value="Log In"  />
-		</form>
-	</section>
+  <aside></aside>
+  <section class="formulario">
+    <h1 class="options">Login</h1>
+    <form id="form-login" class="active">
+      <div>
+        <fieldset>
+          <div>
+            <input
+              name="email"
+              id="email"
+              type="email"
+              placeholder="correo@mail.com"
+              [(ngModel)]="login.correo"
+              required="required"
+            />
+          </div>
+        </fieldset>
+        <fieldset>
+          <div>
+            <input
+              name="password"
+              id="password"
+              type="password"
+              placeholder="Password"
+              [(ngModel)]="login.contrasena"
+              required="required"
+            />
+          </div>
+        </fieldset>
+      </div>
+      <!--<button type="submit" value="Log In"  (click)="crearUsuario()" >Log In</button>-->
+      <input type="submit" value="Log In" />
+    </form>
+  </section>
 </main>
-
