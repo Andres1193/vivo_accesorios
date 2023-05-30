@@ -8,11 +8,11 @@ import { EditarComponent } from './usuario/components/editar/editar.component';
 
 
 const routes: Routes = [
-  {path: "", component: AppComponent, pathMatch: "full"},
-  {path: "login", component: LoginComponent, pathMatch: "full"},
-  {path: "registro", component: RegistroComponent, pathMatch: "full"},
-  {path: "listado", component: ListadoComponent, pathMatch: "full"},
-  {path: "editar", component: EditarComponent, pathMatch: "full"}
+  {path: "", component: AppComponent},
+  {path: "login", component: LoginComponent},
+  {path: "registro", component: RegistroComponent},
+  {path: "listado", component: ListadoComponent},
+  {path: "editar", component: EditarComponent}
 ];
 
 @NgModule({
