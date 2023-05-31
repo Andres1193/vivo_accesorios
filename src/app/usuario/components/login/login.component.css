@@ -7,7 +7,6 @@ main {
   justify-content: center;
   height: 100%;
 
-
 }
 
 main aside {
@@ -143,7 +142,7 @@ main section form input[type="submit"] {
   border: 0;
   border-radius: 10px;
 
- font-size: 24px;
+  font-size: 24px;
   text-transform: lowercase;
   line-height: 2;
   background: white;
@@ -170,10 +169,11 @@ main section form input[type="submit"]:active {
 
   }
 
-  main aside{
+  main aside {
     height: 400px;
     width: 300px;
   }
+
   main section {
     height: 400px;
     width: 300px;
