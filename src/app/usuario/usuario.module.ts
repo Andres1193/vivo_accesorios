@@ -7,7 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './pages/main-page-usuario.component';
 import { EditarComponent } from './components/editar/editar.component';
 import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './components/home/home.component';
+import { LoginRoutingModule } from './login-routing.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -18,13 +19,13 @@ import { HomeComponent } from './components/home/home.component';
     MainPageComponent,
     EditarComponent,
     LoginComponent,
-    MainPageComponent,
-    HomeComponent
+    MainPageComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   exports: [
     MainPageComponent
