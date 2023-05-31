@@ -10,18 +10,15 @@ import { EditarComponent } from './components/editar/editar.component';
 
 const routes: Routes = [
     {
-        path: "", component: AppComponent, pathMatch: "full"
-    },
-    {
-        path: "login", component: LoginComponent, pathMatch: "full",
+        path: '', component: LoginComponent,
         children: [
-            {path: "registro", component: RegistroComponent, pathMatch: "full"},
-            {path: "listado", component: ListadoComponent, pathMatch: "full"},
-            {path: "editar", component: EditarComponent, pathMatch: "full"},
+            {path: 'registro', component: RegistroComponent},
+            {path: 'listado', component: ListadoComponent},
+            {path: 'editar', component: EditarComponent},
         ]
     },
     {
-        path: "**", redirectTo: "login"
+        path: '**', redirectTo: ''
     },
 ];
 
