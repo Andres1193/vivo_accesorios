@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './usuario/components/login/login.component';
+import { ListadoComponent } from './usuario/components/listado/listado.component';
 
 
 
 const routes: Routes = [
-    {
-        path: 'usuario',
-        loadChildren: () => import('./usuario/usuario.module').then( m => m.UsuarioModule )
-    },
-    {
-        path: '',
-        redirectTo: 'usuario',
-        pathMatch: 'full'
-    },
-];
+    { path: 'login', component: LoginComponent, pathMatch:'full' },
+    { path: '', redirectTo: '/home', pathMatch:'full'},
+    { path: 'home', component: ListadoComponent, pathMatch:'full'},
+    // { path: 'register', component: SignInComponent },
+    { path: '**', redirectTo: '/home' }
+  
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

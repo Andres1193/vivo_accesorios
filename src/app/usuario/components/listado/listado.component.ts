@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
+
 declare var $: any;
 
 @Component({
@@ -27,31 +28,6 @@ export class ListadoComponent {
   constructor(public usuarioService: UsuarioService) {
 
   }
-  // ngAfterViewInit() {
-  //   $(document).ready(function() {
-  //     $('.js-check-all').on('click', function() {
-  //       if ( $(self).prop('checked') ) {
-  //         $('th input[type="checkbox"]').each(function() {
-  //           $(self).prop('checked', true);
-  //           $(self).closest('tr').addClass('active');
-  //         })
-  //       } else {
-  //         $('th input[type="checkbox"]').each(function() {
-  //           $(self).prop('checked', false);
-  //           $(self).closest('tr').removeClass('active');
-  //         })
-  //       }
-  //     });
-  //     $('th[scope="row"] input[type="checkbox"]').on('click', function() {
-  //       if ( $(self).closest('tr').hasClass('active') ) {
-  //         $(self).closest('tr').removeClass('active');
-  //       } else {
-  //         $(self).closest('tr').addClass('active');
-  //       }
-  //     });
-  //   });
-
-  // Funciona porque Dios es grande
   
   ngOnInit(): void {
     this.usuarioService.getUsuarios().subscribe(
@@ -68,13 +44,4 @@ export class ListadoComponent {
       .subscribe((usuarios) => (this.usuarios = usuarios));
   }
 
-  //checkAllCheckBox(ev) { // Angular 9
-  checkAllCheckBox(ev: any) {
-    // Angular 13
-    this.usuarios.forEach((x) => (x.checked = ev.target.checked));
-  }
-
-  isAllCheckBoxChecked() {
-    return this.usuarios.every((p) => p.checked);
-  }
 }
