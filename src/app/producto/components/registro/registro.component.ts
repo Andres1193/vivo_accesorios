@@ -10,10 +10,12 @@ import { ProductoService } from '../../services/producto.service';
 export class RegistroComponent {
 
   public producto: Producto = {
+    codigo: 0,
     nombre: '',
     costo_Producto: 0,
     porcent_Utilidad: 0,
     precio_Producto: 0,
+    estado: 'a'
   }
 
   constructor(private productoService: ProductoService) {}
@@ -21,10 +23,12 @@ export class RegistroComponent {
   crearProducto () {
     this.productoService.crearProducto(this.producto).subscribe(resp=>{
       this.producto = {
+        codigo: 0,
         nombre: '',
         costo_Producto: 0,
         porcent_Utilidad: 0,
         precio_Producto: 0,
+        estado: 'a'
       };
     });
   }

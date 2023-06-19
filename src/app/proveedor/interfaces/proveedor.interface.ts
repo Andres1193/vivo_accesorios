@@ -9,5 +9,6 @@ export interface Proveedor {
     telefono_5?: string;
     direccion: string;
     ciudad: string;
-    estado?: string;
+    estado: string;
+    
 }

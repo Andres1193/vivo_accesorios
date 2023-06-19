@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Login } from '../../interfaces/login.interface';
-import { UsuarioService } from '../../services/usuario.service';
+import { LoginService } from '../../services/login.service';
 
 
 @Component({
@@ -15,10 +15,10 @@ export class LoginComponent {
     contrasena: ''
   };
 
-  constructor(public usuarioService: UsuarioService) {}
+  constructor(public loginService: LoginService) {}
     
   autinticarUsuario(){
-    this.usuarioService.iniciarSesion(this.login).subscribe(resp => {
+    this.loginService.iniciarSesion(this.login).subscribe(resp => {
       console.log(resp);
     })
   }

@@ -1,7 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario } from 'src/app/usuario/interfaces/usuario.interface';
-import { Login } from '../interfaces/login.interface';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -31,15 +30,6 @@ export class UsuarioService {
      header.append('Access-Control-Allow-Origin','http://localhost');
 
      return this.http.get<Usuario[]>(url,{headers:header});
-  }
-
-  public iniciarSesion(inicioSesion: Login){
-    let  url ='http://localhost/VivoAccesorios/UsuariosService.php';
-       let header=new HttpHeaders();
-       header.append('Content-Type','aplication/json')
-       header.append('Access-Control-Allow-Methods','"POST"')
-       header.append('Access-Control-Allow-Origin','http://localhost');
-       return this.http.post(url,JSON.stringify(inicioSesion),{headers:header});
   }
 
   public actualizarUsuario(usuario: Usuario) : Observable<Usuario> {
