@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListadoComponent } from './usuario/components/listado/listado.component';
+import { ListadoComponent } from './listado-general/components/listado/listado.component';
 import { LoginComponent } from './login/components/login/login.component';
 import { RegistroComponent } from './usuario/components/registro/registro.component';
 
