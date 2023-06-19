@@ -10,10 +10,12 @@ import { ProductoService } from '../../services/producto.service';
 export class EditarComponent {
 
   public producto: Producto = {
+    codigo: 0,
     nombre: '',
     costo_Producto: 0,
     porcent_Utilidad: 0,
     precio_Producto: 0,
+    estado: 'a'
   }
 
   constructor(private productoService: ProductoService) {}
