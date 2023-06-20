@@ -1,8 +1,9 @@
 export interface Receta {
-    codigo: number;
+    codigoReceta: number;
     codigoInterno: number;
     costoTotalUnd: number;
     cantidad: number;
-    cod: number;
+    codProducto: number;
     codME: number;
+    estado: string;
 }

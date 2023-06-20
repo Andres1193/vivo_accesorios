@@ -1,11 +1,11 @@
 export interface Cliente {
-    codigo: number;
     codigoCliente: number;
-    identificacion: number;
+    identificacion: string;
     nombre: string;
     apellido: string;
     correo: string;
     direccion: string;
     telefono: string;
+    ciudad: string;
     estado: string;
 }

@@ -2,20 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MateriasRoutingModule } from './materias-routing.module';
-import { MateriasPrimasComponent } from './components/materias-primas/materias-primas.component';
-import { MateriasListasComponent } from './components/materias-listas/materias-listas.component';
-import { MateriasCrudasComponent } from './components/materias-crudas/materias-crudas.component';
+import { RegistroComponentMateriasCrudas } from './components/materias-crudas/registro/registro.component';
+import { EditarComponentMateriasCrudas } from './components/materias-crudas/editar/editar.component';
+import { RegistroComponentMateriasListas } from './components/materias-listas/registro/registro.component';
+import { EditarComponentMateriasListas } from './components/materias-listas/editar/editar.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
   declarations: [
-    MateriasPrimasComponent,
-    MateriasListasComponent,
-    MateriasCrudasComponent
+    RegistroComponentMateriasCrudas,
+    EditarComponentMateriasCrudas,
+    RegistroComponentMateriasListas,
+    EditarComponentMateriasListas
   ],
   imports: [
     CommonModule,
-    MateriasRoutingModule
+    MateriasRoutingModule,
+    FormsModule
   ]
 })
 export class MateriasModule { }
