@@ -1,0 +1,10 @@
+<div class='wrap'>
+    <h2>Registro</h2>
+      <form>
+        <input type='text' name="codigo_Interno" id='codigo_Interno' placeholder='Codigo materia lista' [(ngModel)]="materiasListas.codigoInterno">  
+        <input type='text' name="costo_Banio_Linea" id='costo_Banio_Linea' placeholder='Codigo banio linea' [(ngModel)]="materiasListas.costoBanioLinea">
+        <input type='text' name="cantidad_Banada" id='cantidad_Banada' placeholder='Cantidad banada' [(ngModel)]="materiasListas.cantidadBanada">
+        <input type='text' name="costo_Banio_Und" id='costo_Banio_Und' placeholder='Costo Banio Unidad' [(ngModel)]="materiasListas.costoBanioUnd">
+      </form>
+    <button class='registrar' (click)="crearMateriasListas()">Registrar</button>
+  </div>
