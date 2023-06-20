@@ -1,11 +1,8 @@
-<!-- <div class='wrap'>
-    <h2>Registro</h2>
-    <form (ngSubmit)="crearProducto()" #productoForm="ngForm">
-          <input type='text' name="codigoProducto" id='codigoProducto' placeholder='Codigo producto' [(ngModel)]="producto.codigoProducto">
-          <input type='text' name="nombre" id='nombre' placeholder='Nombre' [(ngModel)]="producto.nombre">
-          <input type='text' name="costo_Producto" id='costo_Producto' placeholder='Costo producto' [(ngModel)]="producto.costo_Producto">
-          <input type='text' name="porcent_Utilidad" id='porcent_Utilidad' placeholder='Porcentaje utilidad' [(ngModel)]="producto.porcent_Utilidad">
-          <input type='text' name="precio_Producto" id='precio_Producto' placeholder='Precio producto' [(ngModel)]="producto.precio_Producto">
-      </form>
-      <button type="submit">Registrar</button>
-  </div> -->
+<form [formGroup]="productoForm" (ngSubmit)="crearProducto()">
+  <input type="text" formControlName="codigoProducto" placeholder="Codigo producto">
+  <input type="text" formControlName="nombre" placeholder="Nombre">
+  <input type="number" formControlName="costo_Producto" placeholder="Costo producto">
+  <input type="number" formControlName="porcent_Utilidad" placeholder="Porcentaje utilidad">
+  <input type="number" formControlName="precio_Producto" placeholder="Precio producto">
+  <button type="submit">Crear Producto</button>
+</form>
