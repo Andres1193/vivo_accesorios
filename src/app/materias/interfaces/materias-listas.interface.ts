@@ -1,4 +1,4 @@
-export interface MateriasListas {
+export interface MateriasListas{
     codigoListas: number;
     codigoInterno: string;
     costoBanioLinea: number;

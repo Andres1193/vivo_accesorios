@@ -10,7 +10,7 @@ import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 export class ListadoComponent {
   private self: ListadoComponent = this;
 
-  public frontActual = 'Cliente';
+  public frontActual = 'Provedor';
 
   public proveedor: Proveedor = {
     nombre: '',
