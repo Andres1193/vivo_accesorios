@@ -16,7 +16,7 @@ main aside {
   align-items: left;
   align-content: center;
   justify-content: center;
-  background: white url('../../../../img/logo.png') no-repeat center / cover;
+  background: white url('../../../../assets/imgs/logo.png') no-repeat center / cover;
   background-size: 85% 80%;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
