@@ -1,67 +1,55 @@
 <div class="content">
   <aside class="AsideListado">
-    <img src="./logo.png" alt="Logo" />
+    <img src="../../../../assets/imgs/logo.png" alt="Logo" />
     <nav>
       <li>
         <mat-form-field>
-        <mat-label style="background: white;">Materias primas</mat-label>
+        <mat-label>Materias primas</mat-label>
         <mat-select>
-          <mat-option >Lista</mat-option>
-          <mat-option >Cruda</mat-option>
+          <mat-option ><a href="">Lista</a></mat-option>
+          <mat-option ><a href="">Cruda</a></mat-option>
         </mat-select>
         </mat-form-field>
-        <!-- <a href="">Materias Primas</a> -->
       </li>
       <li>
-        <mat-option><a href="">Material de empaques</a></mat-option>
+        <a href="">Material de empaques</a>
       </li>
       <li>
-        <mat-option><a href="">Productos</a></mat-option>
+        <a href="">Productos</a>
       </li>
       <li>
-        <mat-option><a href="">Proveedores</a></mat-option>
+        <a href="">Proveedores</a>
       </li>
       <li>
         <a href="usuario">Usuarios</a>
       </li>
       <li>
-        <mat-option><a href="">Receta</a></mat-option>
+        <a href="">Receta</a>
       </li>
     </nav>
   </aside>
 
   <div class="container">
-
     <div class="table-responsive">
-    
-
       <table class="table custom-table">
         <thead>
           <tr>
-            <th scope="col">nombre</th>
-            <th scope="col">nom_usuario</th>
-            <th scope="col">correo</th>
-            <th scope="col">estado</th>
+            <th *ngFor="let atributo of getAtributos()"> {{ atributo }} </th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>1392</td>
-            <td>Sales Pitch - 2019</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
             <td>
-              Far far away, behind the word mountains
-              <small class="d-block"
-                >Far far away, behind the word mountains</small
-              >
-            </td>
-            <td>+63 983 0962 971</td>
-            <td>
-              <ul class="persons">
+              <ul class="botones">
                 <li>
                   <a href="#">
                     <img
-                      src="images/person_1.jpg"
-                      alt="Person"
+                      src="../../../../assets/imgs/vista.png"
+                      alt="view"
                       class="img-fluid"
                     />
                   </a>

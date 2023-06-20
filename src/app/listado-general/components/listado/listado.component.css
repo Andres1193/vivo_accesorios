@@ -4,8 +4,6 @@
   align-items: left;
 }
 
-
-
 .container{
   position: relative;
   display: flex;
@@ -35,14 +33,50 @@ a, a:hover {
   text-decoration: none !important;
 }
 
-.content {
-  padding: 7rem 0;
+
+.custom-table tbody .botones li a {
+  display: inline-block;
+  width: 36px;
 }
+
+.custom-table tbody .botones li a img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+.custom-table tbody tr th,
+.custom-table tbody tr td {
+  position: relative;
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
+
+.custom-table tbody tr th:before,
+.custom-table tbody tr th:after,
+.custom-table tbody tr td:before,
+.custom-table tbody tr td:after {
+  -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  content: "";
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 1px;
+  background: #bfbfbf;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
 
 .content .AsideListado img{
   height: 15%;
-  width: 30%;
-  padding-left: 20px;
+  width: 40%;
+  scale: .9;
+  padding-left: 30px;
+  padding-top: 25px;
   box-sizing:content-box;
 }
 
@@ -55,7 +89,10 @@ padding-top: 20px;
   text-decoration: none;
 
 }
-
+.custom-table tbody .botones {
+  padding: 0;
+  margin: 0;
+}
 h2 {
   font-size: 20px;
 }
@@ -85,7 +122,7 @@ h2 {
   font-weight: 300;
 }
 
-.custom-table tbody .persons li {
+.custom-table tbody .botones li {
   padding: 0;
   margin: 0 0 0 -15px;
   list-style: none;

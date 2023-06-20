@@ -1,46 +1,68 @@
 import { AfterViewInit, Component, Input } from '@angular/core';
-import { Usuario } from '../../../usuario/interfaces/usuario.interface';
-
-declare var $: any;
+import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
+import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
-  styleUrls: ['./listado.component.css']
+  styleUrls: ['./listado.component.css'],
 })
 export class ListadoComponent {
-
   private self: ListadoComponent = this;
 
-  public usuario: Usuario = {
+  public frontActual = 'Cliente';
+
+  public proveedor: Proveedor = {
     nombre: '',
-    nom_usuario: '',
-    correo: '',
-    contrasena: '',
-    estado: ''
+    telefono_1: '',
+    direccion: '',
+    ciudad: '',
+    estado: '',
   };
 
-  @Input() usuarios: Usuario[] = [
+  @Input() proveedores: Proveedor[] = [];
 
+  public columnProveedor: string[] = [
+    'Nombre',
+    'Apellido',
+    'Correo',
+    'Dirección',
+    'Telefono',
   ];
 
-  // constructor(public usuarioService: UsuarioService) {
+  public cliente: Cliente = {
+    codigo: 0,
+    codigoCliente: 0,
+    identificacion: 0,
+    nombre: '',
+    apellido: '',
+    correo: '',
+    direccion: '',
+    telefono: '',
+    estado: '',
+  };
 
-  // }
-  
-  // ngOnInit(): void {
-  //   this.usuarioService.getUsuarios().subscribe(
-  //     resp=> {
-  //       console.log(resp);
-  //       this.usuarios = resp;
-  //     }
-  //   );
-  // }
+  @Input() clientes: Cliente[] = [];
 
-  // getUsuarios(): void {
-  //   this.usuarioService
-  //     .getUsuarios()
-  //     .subscribe((usuarios) => (this.usuarios = usuarios));
-  // }
+  public columnCliente: string[] = [
+    'Código',
+    'Identificación',
+    'Nombre',
+    'Apellido',
+    'Correo',
+    'Dirección',
+    'Telefono',
+  ];
 
+
+  getAtributos(): string[] {
+    let atributos: string[] = [''];
+    if (this.frontActual.match('Cliente')) {
+      atributos = this.columnCliente;
+    } else if (this.frontActual.match('Provedor')) {
+      atributos = Object.keys(this.proveedor);
+    }
+
+    return atributos;
+  }
 }
