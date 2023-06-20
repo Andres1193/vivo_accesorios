@@ -31,27 +31,27 @@ export class ListadoComponent {
   ];
 
   public cliente: Cliente = {
-    codigo: 0,
     codigoCliente: 0,
-    identificacion: 0,
+    identificacion: '',
     nombre: '',
     apellido: '',
     correo: '',
     direccion: '',
     telefono: '',
-    estado: '',
+    ciudad: '',
+    estado:''
   };
 
   @Input() clientes: Cliente[] = [];
 
   public columnCliente: string[] = [
-    'Código',
     'Identificación',
     'Nombre',
     'Apellido',
     'Correo',
     'Dirección',
     'Telefono',
+    'Ciudad'
   ];
 
 
