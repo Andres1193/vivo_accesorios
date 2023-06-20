@@ -143,7 +143,6 @@ main section form input[type="submit"] {
   border-radius: 10px;
 
   font-size: 24px;
-  text-transform: lowercase;
   line-height: 2;
   background: white;
   color: AE837B;
@@ -152,13 +151,14 @@ main section form input[type="submit"] {
 
 main section form input[type="submit"]:hover,
 main section form input[type="submit"]:focus {
-  background: #976a36;
-  transition: 200ms;
+  background: #dac9c9;
+  color: white;
+  transition: 150ms;
 }
 
 main section form input[type="submit"]:active {
-  background: #857567;
-  transition: 300ms;
+  background: #e9c6bf;
+  transition: 150ms;
 }
 
 @media only screen {

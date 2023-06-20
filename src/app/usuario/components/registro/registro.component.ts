@@ -8,7 +8,7 @@ import { UsuarioService } from '../../services/usuario.service';
   styleUrls: ['./registro.component.css'],
 
 })
-export class RegistroComponent implements OnInit{
+export class RegistroComponent {
 
   public usuario: Usuario = {
     nombre: '',
@@ -20,16 +20,16 @@ export class RegistroComponent implements OnInit{
 
   constructor (private usuarioService: UsuarioService) { }
 
-  @Input() usuarios: Usuario[] = [];
+  // @Input() usuarios: Usuario[] = [];
 
-  ngOnInit(): void {
-    this.usuarioService.getUsuarios().subscribe(
-      resp=> {
-        console.log(resp);
-        this.usuarios = resp;
-      }
-    );
-  }
+  // ngOnInit(): void {
+  //   this.usuarioService.getUsuarios().subscribe(
+  //     resp=> {
+  //       console.log(resp);
+  //       this.usuarios = resp;
+  //     }
+  //   );
+
 
   crearUsuario() {
     if ( this.usuario.nombre.length === 0 ) {
