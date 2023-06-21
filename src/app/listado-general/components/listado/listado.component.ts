@@ -11,7 +11,8 @@ import { Producto } from 'src/app/producto/interfaces/producto.interface';
 export class ListadoComponent {
   private self: ListadoComponent = this;
 
-  public frontActual = 'Provedor';
+  public frontActual: string = 'Cliente'; // Declara frontActual como propiedad de la clase
+
 
   public proveedor: Proveedor = {
     nombre: '',
@@ -78,13 +79,13 @@ export class ListadoComponent {
     'Stock'
   ];
 
-  selectLista():void {
-    
+  selectLista(name: string): void {
+    this.frontActual = name;
   }
 
   getAtributos(): string[] {
     let atributos: string[] = [''];
-
+    
     if (this.frontActual.match('Cliente')) {
       atributos = this.columnCliente;
     } else if (this.frontActual.match('Provedor')) {
@@ -96,3 +97,5 @@ export class ListadoComponent {
     return atributos;
   }
 }
+
+
