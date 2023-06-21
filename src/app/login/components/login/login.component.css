@@ -31,7 +31,6 @@ main aside p {
   font-size: 18px;
   line-height: 1.2;
   text-align: center;
-  text-shadow: 0 0 10px rgba(133, 117, 103, 0.5);
 }
 
 main aside p strong {
@@ -49,10 +48,11 @@ main section {
 
 main section h1 {
   display: flex;
+  margin-top: 20px;
   justify-content: center;
   padding: 12px;
-  color: #F8F3EF;
-  font-size: 28px;
+  color: #ffffff;
+  font-size: 22px;
   line-height: 1;
   text-align: center;
 }
@@ -71,11 +71,12 @@ main section form {
 main section form>div,
 main section form>ul {
   width: 100%;
-  padding: 6px;
+  padding: 30px 9px;
 }
 
+
 main section form fieldset {
-  padding: 20px;
+  padding: 5px 30px;
 }
 
 main section form fieldset div {
@@ -88,7 +89,6 @@ main section form fieldset div label {
   display: block;
   margin: 0;
   padding: 6px 9px;
-  background: #2C7D8B;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -97,34 +97,34 @@ main section form fieldset div label {
 
 main section form fieldset div input {
   display: block;
-  background: #f8f3efab;
+  background: #ffffff88;
   border: 0;
   border-radius: 6px;
   box-shadow: none;
   margin: 0;
-  padding: 6px 9px;
+  padding: 15px 9px;
   width: 100%;
   color: #857567;
-  font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
 }
 
 main section form fieldset div input::placeholder {
-  color: rgba(133, 117, 103, 0.4);
+  color: rgb(255, 255, 255);
 }
 
 main section form fieldset div input:focus {
-  background: rgba(233, 226, 213, 0.5);
+  background: rgba(255, 255, 255, 0.5);
+  outline: white;
 }
 
+
 main section form fieldset div input:focus::placeholder {
-  color: rgba(133, 117, 103, 0.6);
+  color: rgb(255, 255, 255);
 }
 
 main section form li button {
   display: block;
-  margin: 0 auto;
-  font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0 auto; 
   border: 0;
   border-radius: 100px;
   color: white;
@@ -151,13 +151,13 @@ main section form input[type="submit"] {
 
 main section form input[type="submit"]:hover,
 main section form input[type="submit"]:focus {
-  background: #dac9c9;
+  background: #ffffff56;
   color: white;
   transition: 150ms;
 }
 
 main section form input[type="submit"]:active {
-  background: #e9c6bf;
+  background: #ffffff2d;
   transition: 150ms;
 }
 
