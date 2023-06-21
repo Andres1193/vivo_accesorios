@@ -69,10 +69,10 @@ export class ListadoComponent {
   @Input() clientesproducto: Producto[] = [];
 
   public columnProducto: string[] = [
-    'Identificación',
+    'Código Producto',
     'Nombre',
-    'Apellido',
-    'Correo',
+    'Costo Producto',
+    '% Utilidad',
     'Dirección',
     'Telefono',
     'Ciudad'

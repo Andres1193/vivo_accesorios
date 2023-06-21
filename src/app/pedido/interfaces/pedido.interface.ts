@@ -3,6 +3,6 @@ export interface Pedido {
     codigoPedido: number;
     codigoCliente: number;
     fecha: Date;
-    estado: string;
-    detallePedidosProductos: Producto[];
+    nombreCliente: string;
+    productos: Producto[];
 }
