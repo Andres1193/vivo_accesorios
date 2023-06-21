@@ -8,5 +8,6 @@ export interface Producto {
     porcent_Utilidad: number;
     precio_Producto: number;
     estado: string;
+    stock: number;
     idPedido?: string;
 }

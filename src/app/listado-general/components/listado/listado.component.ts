@@ -18,7 +18,7 @@ export class ListadoComponent {
     telefono_1: '',
     direccion: '',
     ciudad: '',
-    estado: '',
+    estado: 'a',
   };
 
   @Input() proveedores: Proveedor[] = [];
@@ -40,7 +40,7 @@ export class ListadoComponent {
     direccion: '',
     telefono: '',
     ciudad: '',
-    estado:''
+    estado:'a'
   };
 
   @Input() clientes: Cliente[] = [];
@@ -62,28 +62,35 @@ export class ListadoComponent {
     costo_Producto: 0,
     porcent_Utilidad: 0,
     precio_Producto: 0,
-    estado: '',
+    estado: 'a',
+    stock:0,
     idPedido: '' // TODO: acceder a la base de datos para consultar el pedido
   };
 
-  @Input() clientesproducto: Producto[] = [];
+  @Input() productos: Producto[] = [];
 
   public columnProducto: string[] = [
     'Código Producto',
     'Nombre',
     'Costo Producto',
     '% Utilidad',
-    'Dirección',
-    'Telefono',
-    'Ciudad'
+    'Precio Producto',
+    'Stock'
   ];
+
+  selectLista():void {
+    
+  }
 
   getAtributos(): string[] {
     let atributos: string[] = [''];
+
     if (this.frontActual.match('Cliente')) {
       atributos = this.columnCliente;
     } else if (this.frontActual.match('Provedor')) {
       atributos = this.columnProveedor;
+    } else if (this.frontActual.match('Producto')) {
+      atributos = this.columnProducto;
     }
 
     return atributos;
