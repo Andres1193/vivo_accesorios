@@ -1,4 +1,3 @@
-import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { ListadoGeneralRoutingModule } from './listado-general-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -8,7 +7,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-
 
 @NgModule({
   declarations: [],
@@ -20,7 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
     BrowserModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatSelectModule
-  ]
+    MatSelectModule,
+  ],
 })
-export class ListadoGeneralModule { }
+export class ListadoGeneralModule {}

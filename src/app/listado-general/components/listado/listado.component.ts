@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
+import { Producto } from 'src/app/producto/interfaces/producto.interface';
 
 @Component({
   selector: 'app-listado',
@@ -54,13 +55,35 @@ export class ListadoComponent {
     'Ciudad'
   ];
 
+  public producto: Producto = {
+    idProducto: 0,
+    codigoProducto: '',
+    nombre: '',
+    costo_Producto: 0,
+    porcent_Utilidad: 0,
+    precio_Producto: 0,
+    estado: '',
+    idPedido: '' // TODO: acceder a la base de datos para consultar el pedido
+  };
+
+  @Input() clientesproducto: Producto[] = [];
+
+  public columnProducto: string[] = [
+    'Identificación',
+    'Nombre',
+    'Apellido',
+    'Correo',
+    'Dirección',
+    'Telefono',
+    'Ciudad'
+  ];
 
   getAtributos(): string[] {
     let atributos: string[] = [''];
     if (this.frontActual.match('Cliente')) {
       atributos = this.columnCliente;
     } else if (this.frontActual.match('Provedor')) {
-      atributos = Object.keys(this.proveedor);
+      atributos = this.columnProveedor;
     }
 
     return atributos;
