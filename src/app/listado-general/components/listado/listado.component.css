@@ -124,14 +124,17 @@ a:hover {
 }
 
 
-.custom-table tbody .botones li a {
+.custom-table tbody .actionsButton li a {
   display: inline-block;
   width: 36px;
+  padding: 0 10px 0 10px;
+  /* TODO: revisar propiedad
+  box-sizing: unset;  */
 }
 
-.custom-table tbody .botones li a img {
+.custom-table tbody .actionsButton li a img {
   border-radius: 50%;
-  max-width: 100%;
+  width: 80%;
 }
 
 .custom-table tbody tr th,
@@ -180,7 +183,7 @@ a:hover {
 
 }
 
-.custom-table tbody .botones {
+.custom-table tbody .actionsButton {
   padding: 0;
   margin: 0;
 }
@@ -214,7 +217,7 @@ h2 {
   font-weight: 300;
 }
 
-.custom-table tbody .botones li {
+.custom-table tbody .actionsButton li {
   padding: 0;
   margin: 0 0 0 -15px;
   list-style: none;
