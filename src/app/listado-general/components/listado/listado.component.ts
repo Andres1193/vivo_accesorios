@@ -8,11 +8,14 @@ import { Producto } from 'src/app/producto/interfaces/producto.interface';
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css'],
 })
+
 export class ListadoComponent {
   private self: ListadoComponent = this;
 
-  public frontActual: string = 'Cliente'; // Declara frontActual como propiedad de la clase
+  public frontActual: string = 'Cliente'; // frontActual
 
+  searchItem: string = '';
+  
 
   public proveedor: Proveedor = {
     nombre: '',
@@ -85,7 +88,7 @@ export class ListadoComponent {
 
   getAtributos(): string[] {
     let atributos: string[] = [''];
-    
+
     if (this.frontActual.match('Cliente')) {
       atributos = this.columnCliente;
     } else if (this.frontActual.match('Provedor')) {
