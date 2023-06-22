@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ProveedorRoutingModule } from './proveedor-routing.module';
 import { RegistroComponent } from './components/registro/registro.component';
 import { EditarComponent } from './components/editar/editar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     ProveedorRoutingModule
   ]
 })
