@@ -14,8 +14,6 @@ body {
 h1 {
     font-size: 20px;
 }
-
-:root {
-    --width_recuadro: 1100px;
-    --height-recuadro: 600px;
-  }
+h2 {
+    font-size: 17px;
+}
