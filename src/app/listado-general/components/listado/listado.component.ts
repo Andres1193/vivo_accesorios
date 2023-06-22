@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, Input } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
+import { Producto } from 'src/app/producto/interfaces/producto.interface';
 
 @Component({
   selector: 'app-listado',
@@ -10,14 +11,15 @@ import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 export class ListadoComponent {
   private self: ListadoComponent = this;
 
-  public frontActual = 'Provedor';
+  public frontActual: string = 'Cliente'; // Declara frontActual como propiedad de la clase
+
 
   public proveedor: Proveedor = {
     nombre: '',
     telefono_1: '',
     direccion: '',
     ciudad: '',
-    estado: '',
+    estado: 'a',
   };
 
   @Input() proveedores: Proveedor[] = [];
@@ -39,7 +41,7 @@ export class ListadoComponent {
     direccion: '',
     telefono: '',
     ciudad: '',
-    estado:''
+    estado:'a'
   };
 
   @Input() clientes: Cliente[] = [];
@@ -54,15 +56,46 @@ export class ListadoComponent {
     'Ciudad'
   ];
 
+  public producto: Producto = {
+    idProducto: 0,
+    codigoProducto: '',
+    nombre: '',
+    costo_Producto: 0,
+    porcent_Utilidad: 0,
+    precio_Producto: 0,
+    estado: 'a',
+    stock:0,
+    idPedido: '' // TODO: acceder a la base de datos para consultar el pedido
+  };
+
+  @Input() productos: Producto[] = [];
+
+  public columnProducto: string[] = [
+    'Código Producto',
+    'Nombre',
+    'Costo Producto',
+    '% Utilidad',
+    'Precio Producto',
+    'Stock'
+  ];
+
+  selectLista(name: string): void {
+    this.frontActual = name;
+  }
 
   getAtributos(): string[] {
     let atributos: string[] = [''];
+    
     if (this.frontActual.match('Cliente')) {
       atributos = this.columnCliente;
     } else if (this.frontActual.match('Provedor')) {
-      atributos = Object.keys(this.proveedor);
+      atributos = this.columnProveedor;
+    } else if (this.frontActual.match('Producto')) {
+      atributos = this.columnProducto;
     }
 
     return atributos;
   }
 }
+
+

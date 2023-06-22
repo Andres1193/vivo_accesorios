@@ -17,6 +17,7 @@ export class RegistroComponentProducto {
     costo_Producto: 0,
     porcent_Utilidad: 0,
     precio_Producto: 0,
+    stock: 0,
     estado: 'a',
   };
 

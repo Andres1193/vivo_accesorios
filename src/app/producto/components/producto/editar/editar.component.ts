@@ -11,28 +11,28 @@ import { ProductoService } from 'src/app/producto/services/producto.service';
 })
 export class EditarComponentProducto {
 
-  public producto: Producto = {
-    idProducto: 0,
-    codigoProducto: '',
-    nombre: '',
-    costo_Producto: 0,
-    porcent_Utilidad: 0,
-    precio_Producto: 0,
-    estado: 'a',
-  }
+  // public producto: Producto = {
+  //   idProducto: 0,
+  //   codigoProducto: '',
+  //   nombre: '',
+  //   costo_Producto: 0,
+  //   porcent_Utilidad: 0,
+  //   precio_Producto: 0,
+  //   estado: 'a',
+  // }
 
-  constructor(private productoService: ProductoService) {}
+  // constructor(private productoService: ProductoService) {}
 
-  ngOnInit(): void {
-    this.productoService.getProducto(this.producto).subscribe(resp =>{
-      this.producto =  resp[0];
-      console.log(resp);
-    });
-  }
+  // ngOnInit(): void {
+  //   this.productoService.getProducto(this.producto).subscribe(resp =>{
+  //     this.producto =  resp[0];
+  //     console.log(resp);
+  //   });
+  // }
 
-  actualizarProducto(){
-    this.productoService.actualizarProducto(this.producto).subscribe(resp =>{
-      console.log(resp);
-    });
-  }
+  // actualizarProducto(){
+  //   this.productoService.actualizarProducto(this.producto).subscribe(resp =>{
+  //     console.log(resp);
+  //   });
+  // }
 }
