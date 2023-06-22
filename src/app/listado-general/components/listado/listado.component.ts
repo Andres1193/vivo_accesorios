@@ -15,9 +15,10 @@ export class ListadoComponent {
   public frontActual: string = 'Cliente'; // frontActual
 
   searchItem: string = '';
-  
+
 
   public proveedor: Proveedor = {
+    cod_proveedor: '',
     nombre: '',
     telefono_1: '',
     direccion: '',
