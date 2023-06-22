@@ -1,17 +1,19 @@
-<div class="formulario">
-  <h1 class="titulo">Productos</h1>
-  <form [formGroup]="productoForm" (ngSubmit)="crearProducto()">
-    <div class="formulario__input">
-      <input type="text" formControlName="codigoProducto"
-        placeholder="Codigo producto">
-      <input type="text" formControlName="nombre" placeholder="Nombre">
-      <input type="number" formControlName="costo_Producto"
-        placeholder="Costo producto">
-      <input type="number" formControlName="porcent_Utilidad"
-        placeholder="Porcentaje utilidad">
-      <input type="number" formControlName="precio_Producto"
-        placeholder="Precio producto">
-    </div>
-    <button type="submit">Crear Producto</button>
-  </form>
+<div class="principal">
+  <div class="formulario">
+    <h1 >Productos</h1>
+    <form [formGroup]="productoForm" (ngSubmit)="crearProducto()">
+      <div class="formulario__input">
+        <input type="text" formControlName="codigoProducto"
+          placeholder="Codigo producto">
+        <input type="text" formControlName="nombre" placeholder="Nombre">
+        <input type="number" formControlName="costo_Producto"
+          placeholder="Costo producto">
+        <input type="number" formControlName="porcent_Utilidad"
+          placeholder="Porcentaje utilidad">
+        <input type="number" formControlName="precio_Producto"
+          placeholder="Precio producto">
+      </div>
+      <button type="submit">Crear Producto</button>
+    </form>
+  </div>
 </div>
