@@ -10,6 +10,7 @@ import { ProveedorService } from '../../services/proveedor.service';
 export class RegistroComponent {
 
   public proveedor: Proveedor = {
+    cod_proveedor: '',
     nombre: '',
     telefono_1: '',
     telefono_2: '',
@@ -26,6 +27,7 @@ export class RegistroComponent {
   crearProveedor () {
     this.proveedorService.crearProveedor(this.proveedor).subscribe(resp=>{
       this.proveedor = {
+        cod_proveedor: '',
         nombre: '',
         telefono_1: '',
         telefono_2: '',
