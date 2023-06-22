@@ -9,8 +9,16 @@ import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.inte
 export class RegistroComponentMateriasCrudas {
 
   public materiasCrudas: MateriasCrudas = {
-    codigoCrudas: 0,
-    codigoInterno: ''
+    cod_interno: '',
+    desc_mp: '',
+    categoria_mp: '',
+    cant_linea: 0,
+    precio_linea: 0,
+    unidad_medida: '',
+    costo_unitario: 0,
+    costo_total_unitario: 0,
+    estado: '',
+    proveedores: []
   }
 
   crearMateriasCrudas(){

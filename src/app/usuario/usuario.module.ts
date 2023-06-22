@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RegistroComponent } from './components/registro/registro.component';
 import { ListadoComponent } from '../listado-general/components/listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarComponent } from './components/editar/editar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,6 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,

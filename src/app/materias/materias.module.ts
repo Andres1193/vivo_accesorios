@@ -6,7 +6,7 @@ import { RegistroComponentMateriasCrudas } from './components/materias-crudas/re
 import { EditarComponentMateriasCrudas } from './components/materias-crudas/editar/editar.component';
 import { RegistroComponentMateriasListas } from './components/materias-listas/registro/registro.component';
 import { EditarComponentMateriasListas } from './components/materias-listas/editar/editar.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     MateriasRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MateriasModule { }

@@ -1,4 +1,4 @@
-export interface MateriasCrudas {
-    codigoCrudas: number;
-    codigoInterno: string;
+import { MateriasPrimas } from './materias-primas.interface';
+export interface MateriasCrudas extends MateriasPrimas {
+    
 }
