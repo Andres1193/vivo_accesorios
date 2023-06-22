@@ -1,4 +1,6 @@
 <div class="principal">
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
   <div class="formulario">
     <h2 class="bloque">INFORMACIÓN GENERAL</h2>
     <form [formGroup]="productoForm" (ngSubmit)="crearProducto()">
@@ -26,7 +28,8 @@
         <label for="precio">Precio producto:</label>
         <input type="number" formControlName="precio_Producto" id="precio">
       </div>
-
+      
+      <input class="ingresar_img" type="image">
     </form>
   </div>
 </div>
