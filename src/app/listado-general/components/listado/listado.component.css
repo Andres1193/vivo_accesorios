@@ -51,7 +51,6 @@ p {
 #search {
   display: flex;
   width: 250px;
-
   justify-content: center;
   align-items: center;
   background-color: rgba(255, 255, 255, 1);
@@ -89,6 +88,28 @@ p {
   gap: 10px;
   flex-shrink: 0;
   border-radius: 8px;
+}
+
+#create:hover {
+  background-color: rgba(174, 131, 123, 0.8);
+  transition: 100ms;
+}
+
+#create:active,
+#create:focus {
+  opacity: 0.8;
+  transition: 90ms;
+}
+
+#export:hover {
+  background-color: rgba(248, 243, 239, 0.8);
+  transition: 100ms;
+}
+
+#export:active,
+#export:focus {
+  opacity: 0.5;
+  transition: 90ms;
 }
 
 a {
