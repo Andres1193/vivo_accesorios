@@ -1,3 +1,6 @@
+<a routerLink="/home"></a>
+  <router-outlet></router-outlet> 
+
 <div class="principal">
   <div id="cancelar">Cancelar</div>
   <div id="guardar">Guardar</div>
@@ -35,7 +38,7 @@
           <div [innerHtml]='msg' *ngIf="msg" ></div>
           <img [src]="url" *ngIf="url">
           <p>
-            <input id="file-input"  type="file" (change)="selectFile($event)">
+            <input id="ingresar_img"  type="file" (change)="selectFile($event)">
           </p>
         </div>
       

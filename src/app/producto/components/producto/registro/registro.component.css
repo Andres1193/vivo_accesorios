@@ -38,7 +38,8 @@ input {
   margin: 0px 70px 40px 80px;
 }
 
-.ingresar_img{
+
+#ingresar_img{
   top: -300px;
   left: 64%;
   display: flex;
