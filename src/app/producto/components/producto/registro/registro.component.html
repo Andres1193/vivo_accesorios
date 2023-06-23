@@ -1,4 +1,6 @@
 <div class="principal">
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
   <div class="formulario">
     <h2 class="bloque">INFORMACIÓN GENERAL</h2>
     <form [formGroup]="productoForm" (ngSubmit)="crearProducto()">
@@ -14,7 +16,7 @@
 
       <div class="componente">
         <label for="costo">Costo producto:</label>
-        <input type="number" formControlName="costo_Producto" id="costo">
+        <input type="number" [readonly]="true" formControlName="costo_Producto" id="costo">
       </div>
 
       <div class="componente">
@@ -24,9 +26,19 @@
 
       <div class="componente">
         <label for="precio">Precio producto:</label>
-        <input type="number" formControlName="precio_Producto" id="precio">
+        <input type="number" [readonly]="true" formControlName="precio_Producto" id="precio">
       </div>
+      
+        <!-- <input class="ingresar_img"> -->
 
+        <div>
+          <div [innerHtml]='msg' *ngIf="msg" ></div>
+          <img [src]="url" *ngIf="url">
+          <p>
+            <input id="file-input"  type="file" (change)="selectFile($event)">
+          </p>
+        </div>
+      
     </form>
   </div>
 </div>

@@ -5,14 +5,13 @@
   width: 100%;
   height: 100%;
   background-color: #ae837b41;
-  padding-top: 90px;
 }
 
 .formulario {
+  top: 50px;
   background-color: #ffffff;
-  left: 8%;
-  width: 75%;
-  height: 60%;
+  width: 85%;
+  height: 70%;
   max-width: 100%;
   margin: auto;
   position: relative;
@@ -27,18 +26,30 @@
 }
 
 label {
-  margin: 0px 0px 0px 80px;
-  top: 25;
-  position: relative;
+  margin: 10px 0px 0px 80px;
 }
 
 input {
   width: 300px;
-  height: 41px;
+  height: 30px;
   border: 1.5px solid black;
   border-radius: 10px;
   padding: 4%;
-  margin: 30px 10px 10px 80px;
+  margin: 0px 70px 40px 80px;
+}
+
+.ingresar_img{
+  top: -300px;
+  left: 64%;
+  display: flex;
+  position: relative;
+  background-color: #EFEFEF;
+  width: 26%;
+  height: 65%;
+  border: #EFEFEF;
+  border-radius: 10px;
+  background: #EFEFEF url('../../../../../assets/icons/🦆 icon _camera alt_.svg')  no-repeat center / cover;
+  background-size: 22% 10%;
 }
 
 .bloque {
@@ -54,16 +65,61 @@ input:focus{
   outline: none;
 }
 
+#guardar, #cancelar{
+  text-align: center;
+  position:relative;
+  width: 120px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+#guardar{
+  top: 20px;
+  background-color: #ae837bce;
+  left: 79.5%;
+} 
+
+#cancelar{
+  top: 50px;
+  background-color: white;
+  left: 70%;
+}
+
+#cancelar:active,
+#cancelar:focus{
+  background-color: #D3D3D3;
+  transition: 50ms;
+}
+
+#guardar:active,
+#guardar:focus {
+  background-color: #90726C;
+  transition: 50ms;
+}
+
+#file-input{
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .formulario {
     width: 70%;
-    height: 97%;
+    height: 84%;
   }
 
   input {
     width: 200px;
     height: 41px;
   }
+  .principal {
+    width: 265%;
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -75,5 +131,9 @@ input:focus{
   input {
     width: 200px;
     height: 41px;
+  }
+
+    .principal {
+      width: 265%;
   }
 }
