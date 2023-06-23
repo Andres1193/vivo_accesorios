@@ -14,6 +14,8 @@ export class ListadoComponent {
 
   public frontActual: string = 'Cliente'; // frontActual
 
+  flagContent: boolean = true;
+
   searchItem: string = '';
 
 
@@ -100,6 +102,11 @@ export class ListadoComponent {
 
     return atributos;
   }
+
+  showCreate(): void {
+    this.flagContent = !this.flagContent;
+  }
+
 }
 
 

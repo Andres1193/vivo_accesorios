@@ -7,6 +7,7 @@ import { LoginModule } from "./login/login.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgModule } from "@angular/core";
 import { ProductoModule } from "./producto/producto.module";
+import { RouterModule } from "@angular/router";
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ProductoModule } from "./producto/producto.module";
     BrowserAnimationsModule,
     LoginModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
