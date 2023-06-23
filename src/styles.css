@@ -2,18 +2,16 @@
 @import "~bootstrap/dist/css/bootstrap.css"
 
 html;
-body {
-    height: 100%;
-}
-
-body {
+body, h2 {
     font-family: "Times New Roman", Times, serif;
     font-size: 16px;
 }
 
+body{
+    height: 100%;
+}
+
 h1 {
-    font-size: 20px;
+    font-size: 24px;
 }
-h2 {
-    font-size: 17px;
-}
+
