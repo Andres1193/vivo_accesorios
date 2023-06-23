@@ -1,5 +1,5 @@
-<a routerLink="/home"></a>
-  <router-outlet></router-outlet> 
+<!-- <a routerLink="/home"></a> -->
+<router-outlet></router-outlet>
 
 <div class="principal">
   <div id="cancelar">Cancelar</div>
@@ -31,7 +31,7 @@
         <label for="precio">Precio producto:</label>
         <input type="number" [readonly]="true" formControlName="precio_Producto" id="precio">
       </div>
-      
+
         <!-- <input class="ingresar_img"> -->
 
         <div>
@@ -41,7 +41,7 @@
             <input id="ingresar_img"  type="file" (change)="selectFile($event)">
           </p>
         </div>
-      
+
     </form>
   </div>
 </div>

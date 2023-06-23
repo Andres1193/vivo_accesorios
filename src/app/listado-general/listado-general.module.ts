@@ -7,6 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [],
@@ -19,6 +21,8 @@ import { MatSelectModule } from '@angular/material/select';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatSelectModule,
+    AppRoutingModule,
+    RouterModule
   ],
 })
 export class ListadoGeneralModule {}
