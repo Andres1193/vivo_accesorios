@@ -29,63 +29,70 @@
     </nav>
   </aside>
 
-  <div class="container">
+  <div class="customPage">
 
-    <div class="Top">
-      <div class="head">
-        <h2>{{ frontActual }}</h2>
-        <div class="searchBox" id="search">
-          <img src="../../../../assets/icons/🦆 icon _search_.svg" alt="searchIcon">
-          <input type="text" [(ngModel)]="searchItem" />
+
+
+
+    <div class="container">
+      <div class="Top">
+        <div class="head">
+          <h2>{{ frontActual }}</h2>
+          <div class="searchBox" id="search">
+            <img src="../../../../assets/icons/🦆 icon _search_.svg" alt="searchIcon">
+            <input type="text" [(ngModel)]="searchItem" />
+          </div>
+        </div>
+        <div class="TopButtons">
+          <div id="export"><img src="../../../../assets/icons/🦆 icon _download_.svg" alt="">
+            Exportar</div>
+          <div id="create"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">
+            Crear</div>
         </div>
       </div>
-      <div class="TopButtons">
-        <div id="export"><img src="../../../../assets/icons/🦆 icon _download_.svg" alt="">Exportar</div>
-        <div id="create"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">Crear</div>
+      <div class="table-responsive">
+        <table class="table custom-table">
+          <thead>
+            <tr>
+              <th *ngFor="let atributo of getAtributos()">{{ atributo }}</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+                <ul class="actionsButton">
+                  <li>
+                    <a href="#">
+                      <img src="../../../../assets/icons/🦆 icon _eye_.svg" alt="view" class="img-fluid" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="../../../../assets/icons/🦆 icon _pen_.svg" alt="Person" class="img-fluid" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="../../../../assets/icons/🦆 icon _lightbulb on_.svg" alt="Person" class="img-fluid" />
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="../../../../assets/icons/🦆 icon _cross_.svg" alt="Person" class="img-fluid" />
+                    </a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-
-    <div class="table-responsive">
-      <table class="table custom-table">
-        <thead>
-          <tr>
-            <th *ngFor="let atributo of getAtributos()">{{ atributo }}</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <ul class="actionsButton">
-                <li>
-                  <a href="#">
-                    <img src="../../../../assets/icons/🦆 icon _eye_.svg" alt="view" class="img-fluid" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="../../../../assets/icons/🦆 icon _pen_.svg" alt="Person" class="img-fluid" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="../../../../assets/icons/🦆 icon _lightbulb on_.svg" alt="Person" class="img-fluid" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <img src="../../../../assets/icons/🦆 icon _cross_.svg" alt="Person" class="img-fluid" />
-                  </a>
-                </li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
-</div>
+
+  </div>
