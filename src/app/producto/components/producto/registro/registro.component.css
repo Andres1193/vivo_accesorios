@@ -62,13 +62,13 @@ input:focus{
 #guardar{
   top: 20px;
   background-color: #ae837bce;
-  left: 79.5%;
+  left: 84.5%;
 } 
 
 #cancelar{
   top: 50px;
   background-color: white;
-  left: 70%;
+  left: 75%;
 }
 
 #cancelar:active,
@@ -110,8 +110,8 @@ input:focus{
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  background-color: #EFEFEF;
 }
-
 
 
 @media (max-width: 768px) {
