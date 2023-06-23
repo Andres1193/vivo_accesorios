@@ -5,6 +5,8 @@ import { ProveedorRoutingModule } from './proveedor-routing.module';
 import { RegistroComponent } from './components/registro/registro.component';
 import { EditarComponent } from './components/editar/editar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    ProveedorRoutingModule
+    ProveedorRoutingModule,
+    RouterModule,
+    AppRoutingModule
   ]
 })
 export class ProveedorModule { }

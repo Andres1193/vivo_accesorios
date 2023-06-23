@@ -5,6 +5,8 @@ import { PedidoRoutingModule } from './pedido-routing.module';
 import { RegistroComponent } from './components/registro/registro.component';
 import { EditarComponent } from './components/editar/editar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -18,7 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     PedidoRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    AppRoutingModule
   ]
 })
 export class PedidoModule { }
