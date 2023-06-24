@@ -15,7 +15,7 @@ import { ModalEliminarComponent } from './modal-eliminar.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     RouterModule
   ],
   exports:[
