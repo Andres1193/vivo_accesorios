@@ -14,6 +14,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { RecetaModule } from "./receta/receta.module";
 import { ProveedorModule } from "./proveedor/proveedor.module";
 import { MateriasModule } from "./materias/materias.module";
+import { ClienteModule } from './cliente/cliente.module';
 
 
 
@@ -36,7 +37,8 @@ import { MateriasModule } from "./materias/materias.module";
     ListadoGeneralModule,
     RecetaModule,
     ProveedorModule,
-    MateriasModule
+    MateriasModule,
+    ClienteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
