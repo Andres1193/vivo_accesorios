@@ -5,10 +5,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editar',
-  templateUrl: './editar.component.html',
-  styleUrls: ['./editar.component.css']
+  templateUrl: './editar-proveedor.component.html',
+  styleUrls: ['./editar-proveedor.component.css']
 })
-export class EditarComponent {
+export class EditarProveedorComponent {
   public proveedorForm: FormGroup;
   public proveedor: Proveedor = {
     cod_proveedor: '',
