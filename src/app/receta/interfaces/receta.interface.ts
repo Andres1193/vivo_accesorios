@@ -1,9 +1,10 @@
+import { Producto } from "src/app/producto/interfaces/producto.interface";
+
 export interface Receta {
-    codigoReceta: number;
     codigoInterno: number;
-    costoTotalUnd: number;
+    costo_total_un: number;
     cantidad: number;
-    codProducto: number;
-    codME: number;
+    cod_producto: number;
     estado: string;
+    productos: Producto[];
 }
