@@ -3,10 +3,21 @@
     <img class="logo" src="../../../../assets/imgs/Vivo Blanco 1.png" alt="Logo"/>
     <nav>
       <li>
-
+        <div>
+          <p>
+            <button type="button" class="btn btn-outline-primary ms-2" (click)="isCollapsed = ! isCollapsed"
+              [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+              Toggle with Two Way Binding
+            </button>
+          </p>
+          <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+            <div class="card">
+              <div class="card-body">You can collapse this card by clicking one Toggle button</div>
+            </div>
+          </div>
+        </div>
       </li>
-      <li>
-        <label (click)="showCreate()">Material de empaques</label>
+      <li>  <label (click)="showCreate()">Material de empaques</label>
       </li>
       <li>
         <label (click)="selectLista('Producto')">Productos</label>
@@ -18,7 +29,7 @@
         <label (click)="selectLista('Cliente')">Usuarios</label>
       </li>
       <li>
-        <mat-option (click)="selectLista('')">Receta</mat-option>
+        <label (click)="selectLista('')">Receta</label>
       </li>
     </nav>
   </aside>
