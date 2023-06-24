@@ -1,3 +1,4 @@
+import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
@@ -5,9 +6,13 @@ import { UsuarioModule } from "./usuario/usuario.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LoginModule } from "./login/login.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { NgModule } from "@angular/core";
 import { ProductoModule } from "./producto/producto.module";
 import { RouterModule } from "@angular/router";
+import { ModalEliminarModule } from "./producto/components/modal-eliminar/modal-eliminar.module";
+import { MatSelectModule } from "@angular/material/select";
+import { ListadoGeneralModule } from "./listado-general/listado-general.module";
+import { MatFormFieldModule } from "@angular/material/form-field";
+
 
 
 @NgModule({
@@ -19,11 +24,15 @@ import { RouterModule } from "@angular/router";
     UsuarioModule,
     ProductoModule,
     AppRoutingModule,
+    ModalEliminarModule,
     BrowserAnimationsModule,
     LoginModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    ListadoGeneralModule
   ],
   providers: [],
   bootstrap: [AppComponent]

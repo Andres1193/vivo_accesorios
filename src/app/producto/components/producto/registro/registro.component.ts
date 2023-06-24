@@ -43,7 +43,7 @@ export class RegistroComponentProducto {
 
   selectFile(event: any) {
     if (!event.target.files[0] || event.target.files[0].length == 0) {
-      this.msg = 'Deberías seleccionar una imagen';
+      this.msg = 'Debe seleccionar una imagen';
       return;
     }
 
@@ -61,5 +61,13 @@ export class RegistroComponentProducto {
       this.msg = "";
       this.url = reader.result;
     }
+  }
+
+  //ventana modal
+
+  modalSwitch:boolean = false;
+
+  AbrirModal(){
+    this.modalSwitch = true;
   }
 }

@@ -1,8 +1,33 @@
 <!-- <a routerLink="/home"></a> -->
 <router-outlet></router-outlet>
 
+<button (click)="AbrirModal()">abrir</button>
+
+<div class *ngIf="modalSwitch == true">
+  <app-modal-eliminar></app-modal-eliminar>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <div class="principal">
-  <h1>Editar producto</h1>
+  <h1 id="titulo_principal">Registrar producto</h1>
   <div id="cancelar">Cancelar</div>
   <div id="guardar">Guardar</div>
   <div class="formulario">
@@ -35,7 +60,7 @@
           id="precio">
       </div>
 
-      <div [innerHtml]='msg' *ngIf="msg"></div>
+      <div class="mensaje" [innerHtml]='msg' *ngIf="msg"></div>
       <label for="file-input" class="custom-file-input">
         <img [src]="url" *ngIf="url" id="imagen">
         <input type="file" id="file-input" (change)="selectFile($event)">
@@ -44,4 +69,4 @@
     </form>
 
   </div>
-</div>
+</div> -->
