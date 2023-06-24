@@ -4,11 +4,11 @@ import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css'],
+  templateUrl: './registro-usuario.component.html',
+  styleUrls: ['./registro-usuario.component.css'],
 
 })
-export class RegistroComponent {
+export class RegistroUsuarioComponent {
 
   public usuario: Usuario = {
     nombre: '',

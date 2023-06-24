@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Receta } from '../../interfaces/receta.interface';
 
 @Component({
-  selector: 'app-editar',
-  templateUrl: './editar.component.html',
-  styleUrls: ['./editar.component.css']
+  selector: 'app-editar-receta',
+  templateUrl: './editar-receta.component.html',
+  styleUrls: ['./editar-receta.component.css']
 })
-export class EditarComponent {
+export class EditarRecetaComponent {
 
   public receta: Receta = {
     codigoReceta: 0,
@@ -19,6 +19,6 @@ export class EditarComponent {
   }
 
   actualizarReceta(){
-    
+
   }
 }

@@ -4,21 +4,21 @@
     <nav>
       <li>
         <mat-form-field>
-        <mat-label>Materias primas</mat-label>
-        <mat-select>
-          <mat-option ><a href="">Lista</a></mat-option>
-          <mat-option ><a href="">Cruda</a></mat-option>
-        </mat-select>
+          <mat-label>Materias primas</mat-label>
+          <mat-select>
+            <mat-option><a href="">Lista</a></mat-option>
+            <mat-option><a href="">Cruda</a></mat-option>
+          </mat-select>
         </mat-form-field>
       </li>
       <li>
-        <label  >Material de empaques</label>
+        <label (click)="showCreate()">Material de empaques</label>
       </li>
       <li>
-        <label  (click)="selectLista('Producto')" >Productos</label>
+        <label (click)="selectLista('Producto')">Productos</label>
       </li>
       <li>
-        <label  (click)="selectLista('Provedor')">Proveedores</label>
+        <label (click)="selectLista('Provedor')">Proveedores</label>
       </li>
       <li>
         <label (click)="selectLista('Cliente')">Usuarios</label>
@@ -29,12 +29,30 @@
     </nav>
   </aside>
 
-  <div class="container">
+  <div *ngIf="flagContent">
+    <!-- <app-registro></app-registro> -->
+  </div>
+
+  <div class="container" *ngIf="!flagContent">
+    <div class="Top">
+      <div class="head">
+        <h2>{{ frontActual }}</h2>
+        <div class="searchBox" id="search">
+          <img src="../../../../assets/icons/🦆 icon _search_.svg" alt="searchIcon">
+          <input type="text" [(ngModel)]="searchItem" />
+        </div>
+      </div>
+      <div class="TopButtons">
+        <div id="export"><img src="../../../../assets/icons/🦆 icon _download_.svg" alt="">Exportar</div>
+        <div id="create"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">Crear</div>
+      </div>
+    </div>
     <div class="table-responsive">
       <table class="table custom-table">
         <thead>
           <tr>
-            <th *ngFor="let atributo of getAtributos()"> {{ atributo }} </th>
+            <th *ngFor="let atributo of getAtributos()">{{ atributo }}</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -44,41 +62,25 @@
             <td></td>
             <td></td>
             <td>
-              <ul class="botones">
+              <ul class="actionsButton">
                 <li>
                   <a href="#">
-                    <img
-                      src="../../../../assets/imgs/vista.png"
-                      alt="view"
-                      class="img-fluid"
-                    />
+                    <img src="../../../../assets/icons/🦆 icon _eye_.svg" alt="view" class="img-fluid" />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img
-                      src="images/person_2.jpg"
-                      alt="Person"
-                      class="img-fluid"
-                    />
+                    <img src="../../../../assets/icons/🦆 icon _pen_.svg" alt="Person" class="img-fluid" />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img
-                      src="images/person_3.jpg"
-                      alt="Person"
-                      class="img-fluid"
-                    />
+                    <img src="../../../../assets/icons/🦆 icon _lightbulb on_.svg" alt="Person" class="img-fluid" />
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img
-                      src="images/person_4.jpg"
-                      alt="Person"
-                      class="img-fluid"
-                    />
+                    <img src="../../../../assets/icons/🦆 icon _cross_.svg" alt="Person" class="img-fluid" />
                   </a>
                 </li>
               </ul>

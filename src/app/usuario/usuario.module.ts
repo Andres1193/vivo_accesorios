@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegistroComponent } from './components/registro/registro.component';
 import { ListadoComponent } from '../listado-general/components/listado/listado.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EditarComponent } from './components/editar/editar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
+import { RegistroUsuarioComponent } from './components/registro-usuario/registro-usuario.component';
+import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
 
 
 
 @NgModule({
   declarations: [
-    RegistroComponent,
-    ListadoComponent,
-    EditarComponent
+    RegistroUsuarioComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +27,9 @@ import { MatSelectModule } from '@angular/material/select';
     BrowserModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    RouterModule,
+    AppRoutingModule
   ],
   exports: [
   ]

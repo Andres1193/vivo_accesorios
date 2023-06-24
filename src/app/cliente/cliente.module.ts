@@ -5,6 +5,8 @@ import { ClienteRoutingModule } from './cliente-routing.module';
 import { RegistroComponent } from './components/registro/registro.component';
 import { EditarComponent } from './components/editar/editar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     ClienteRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    AppRoutingModule
   ]
 })
 export class ClienteModule { }

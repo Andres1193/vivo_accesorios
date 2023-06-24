@@ -1,10 +1,49 @@
-<div class='wrap'>
-    <h2>Edicion</h2>
-      <!-- <form>
-          <input type='text' name="nombre" id='nombre' placeholder='Nombre' [(ngModel)]="producto.nombre">
-          <input type='text' name="costo_Producto" id='costo_Producto' placeholder='Costo producto' [(ngModel)]="producto.costo_Producto">
-          <input type='text' name="porcent_Utilidad" id='porcent_Utilidad' placeholder='Porcentaje utilidad' [(ngModel)]="producto.porcent_Utilidad">
-          <input type='text' name="precio_Producto" id='precio_Producto' placeholder='Precio producto' [(ngModel)]="producto.precio_Producto">
-      </form> -->
-    <!-- <button class='registrar' (click)="actualizarProducto()">Actualizar</button> -->
+<!-- <a routerLink="/home"></a> -->
+<router-outlet></router-outlet>
+
+<div class="principal">
+  <h1 id="titulo_principal">Editar Producto</h1>
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
+  <div class="formulario">
+    <h2 class="bloque"><b>INFORMACIÓN GENERAL</b></h2>
+    <form>
+      <!-- [formGroup]="productoForm" (ngSubmit)="crearProducto()" -->
+      <div class="componente">
+        <label for="codigo">Codigo producto:</label>
+        <input type="text" formControlName="codigoProducto" id="codigo">
+      </div>
+
+      <div class="componente">
+        <label for="nombre">Nombre:</label>
+        <input type="text" formControlName="nombre" id="nombre">
+      </div>
+
+      <div class="componente">
+        <label for="costo">Costo producto:</label>
+        <input type="number" [readonly]="true" formControlName="costo_Producto"
+          id="costo">
+      </div>
+
+      <div class="componente">
+        <label for="porcent">Porcentaje utilidad:</label>
+        <input type="number" formControlName="porcent_Utilidad" id="porcent">
+      </div>
+
+      <div class="componente">
+        <label for="precio">Precio producto:</label>
+        <input type="number" [readonly]="true" formControlName="precio_Producto"
+          id="precio">
+      </div>
+
+      <div [innerHtml]='msg' *ngIf="msg"></div>
+      <label for="file-input" class="custom-file-input">
+        <img [src]="url" *ngIf="url" id="imagen">
+        <input type="file" id="file-input" (change)="selectFile($event)">
+      </label>
+
+    </form>
+
   </div>
+</div>
+ 

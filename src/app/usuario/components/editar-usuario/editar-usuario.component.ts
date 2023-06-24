@@ -4,10 +4,10 @@ import { UsuarioService } from '../../services/usuario.service';
 
 @Component({
   selector: 'app-editar',
-  templateUrl: './editar.component.html',
-  styleUrls: ['./editar.component.css']
+  templateUrl: './editar-usuario.component.html',
+  styleUrls: ['./editar-usuario.component.css']
 })
-export class EditarComponent {
+export class EditarUsuarioComponent {
 
   public usuario: Usuario = {
     nombre: '',

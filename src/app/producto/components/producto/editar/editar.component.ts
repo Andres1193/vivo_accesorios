@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { Producto } from 'src/app/producto/interfaces/producto.interface';
-
-import { ProductoService } from 'src/app/producto/services/producto.service';
 
 
 @Component({
@@ -35,4 +32,32 @@ export class EditarComponentProducto {
   //     console.log(resp);
   //   });
   // }
+
+  
+  //Seleccionar una imagen;
+  url: any;
+  msg = "";
+
+  selectFile(event: any) {
+    if (!event.target.files[0] || event.target.files[0].length == 0) {
+      this.msg = 'Deberías seleccionar una imagen';
+      return;
+    }
+
+    var mimeType = event.target.files[0].type;
+
+    if (mimeType.match(/image\/*/) == null) {
+      this.msg = "Solo soporta imagenes";
+      return;
+    }
+
+    var reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+
+    reader.onload = (_event) => {
+      this.msg = "";
+      this.url = reader.result;
+    }
+  }
+
 }

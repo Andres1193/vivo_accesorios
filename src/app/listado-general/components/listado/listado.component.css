@@ -1,14 +1,16 @@
+
 .AsideListado {
   position: relative;
   flex-flow: row wrap;
   align-items: left;
 }
 
-.container{
+.container {
   position: relative;
-  display: flex;
+  display: inline-block;
   flex-flow: row wrap;
   align-items: left;
+  background: #E1E1E1;
 }
 
 p {
@@ -16,11 +18,101 @@ p {
   font-weight: 300;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+.top {
+  padding-top: 2%;
+}
+
+.head {
+  display: flex;
+}
+
+.head h2 {
+  padding-right: 70%;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.searchBox img {
+  width: 20px;
+  height: 20px;
+  padding-left: 5px;
+  border-radius: 12px;
+}
+
+.searchBox input[type="text"] {
+  display: flex;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+
+}
+
+#search {
+  display: flex;
+  width: 250px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 12px;
+}
+
+.searchBox input[type="text"]:focus {
+  outline: none;
+}
+
+.TopButtons {
+  display: flex;
+  padding: 30px 15px 20px 0;
+
+}
+
+#create {
+  background-color: rgba(174, 131, 123, 1);
+}
+
+#export {
+  background-color: rgba(248, 243, 239, 1);
+  margin-right: 20px;
+}
+
+#export,
+#create {
+  padding: 4px 14px;
+  border: 12px;
+  display: flex;
+  width: 120px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+#create:hover {
+  background-color: rgba(174, 131, 123, 0.8);
+  transition: 100ms;
+}
+
+#create:active,
+#create:focus {
+  opacity: 0.8;
+  transition: 90ms;
+}
+
+#export:hover {
+  background-color: rgba(248, 243, 239, 0.8);
+  transition: 100ms;
+}
+
+#export:active,
+#export:focus {
+  opacity: 0.5;
+  transition: 90ms;
 }
 
 a {
@@ -29,19 +121,22 @@ a {
   transition: 0.3s all ease;
 }
 
-a, a:hover {
+a,
+a:hover {
   text-decoration: none !important;
+
 }
 
 
-.custom-table tbody .botones li a {
+.custom-table tbody .actionsButton li a {
   display: inline-block;
   width: 36px;
+  padding: 0 10px 0 10px;
 }
 
-.custom-table tbody .botones li a img {
+.custom-table tbody .actionsButton li a img {
   border-radius: 50%;
-  max-width: 100%;
+  width: 80%;
 }
 
 .custom-table tbody tr th,
@@ -71,28 +166,30 @@ a, a:hover {
 }
 
 
-.content .AsideListado img{
+.content .AsideListado img {
   height: 15%;
   width: 40%;
   scale: .9;
   padding-left: 30px;
   padding-top: 25px;
-  box-sizing:content-box;
+  box-sizing: content-box;
 }
 
-.content .AsideListado nav{
-padding-top: 20px;
+.content .AsideListado nav {
+  padding-top: 20px;
 }
 
 
-.content .AsideListado nav li a{
+.content .AsideListado nav li a {
   text-decoration: none;
 
 }
-.custom-table tbody .botones {
+
+.custom-table tbody .actionsButton {
   padding: 0;
   margin: 0;
 }
+
 h2 {
   font-size: 20px;
 }
@@ -122,7 +219,7 @@ h2 {
   font-weight: 300;
 }
 
-.custom-table tbody .botones li {
+.custom-table tbody .actionsButton li {
   padding: 0;
   margin: 0 0 0 -15px;
   list-style: none;
@@ -170,5 +267,6 @@ h2 {
     display: flex;
     height: 100%;
     max-height: 100%;
+    background: #E1E1E1;
   }
 }

@@ -6,6 +6,8 @@ import { RegistroComponentProducto } from './components/producto/registro/regist
 import { EditarComponentProducto } from './components/producto/editar/editar.component';
 import { RegistroComponentCategoria } from './components/categoria/registro/registro.component';
 import { EditarComponentCategoria } from './components/categoria/editar/editar.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +21,9 @@ import { EditarComponentCategoria } from './components/categoria/editar/editar.c
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    RouterModule
   ],
   exports:[
     RegistroComponentProducto,
