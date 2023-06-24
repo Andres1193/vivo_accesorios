@@ -15,7 +15,6 @@ import { RecetaModule } from "./receta/receta.module";
 import { ProveedorModule } from "./proveedor/proveedor.module";
 import { MateriasModule } from "./materias/materias.module";
 import { ClienteModule } from './cliente/cliente.module';
-import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
 import { NgbCollapseModule, NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 
@@ -37,7 +36,6 @@ import { NgbCollapseModule, NgbModule } from "@ng-bootstrap/ng-bootstrap";
     ProveedorModule,
     MateriasModule,
     ClienteModule,
-    ModalEliminarModule,
     NgbModule,
     NgbCollapseModule
   ],
