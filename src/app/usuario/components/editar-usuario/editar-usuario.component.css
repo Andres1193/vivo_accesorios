@@ -7,8 +7,7 @@
   background-color: #efefef;
 }
 
-.formulario,
-.division_costo {
+.formulario {
   top: 30px;
   background-color: #ffffff;
   width: 85%;
@@ -25,13 +24,6 @@
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-}
-
-.division_costo {
-  width: 100%;
-  top: 108%;
-  height: 50%;
-  position: absolute;
 }
 
 label {
