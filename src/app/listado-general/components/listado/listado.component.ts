@@ -14,7 +14,7 @@ export class ListadoComponent {
 
   public frontActual: string = 'Cliente'; // frontActual
 
-  flagContent: boolean = true;
+  flagContent: boolean = false;
 
   searchItem: string = '';
 
@@ -108,5 +108,3 @@ export class ListadoComponent {
   }
 
 }
-
-
