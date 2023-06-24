@@ -10,54 +10,48 @@
 .formulario {
   top: 30px;
   background-color: #ffffff;
-  width: 85%;
-  height: 650px;
+  width: 75%;
+  height: 620px;
   max-width: 100%;
   margin: auto;
   position: relative;
   box-shadow: 0 0 5px 0.2px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  
+
 }
 
-.componente{
+.componente {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 label {
-  margin: 30px 0px 0px 80px;
+  margin: 20px 0px 0px 100px;
 }
 
 input {
   position: relative;
-  left: 31px;
+  left: 48px;
   width: 300px;
   height: 30px;
   border: 1.5px solid black;
   border-radius: 10px;
-  padding: 4%;
-  margin: 10px 70px 15px 40px;
+  padding: 2%;
+  margin: 10px 200px 4px 40px;
 }
 
- #nombre{
+#nombre, #direccion{
   display: flex;
   position: relative;
   width: 600px;
-  margin: 10px 300px 15px 40px;
-  padding: 1.8%;
+  margin: 10px 300px 4px 40px;
+  padding: 1.5%;
 }
 
-#direccion{
-  width: 600px;
-  margin: 10px 300px 15px 40px;
-  padding: 1.8%;
-}
-
-#ciudad{
-  margin: 10px 1000px 15px 40px;
-  padding: 1.3%;
+#ciudad {
+  margin: 10px 400px 4px 40px;
+  padding: 1%;
 }
 
 .bloque {
@@ -80,7 +74,7 @@ input:focus {
 
 #guardar,
 #cancelar {
-  position: relative; 
+  position: relative;
   width: 120px;
   height: 30px;
   border-radius: 8px;

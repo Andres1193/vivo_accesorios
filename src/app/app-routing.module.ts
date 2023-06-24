@@ -11,6 +11,8 @@ import { RegistroUsuarioComponent } from './usuario/components/registro-usuario/
 import { RegistroRecetaComponent } from './receta/components/registro-receta/registro-receta.component';
 import { RegistroComponentMateriasCrudas } from './materias/components/materias-crudas/registro-materias-crudas/registro-materias-crudas.component';
 import { RegistroClienteComponent } from './cliente/components/registro-cliente/registro-cliente.component';
+
+import { RegistroComponentMateriasListas } from './materias/components/materias-listas/registro-materias-listas/registro-materias-listas.component';
 import { RegistroComponentProducto } from './producto/components/producto/registro-producto/registro-producto.component';
 
 
@@ -23,10 +25,10 @@ const routes: Routes = [
     { path: 'producto', component: RegistroComponentProducto, pathMatch:'full'},
     { path: 'proveedor', component: RegistroProveedorComponent, pathMatch:'full'},
     { path: 'usuario', component: RegistroUsuarioComponent, pathMatch:'full'},
-    { path: 'Receta', component: RegistroRecetaComponent, pathMatch:'full'},
+    { path: 'receta', component: RegistroRecetaComponent, pathMatch:'full'},
     { path: 'cliente', component: RegistroClienteComponent, pathMatch:'full'},
     { path: 'mp_crudas', component: RegistroComponentMateriasCrudas, pathMatch:'full'},
-    { path: 'mp_listas', component: RegistroComponentMateriasCrudas, pathMatch:'full'},
+    { path: 'mp_listas', component: RegistroComponentMateriasListas, pathMatch:'full'},
     // { path: 'register', component: SignInComponent },
     
     { path: '**', redirectTo: '/home' }

@@ -8,15 +8,14 @@ import { LoginModule } from "./login/login.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ProductoModule } from "./producto/producto.module";
 import { RouterModule } from "@angular/router";
-import { MatSelectModule } from "@angular/material/select";
+
 import { ListadoGeneralModule } from "./listado-general/listado-general.module";
-import { MatFormFieldModule } from "@angular/material/form-field";
+
 import { RecetaModule } from "./receta/receta.module";
 import { ProveedorModule } from "./proveedor/proveedor.module";
 import { MateriasModule } from "./materias/materias.module";
 import { ClienteModule } from './cliente/cliente.module';
 import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
-import { MaterialEmpaqueModule } from "./material-empaque/material-empaque.module";
 
 
 
@@ -29,19 +28,15 @@ import { MaterialEmpaqueModule } from "./material-empaque/material-empaque.modul
     ProductoModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LoginModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    MatFormFieldModule,
-    MatSelectModule,
     ListadoGeneralModule,
     RecetaModule,
     ProveedorModule,
     MateriasModule,
     ClienteModule,
-    ModalEliminarModule,
-    MaterialEmpaqueModule
+    ModalEliminarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
