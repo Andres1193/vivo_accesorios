@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgModule } from "@angular/core";
 import { ProductoModule } from "./producto/producto.module";
 import { RouterModule } from "@angular/router";
+import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
+
 
 
 @NgModule({
@@ -19,6 +21,7 @@ import { RouterModule } from "@angular/router";
     UsuarioModule,
     ProductoModule,
     AppRoutingModule,
+    ModalEliminarModule,
     BrowserAnimationsModule,
     LoginModule,
     FormsModule,
