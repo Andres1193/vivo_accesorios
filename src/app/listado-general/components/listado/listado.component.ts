@@ -39,7 +39,6 @@ export class ListadoComponent {
   ];
 
   public cliente: Cliente = {
-    codigoCliente: 0,
     identificacion: '',
     nombre: '',
     apellido: '',
