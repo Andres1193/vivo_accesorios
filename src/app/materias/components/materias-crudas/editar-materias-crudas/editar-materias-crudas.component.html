@@ -17,7 +17,7 @@
         <label for="categoria">Categoria:</label>
         <select [(ngModel)]="opcionSeleccionadaCategoria" (change)="seleccionarOpcionCategoria(opcionSeleccionadaCategoria)">
           <option *ngFor="let unidad of materiasCrudas.categoria_mp" [value]="">{{ "" }}</option>
-        </select>>
+        </select>
       </div>
 
       <div class="componente">

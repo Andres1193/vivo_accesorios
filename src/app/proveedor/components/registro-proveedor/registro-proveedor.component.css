@@ -94,7 +94,7 @@ input:focus{
   background-color: #EFEFEF;
   border: none;
   border-radius: 10px;
-  background: #EFEFEF url('../../../../../assets/icons/🦆 icon _camera alt_.svg')  no-repeat center / cover;
+  /* background: #EFEFEF url('../../../../../assets/icons/🦆 icon _camera alt_.svg')  no-repeat center / cover; */
   background-size: 22% 10%;
 }
 

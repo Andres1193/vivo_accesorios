@@ -15,6 +15,7 @@ import { RecetaModule } from "./receta/receta.module";
 import { ProveedorModule } from "./proveedor/proveedor.module";
 import { MateriasModule } from "./materias/materias.module";
 import { ClienteModule } from './cliente/cliente.module';
+import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
 
 
 
@@ -24,7 +25,6 @@ import { ClienteModule } from './cliente/cliente.module';
   ],
   imports: [
     BrowserModule,
-    UsuarioModule,
     ProductoModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -38,7 +38,8 @@ import { ClienteModule } from './cliente/cliente.module';
     RecetaModule,
     ProveedorModule,
     MateriasModule,
-    ClienteModule
+    ClienteModule,
+    ModalEliminarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
