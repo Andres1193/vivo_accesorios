@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.interfaces';
 
 @Component({
@@ -8,6 +9,7 @@ import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.inte
 })
 export class RegistroComponentMateriasCrudas {
 
+  public materiaCrudaForm: FormGroup;
   public materiasCrudas: MateriasCrudas = {
     cod_interno: '',
     desc_mp: '',
@@ -19,6 +21,18 @@ export class RegistroComponentMateriasCrudas {
     costo_total_unitario: 0,
     estado: '',
     proveedores: []
+  }
+
+  constructor(private formBuilder: FormBuilder) {
+    this.materiaCrudaForm = this.formBuilder.group({
+      desc_mp: ['', Validators.required],
+      categoria_mp: ['', Validators.required],
+      cant_linea: [0, Validators.required],
+      precio_linea: [0, Validators.required],
+      unidad_medida: [0, Validators.required],
+      costo_unitario: [0, Validators.required],
+      costo_total_unitario: [0, Validators.required]
+    });
   }
 
   crearMateriasCrudas(){

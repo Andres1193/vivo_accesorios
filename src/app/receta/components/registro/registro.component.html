@@ -1,11 +1,31 @@
-<div class='wrap'>
+<div class="principal">
+  <div class="formulario">
+    <h1 >Receta</h1>
+    <form [formGroup]="recetaForm" (ngSubmit)="crearReceta()">
+      <div class="formulario__input">
+        <input type="text" formControlName="costo_total_un"
+          placeholder="Costo total unidad">
+        <input type="text" formControlName="cantidad" 
+          placeholder="Cantidad">
+        <select>
+          <option *ngFor="let producto of receta.productos">{{ producto }}</option>
+        </select>
+        <!-- hacer el select de proveedores -->
+      </div>
+      <button type="submit">Crear Receta</button>
+    </form>
+  </div>
+</div>
+
+
+<!-- <div class='wrap'>
     <h2>Registro</h2>
       <form>
           <input type='text' name="codigo_Interno" id='codigo_Interno' placeholder='Codigo' [(ngModel)]="receta.codigoInterno">
           <input type='text' name="costo_Total_Und" id='costo_Total_Und' placeholder='Costo total unidad' [(ngModel)]="receta.costoTotalUnd">
           <input type='text' name='cantidad' id='cantidad' placeholder='Cantidad' [(ngModel)]="receta.cantidad">
-          <!-- <input type='text' name='cod_Producto' id='cod_Producto' placeholder='Codigo producto' [(ngModel)]="receta.codProducto"> -->
-          <!-- <input type='text' name='cod_EM' id='cod_EM' placeholder='Codigo Material Empaque' [(ngModel)]="receta.codME"> -->
+          <input type='text' name='cod_Producto' id='cod_Producto' placeholder='Codigo producto' [(ngModel)]="receta.codProducto">
+          <input type='text' name='cod_EM' id='cod_EM' placeholder='Codigo Material Empaque' [(ngModel)]="receta.codME">
       </form>
     <button class='registrar' (click)="crearReceta()">Registrar</button>
-</div>
+</div> -->
