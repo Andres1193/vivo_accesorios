@@ -8,6 +8,8 @@ import { RegistroComponentCategoria } from './components/categoria/registro/regi
 import { EditarComponentCategoria } from './components/categoria/editar/editar.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
+import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar/modal-eliminar.component';
+import { ModalEliminarModule } from '../modal-eliminar/modal-eliminar.module';
 
 
 
@@ -16,7 +18,7 @@ import { RouterModule } from '@angular/router';
         RegistroComponentProducto,
         EditarComponentProducto,
         EditarComponentCategoria,
-        RegistroComponentCategoria        
+        RegistroComponentCategoria,     
     ],
     exports: [
     ],
@@ -25,7 +27,8 @@ import { RouterModule } from '@angular/router';
         FormsModule,
         ReactiveFormsModule,
         AppRoutingModule,
-        RouterModule
+        RouterModule,
+        ModalEliminarModule   
     ]
 })
 export class ProductoModule { }
