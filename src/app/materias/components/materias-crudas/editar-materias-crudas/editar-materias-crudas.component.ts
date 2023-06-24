@@ -20,7 +20,8 @@ export class EditarComponentMateriasCrudas {
     costo_unitario: 0,
     costo_total_unitario: 0,
     estado: '',
-    proveedores: []
+    proveedores: [],
+    stock: 0
   }
 
   opcionSeleccionadaCategoria: string = '';
@@ -48,7 +49,8 @@ export class EditarComponentMateriasCrudas {
       precio_linea: [0, Validators.required],
       unidad_medida: [0, Validators.required],
       costo_unitario: [0, Validators.required],
-      costo_total_unitario: [0, Validators.required]
+      costo_total_unitario: [0, Validators.required],
+      stock: [0, Validators.required]
     });
   }
 
