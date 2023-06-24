@@ -23,7 +23,8 @@ export class RegistroComponentMateriasListas {
     costo_banio_linea: 0,
     cantidad_banada: 0,
     costo_banio_un: 0,
-    proveedores: []
+    proveedores: [],
+    stock: 0
   }
 
   opcionSeleccionadaCategoria: string = '';
@@ -55,6 +56,7 @@ export class RegistroComponentMateriasListas {
       costo_banio_linea: [0, Validators.required],
       cantidad_banada: [0, Validators.required],
       costo_banio_un: [0, Validators.required],
+      stock: [0, Validators.required]
     });
   }
 
