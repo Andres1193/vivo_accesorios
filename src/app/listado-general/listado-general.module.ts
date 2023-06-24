@@ -9,21 +9,23 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "../app-routing.module";
 import { ListadoComponent } from "./components/listado/listado.component";
+import { ProductoModule } from "../producto/producto.module";
 
 @NgModule({
-  declarations: [
-    ListadoComponent
-  ],
-  imports: [
-    CommonModule,
-    ListadoGeneralRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    AppRoutingModule,
-    RouterModule
-  ]
+    declarations: [
+        ListadoComponent
+    ],
+    imports: [
+        CommonModule,
+        ListadoGeneralRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        AppRoutingModule,
+        RouterModule,
+        ProductoModule
+    ]
 })
 export class ListadoGeneralModule {}

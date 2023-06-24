@@ -16,6 +16,8 @@ export class ListadoComponent {
 
   flagContent: boolean = false;
 
+  
+
   searchItem: string = '';
 
 
@@ -39,7 +41,6 @@ export class ListadoComponent {
   ];
 
   public cliente: Cliente = {
-    // codigoCliente: 0,
     identificacion: '',
     nombre: '',
     apellido: '',

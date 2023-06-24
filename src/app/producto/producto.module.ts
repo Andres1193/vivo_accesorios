@@ -18,7 +18,7 @@ import { ModalEliminarModule } from '../modal-eliminar/modal-eliminar.module';
         RegistroComponentProducto,
         EditarComponentProducto,
         EditarComponentCategoria,
-        RegistroComponentCategoria,     
+        RegistroComponentCategoria,
     ],
     exports: [
     ],
@@ -27,8 +27,7 @@ import { ModalEliminarModule } from '../modal-eliminar/modal-eliminar.module';
         FormsModule,
         ReactiveFormsModule,
         AppRoutingModule,
-        RouterModule,
-        ModalEliminarModule   
+        RouterModule
     ]
 })
 export class ProductoModule { }

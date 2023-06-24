@@ -1,10 +1,10 @@
 <div class="content">
   <aside class="AsideListado">
-    <img src="../../../../assets/imgs/logo.png" alt="Logo" />
+    <img class="logo" src="../../../../assets/imgs/Vivo Blanco 1.png" alt="Logo"/>
     <nav>
       <li>
-        <mat-form-field>
-          <mat-label>Materias primas</mat-label>
+        <mat-form-field class="dropBar">
+          <mat-label >Materias primas</mat-label>
           <mat-select>
             <mat-option><a href="">Lista</a></mat-option>
             <mat-option><a href="">Cruda</a></mat-option>
@@ -24,7 +24,7 @@
         <label (click)="selectLista('Cliente')">Usuarios</label>
       </li>
       <li>
-        <label (click)="selectLista('')">Receta</label>
+        <mat-option (click)="selectLista('')">Receta</mat-option>
       </li>
     </nav>
   </aside>
