@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
@@ -10,7 +10,7 @@ import { Producto } from 'src/app/producto/interfaces/producto.interface';
 })
 
 export class ListadoComponent {
-  private self: ListadoComponent = this;
+
 
   public frontActual: string = 'Cliente'; // frontActual
 
