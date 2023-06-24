@@ -5,10 +5,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  templateUrl: './registro-proveedor.component.html',
+  styleUrls: ['./registro-proveedor.component.css']
 })
-export class RegistroComponent {
+export class RegistroProveedorComponent {
   public proveedorForm: FormGroup;
   public proveedor: Proveedor = {
     cod_proveedor: '',

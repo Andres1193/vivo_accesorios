@@ -13,6 +13,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { ListadoGeneralModule } from "./listado-general/listado-general.module";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { RecetaModule } from "./receta/receta.module";
+import { ProveedorModule } from "./proveedor/proveedor.module";
 
 
 
@@ -34,7 +35,8 @@ import { RecetaModule } from "./receta/receta.module";
     MatFormFieldModule,
     MatSelectModule,
     ListadoGeneralModule,
-    RecetaModule
+    RecetaModule,
+    ProveedorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

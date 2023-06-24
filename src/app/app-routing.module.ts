@@ -7,6 +7,7 @@ import { RegistroComponentProducto } from './producto/components/producto/regist
 import { ModalEliminarComponent } from './producto/components/modal-eliminar/modal-eliminar.component';
 import { EditarComponentProducto } from './producto/components/producto/editar/editar.component';
 import { EditarRecetaComponent } from './receta/components/editar-receta/editar-receta.component';
+import { EditarProveedorComponent } from './proveedor/components/editar-proveedor/editar-proveedor.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'home', component: ListadoComponent, pathMatch:'full'},
     { path: 'producto', component: EditarComponentProducto, pathMatch:'full'},
     { path: 'receta', component: EditarRecetaComponent, pathMatch:'full'},
+    { path: 'proveedor', component: EditarProveedorComponent, pathMatch:'full'},
     // { path: 'usuario', component: RegistroComponent, pathMatch:'full'},
    // { path: 'registroproducto', component: RegistroComponentProducto, pathMatch:'full'},
     // { path: 'register', component: SignInComponent },
