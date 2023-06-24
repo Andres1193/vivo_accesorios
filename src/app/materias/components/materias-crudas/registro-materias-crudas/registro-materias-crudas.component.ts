@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.interfaces';
 
 @Component({
-  selector: 'app-registro',
+  selector: 'app-registro-materias-crudas',
   templateUrl: './registro-materias-crudas.component.html',
   styleUrls: ['./registro-materias-crudas.component.css']
 })

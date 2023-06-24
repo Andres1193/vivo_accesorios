@@ -6,12 +6,10 @@ describe('ModalEliminarComponent', () => {
   let component: ModalEliminarComponent;
   let fixture: ComponentFixture<ModalEliminarComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ModalEliminarComponent ]
-    })
-    .compileComponents();
-
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [ModalEliminarComponent]
+    });
     fixture = TestBed.createComponent(ModalEliminarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
