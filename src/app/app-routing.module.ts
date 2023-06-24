@@ -4,7 +4,7 @@ import { ListadoComponent } from './listado-general/components/listado/listado.c
 import { LoginComponent } from './login/components/login/login.component';
 import { RegistroUsuarioComponent } from './usuario/components/registro-usuario/registro-usuario.component';
 import { RegistroComponentProducto } from './producto/components/producto/registro/registro.component';
-import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
+import { ModalEliminarComponent } from './producto/components/modal-eliminar/modal-eliminar.component';
 
 
 

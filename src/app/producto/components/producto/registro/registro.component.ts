@@ -62,4 +62,12 @@ export class RegistroComponentProducto {
       this.url = reader.result;
     }
   }
+
+  //ventana modal
+
+  modalSwitch:boolean = false;
+
+  AbrirModal(){
+    this.modalSwitch = true;
+  }
 }

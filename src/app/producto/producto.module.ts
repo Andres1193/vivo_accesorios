@@ -8,28 +8,30 @@ import { RegistroComponentCategoria } from './components/categoria/registro/regi
 import { EditarComponentCategoria } from './components/categoria/editar/editar.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
+import { ModalEliminarModule } from './components/modal-eliminar/modal-eliminar.module';
 
 
 
 @NgModule({
-  declarations: [
-    RegistroComponentProducto,
-    EditarComponentProducto,
-    EditarComponentCategoria,
-    RegistroComponentCategoria
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    RouterModule
-  ],
-  exports:[
-    RegistroComponentProducto,
-    EditarComponentProducto,
-    EditarComponentCategoria,
-    RegistroComponentCategoria
-  ]
+    declarations: [
+        RegistroComponentProducto,
+        EditarComponentProducto,
+        EditarComponentCategoria,
+        RegistroComponentCategoria        
+    ],
+    exports: [
+        RegistroComponentProducto,
+        EditarComponentProducto,
+        EditarComponentCategoria,
+        RegistroComponentCategoria
+    ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        AppRoutingModule,
+        RouterModule,
+        ModalEliminarModule
+    ]
 })
 export class ProductoModule { }
