@@ -25,11 +25,9 @@
               "src/assets"
             ],
             "styles": [
-              "./src/custom-theme.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.css",
-              "src/styles.css",
-              "@angular/material/prebuilt-themes/indigo-pink.css"
+              "src/styles.css"
 
             ],
             "scripts": [
@@ -94,9 +92,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/custom-theme.scss",
-              "src/styles.css",
-              "@angular/material/prebuilt-themes/indigo-pink.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "src/styles.css"
             ],
             "scripts": []
           }
