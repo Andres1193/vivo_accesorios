@@ -44,7 +44,7 @@ export class RegistroComponentMateriasListas {
 
   crearMateriaLista() {
     if (this.materiaListaForm.valid) {
-      // Acciones para crear el producto utilizando this.producto
+      // Acciones para crear el producto utilizando this.materiasListas
     }
   }
 

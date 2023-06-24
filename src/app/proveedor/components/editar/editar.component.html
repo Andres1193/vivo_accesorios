@@ -1,4 +1,71 @@
-<div class='wrap'>
+<!-- <a routerLink="/home"></a> -->
+<router-outlet></router-outlet>
+
+<div class="principal">
+  <h1>Editar proveedor</h1>
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
+  <div class="formulario">
+    <h2 class="bloque">INFORMACIÓN GENERAL</h2>
+    <form [formGroup]="proveedorForm" (ngSubmit)="actualizarProveedor()">
+      <div class="componente">
+        <label for="nombre">Nombre:</label>
+        <input type="text" formControlName="nombre" id="nombre">
+      </div>
+
+      <div class="componente">
+        <label for="telefono">Telefono 1:</label>
+        <input type="text" formControlName="telefono_1" id="telefono">
+      </div>
+
+      <div class="componente">
+        <label for="telefono">Telefono 2:</label>
+        <input type="text" formControlName="telefono_2" id="telefono">
+      </div>
+
+      <div class="componente">
+        <label for="telefono">Telefono 3:</label>
+        <input type="text" formControlName="telefono_3" id="telefono">
+      </div>
+
+      <div class="componente">
+        <label for="telefono">Telefono 4:</label>
+        <input type="text" formControlName="telefono_4" id="telefono">
+      </div>
+
+      <div class="componente">
+        <label for="telefono">Telefono 5:</label>
+        <input type="text" formControlName="telefono_5" id="telefono">
+      </div>
+       
+      <div class="componente">
+        <label for="direccion">Dirección:</label>
+        <input type="text" [readonly]="true" formControlName="direccion"
+          id="direccion">
+      </div>
+
+      <div class="componente">
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" formControlName="ciudad" id="ciudad">
+      </div>
+
+      <!-- <div [innerHtml]='msg' *ngIf="msg"></div>
+      <label for="file-input" class="custom-file-input">
+        <img [src]="url" *ngIf="url" id="imagen">
+        <input type="file" id="file-input" (change)="selectFile($event)">
+      </label> -->
+
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <div class='wrap'>
     <h2>Edicion</h2>
       <form>
           <input type='text' name="nombre" id='nombre' placeholder='Nombre' [(ngModel)]="proveedor.nombre">
@@ -11,4 +78,4 @@
           <input type='text' name='ciudad' id='ciudad' placeholder='Ciudad' [(ngModel)]="proveedor.ciudad">
       </form>
     <button class='registrar' (click)="actualizarProveedor()">Actualizar</button>
-  </div>
+  </div> -->

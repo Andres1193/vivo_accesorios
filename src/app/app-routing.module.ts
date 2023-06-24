@@ -12,9 +12,8 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent, pathMatch:'full' },
     { path: '', redirectTo: '/home', pathMatch:'full'},
     { path: 'home', component: ListadoComponent, pathMatch:'full'},
-    { path: 'producto', component: RegistroComponentProducto, pathMatch:'full'},
-    { path: 'modal', component: ModalEliminarComponent, pathMatch:'full'},
-    { path: 'usuario', component: RegistroUsuarioComponent, pathMatch:'full'},
+    { path: 'producto', component: EditarComponentProducto, pathMatch:'full'},
+    { path: 'usuario', component: RegistroComponent, pathMatch:'full'},
    // { path: 'registroproducto', component: RegistroComponentProducto, pathMatch:'full'},
     // { path: 'register', component: SignInComponent },
     { path: '**', redirectTo: '/home' }
