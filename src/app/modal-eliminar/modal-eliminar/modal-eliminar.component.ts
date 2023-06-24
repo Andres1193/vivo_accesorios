@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-modal-eliminar',
@@ -8,12 +8,12 @@ import {NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalEliminarComponent implements OnInit{
 
-  constructor(public modal: NgbModal ){
+  constructor(){
 
   }
 
   ngOnInit(): void {
-      
+
   }
 
 }
