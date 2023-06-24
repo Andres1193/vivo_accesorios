@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AppRoutingModule } from '../app-routing.module';
+import { AppRoutingModule } from '../../../app-routing.module';
 import { RouterModule } from '@angular/router';
 import { ModalEliminarComponent } from './modal-eliminar.component';
-
 
 
 @NgModule({
@@ -15,7 +14,7 @@ import { ModalEliminarComponent } from './modal-eliminar.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     RouterModule
   ],
   exports:[

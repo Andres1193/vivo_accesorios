@@ -1,6 +1,31 @@
 <!-- <a routerLink="/home"></a> -->
 <router-outlet></router-outlet>
 
+<button (click)="AbrirModal()">abrir</button>
+
+<div class *ngIf="modalSwitch == true">
+  <app-modal-eliminar></app-modal-eliminar>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
 <div class="principal">
   <h1 id="titulo_principal">Registrar producto</h1>
   <div id="cancelar">Cancelar</div>
@@ -44,4 +69,4 @@
     </form>
 
   </div>
-</div>
+</div> -->

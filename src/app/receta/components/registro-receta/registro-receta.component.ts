@@ -4,33 +4,30 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  templateUrl: './registro-receta.component.html',
+  styleUrls: ['./registro-receta.component.css']
 })
-export class RegistroComponent {
+export class RegistroRecetaComponent {
   public recetaForm: FormGroup;
   public receta: Receta = {
-    codigoInterno: 0,
-    costo_total_un: 0,
+    codigo_mp: 0,
+    descripcion_mp: '',
     cantidad: 0,
-    cod_producto: 0,
-    estado: '',
-    productos: []
+    unidad_medida: [],
+    costo_unitario: 0,
+    costo_total_unitario: 0
+  }
+
+  opcionSeleccionada: string = '';
+
+  seleccionarOpcion(opcion: string): void {
+    this.opcionSeleccionada = opcion;
   }
 
   constructor(private formBuilder: FormBuilder) {
     this.recetaForm = this.formBuilder.group({
-      desc_mp: ['', Validators.required],
-      categoria_mp: ['', Validators.required],
-      cant_linea: [0, Validators.required],
-      precio_linea: [0, Validators.required],
-      unidad_medida: [0, Validators.required],
-      costo_unitario: [0, Validators.required],
-      costo_total_unitario: [0, Validators.required],
-      costo_banio_linea: [0, Validators.required],
-      cantidad_banada: [0, Validators.required],
-      costo_banio_un: [0, Validators.required],
-      
+      codigo_mp: [0, Validators.required],
+      cantidad: [0, Validators.required]
     });
   }
 

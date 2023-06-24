@@ -1,32 +1,62 @@
+<!-- <a routerLink="/home"></a> -->
+<router-outlet></router-outlet>
+
 <div class="principal">
+  <h1>Registrar materia cruda</h1>
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
   <div class="formulario">
-    <h1 >Materia Cruda</h1>
+    <h2 class="bloque">INFORMACIÓN GENERAL</h2>
     <form [formGroup]="materiaCrudaForm" (ngSubmit)="crearMateriasCrudas()">
-      <div class="formulario__input">
-        <input type="text" formControlName="desc_mp"
-          placeholder="Descripcion">
-        <input type="text" formControlName="categoria_mp" 
-          placeholder="Categoria">
-        <input type="number" formControlName="cant_linea"
-          placeholder="Cantidad linea">
-        <input type="number" formControlName="precio_linea"
-          placeholder="Precio linea">
-        <input type="text" formControlName="unidad_medida"
-          placeholder="Unidad medida">
-        <input type="number" formControlName="costo_unitario"
-          placeholder="Costo unitario">
-        <input type="number" formControlName="costo_total_unitario"
-          placeholder="Costo unitario">
-        <select>
-          <option *ngFor="let proveedor of materiasCrudas.proveedores">{{ proveedor }}</option>
-        </select>
-        <!-- hacer el select de proveedores -->
+      <div class="componente">
+        <label for="descripcion">Descripción:</label>
+        <input type="text" formControlName="desc_mp" id="descripcion">
       </div>
-      <button type="submit">Crear Materia Cruda</button>
+
+      <div class="componente">
+        <label for="categoria">Categoria:</label>
+        <input type="text" formControlName="categoria_mp" id="categoria">
+      </div>
+
+      <div class="componente">
+        <label for="cantidad">Cantidad linea:</label>
+        <input type="number" [readonly]="true" formControlName="cant_linea"
+          id="cantidad">
+      </div>
+
+      <div class="componente">
+        <label for="precio">Precio linea:</label>
+        <input type="number" formControlName="precio_linea" id="precio">
+      </div>
+
+      <div class="componente">
+        <label for="unidad">Unidad medida:</label>
+        <input type="number" [readonly]="true" formControlName="unidad_medida"
+          id="unidad">
+      </div>
+
+      <div class="componente">
+        <label for="costo">Costo unitario:</label>
+        <input type="number" [readonly]="true" formControlName="costo_unitario"
+          id="costo">
+      </div>
+
+      <div class="componente">
+        <label for="costo">Costo total unitario:</label>
+        <input type="number" [readonly]="true" formControlName="costo_total_unitario"
+          id="costo">
+      </div>
+
+      <!-- <div [innerHtml]='msg' *ngIf="msg"></div>
+      <label for="file-input" class="custom-file-input">
+        <img [src]="url" *ngIf="url" id="imagen">
+        <input type="file" id="file-input" (change)="selectFile($event)">
+      </label> -->
+
     </form>
+
   </div>
 </div>
-
 
 
 <!-- <div class='wrap'>

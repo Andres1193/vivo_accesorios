@@ -1,11 +1,52 @@
-<div class='wrap'>
-    <h2>Edicion</h2>
-      <form>
-          <input type='text' name="codigo_Interno" id='codigo_Interno' placeholder='Codigo' [(ngModel)]="receta.codigoInterno">
-          <input type='text' name="costo_Total_Und" id='costo_Total_Und' placeholder='Costo total unidad' [(ngModel)]="receta.costoTotalUnd">
-          <input type='text' name='cantidad' id='cantidad' placeholder='Cantidad' [(ngModel)]="receta.cantidad">
-          <!-- <input type='text' name='cod_Producto' id='cod_Producto' placeholder='Codigo producto' [(ngModel)]="receta.codProducto"> -->
-          <!-- <input type='text' name='cod_EM' id='cod_EM' placeholder='Codigo Material Empaque' [(ngModel)]="receta.codME"> -->
-      </form>
-    <button class='registrar' (click)="actualizarReceta()">Actualizar</button>
+<!-- <a routerLink="/home"></a> -->
+<router-outlet></router-outlet>
+
+<div class="principal">
+  <h1>Editar receta</h1>
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
+  <div class="formulario">
+    <h2 class="bloque">INFORMACIÓN GENERAL</h2>
+    <form [formGroup]="recetaForm" (ngSubmit)="actualizarReceta()">
+      <div class="componente">
+        <label for="codigo">Codigo materia prima:</label>
+        <input type="text" formControlName="codigo_mp" id="codigo">
+      </div>
+
+      <div class="componente">
+        <label for="descripcion">Descripción materia prima:</label>
+        <input type="text" formControlName="descripcion_mp" id="descripcion">
+      </div>
+
+      <div class="componente">
+        <label for="cantidad">Cantidad:</label>
+        <input type="text" formControlName="descripcion_mp" id="cantidad">
+      </div>
+
+      <div class="componente">
+        <label for="unidad">Unidad de medida:</label>
+        <select [(ngModel)]="opcionSeleccionada" (change)="seleccionarOpcion(opcionSeleccionada)">
+          <option *ngFor="let unidad of receta.unidad_medida" [value]="unidad">{{ unidad }}</option>
+        </select>
+      </div>
+
+      <div class="componente">
+        <label for="costo">Costo unitario:</label>
+        <input type="text" formControlName="costo_unitario" id="costo">
+      </div>
+
+      <div class="componente">
+        <label for="costo">Costo total unitario:</label>
+        <input type="text" formControlName="costo_total_unitario" id="costo">
+      </div>
+
+      <!-- <div [innerHtml]='msg' *ngIf="msg"></div>
+      <label for="file-input" class="custom-file-input">
+        <img [src]="url" *ngIf="url" id="imagen">
+        <input type="file" id="file-input" (change)="selectFile($event)">
+      </label> -->
+
+    </form>
+
+  </div>
 </div>

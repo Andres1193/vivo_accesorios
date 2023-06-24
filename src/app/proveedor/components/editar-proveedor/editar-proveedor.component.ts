@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { Proveedor } from '../../interfaces/proveedor.interface';
 import { ProveedorService } from '../../services/proveedor.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editar',
-  templateUrl: './editar.component.html',
-  styleUrls: ['./editar.component.css']
+  templateUrl: './editar-proveedor.component.html',
+  styleUrls: ['./editar-proveedor.component.css']
 })
-export class EditarComponent {
-
+export class EditarProveedorComponent {
+  public proveedorForm: FormGroup;
   public proveedor: Proveedor = {
+    cod_proveedor: '',
     nombre: '',
     telefono_1: '',
     telefono_2: '',
@@ -21,12 +23,12 @@ export class EditarComponent {
     estado: '',
   }
 
-  constructor(private proveedorService: ProveedorService) {}
-
-  ngOnInit(): void {
-    this.proveedorService.getProveedor(this.proveedor).subscribe(resp =>{
-      this.proveedor =  resp[0];
-      console.log(resp);
+  constructor(private formBuilder: FormBuilder, private proveedorService: ProveedorService) {
+    this.proveedorForm = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      telefono_1: ['', Validators.required],
+      direccion: ['', Validators.required],
+      ciudad: ['', Validators.required]
     });
   }
 
