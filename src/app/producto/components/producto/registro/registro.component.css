@@ -4,7 +4,7 @@
 .principal {
   width: 100%;
   height: 100%;
-  background-color: #ae837b41;
+  background-color: #efefef;
 }
 
 .formulario {
@@ -39,12 +39,17 @@ input {
 }
 
 .bloque {
+  display: flex;
+  align-items: center;
+  position: relative;
   width: 100%;
-  height: 15%;
-  padding: 20px 80px;
+  height: 70px;
+  padding: 0px 80px;
   border-bottom: 1px solid #929090;
   color: #000000;
+  font-size: 16px;
 }
+
 
 input:focus{
   border: 1.5px solid #AE837B;
@@ -57,8 +62,10 @@ input:focus{
   width: 120px;
   height: 30px;
   border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 #guardar{
   top: 20px;
   background-color: #ae837bce;
@@ -113,18 +120,19 @@ input:focus{
   background-color: #EFEFEF;
 }
 
+
 .mensaje{
   position: absolute;
   color: #a80000;
   left: 69.5%;
 }
 
-#titulo_principal{
+.principal h1 {
   position: relative;
-  top: 80;
-  padding: 0% 0% 0% 7.8%;
+  top: 70;
+  padding: 0% 0% 0% 7%;
   text-align: left;
-  color: #000000;
+  font-size: 22px;
 }
 
 @media (max-width: 768px) {
