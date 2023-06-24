@@ -29,7 +29,6 @@ const routes: Routes = [
     { path: 'cliente', component: RegistroClienteComponent, pathMatch:'full'},
     { path: 'mp_crudas', component: RegistroComponentMateriasCrudas, pathMatch:'full'},
     { path: 'mp_listas', component: RegistroComponentMateriasListas, pathMatch:'full'},
-    { path: 'modal', component: ModalEliminarComponent, pathMatch:'full'},
     // { path: 'register', component: SignInComponent },
     
     { path: '**', redirectTo: '/home' }
