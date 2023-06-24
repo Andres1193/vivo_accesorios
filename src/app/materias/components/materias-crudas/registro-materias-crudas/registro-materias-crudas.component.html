@@ -7,7 +7,7 @@
   <div id="guardar">Guardar</div>
   <div class="formulario">
     <h2 class="bloque">INFORMACIÓN GENERAL</h2>
-    <form [formGroup]="materiaCrudaForm" (ngSubmit)="crearMateriasCrudas()">
+    <form [formGroup]="materiaCrudasForm" (ngSubmit)="crearMateriasCrudas()">
       <div class="componente">
         <label for="descripcion">Descripción:</label>
         <input type="text" formControlName="desc_mp" id="descripcion">
@@ -15,7 +15,9 @@
 
       <div class="componente">
         <label for="categoria">Categoria:</label>
-        <input type="text" formControlName="categoria_mp" id="categoria">
+        <select [(ngModel)]="opcionSeleccionadaCategoria" (change)="seleccionarOpcionCategoria(opcionSeleccionadaCategoria)">
+          <option *ngFor="let unidad of materiasCrudas.categoria_mp" [value]="">{{ "" }}</option>
+        </select>>
       </div>
 
       <div class="componente">
@@ -31,8 +33,9 @@
 
       <div class="componente">
         <label for="unidad">Unidad medida:</label>
-        <input type="number" [readonly]="true" formControlName="unidad_medida"
-          id="unidad">
+        <select [(ngModel)]="opcionSeleccionadaProveedor" (change)="seleccionarOpcionUnidad(opcionSeleccionadaProveedor)">
+          <option *ngFor="let unidad of materiasCrudas.unidad_medida" [value]="">{{ "" }}</option>
+        </select>
       </div>
 
       <div class="componente">
@@ -45,6 +48,13 @@
         <label for="costo">Costo total unitario:</label>
         <input type="number" [readonly]="true" formControlName="costo_total_unitario"
           id="costo">
+      </div>
+
+      <div class="componente">
+        <label for="costo">Proveedor:</label>
+        <select [(ngModel)]="opcionSeleccionadaUnidad" (change)="seleccionarOpcionUnidad(opcionSeleccionadaUnidad)">
+          <option *ngFor="let unidad of materiasCrudas.proveedores" [value]="">{{ "" }}</option>
+        </select>
       </div>
 
       <!-- <div [innerHtml]='msg' *ngIf="msg"></div>

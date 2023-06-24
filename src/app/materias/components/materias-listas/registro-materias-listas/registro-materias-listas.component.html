@@ -15,7 +15,9 @@
 
       <div class="componente">
         <label for="categoria">Categoria:</label>
-        <input type="text" formControlName="categoria_mp" id="categoria">
+        <select [(ngModel)]="opcionSeleccionadaCategoria" (change)="seleccionarOpcionCategoria(opcionSeleccionadaCategoria)">
+          <option *ngFor="let unidad of materiasListas.categoria_mp" [value]="">{{ "" }}</option>
+        </select>>
       </div>
 
       <div class="componente">
@@ -31,8 +33,9 @@
 
       <div class="componente">
         <label for="unidad">Unidad medida:</label>
-        <input type="number" [readonly]="true" formControlName="unidad_medida"
-          id="unidad">
+        <select [(ngModel)]="opcionSeleccionadaProveedor" (change)="seleccionarOpcionUnidad(opcionSeleccionadaProveedor)">
+          <option *ngFor="let unidad of materiasListas.unidad_medida" [value]="">{{ "" }}</option>
+        </select>
       </div>
 
       <div class="componente">
@@ -63,6 +66,13 @@
         <label for="costo">Costo baño unitario:</label>
         <input type="number" [readonly]="true" formControlName="costo_banio_un"
           id="costo">
+      </div>
+
+      <div class="componente">
+        <label for="costo">Proveedor:</label>
+        <select [(ngModel)]="opcionSeleccionadaUnidad" (change)="seleccionarOpcionUnidad(opcionSeleccionadaUnidad)">
+          <option *ngFor="let unidad of materiasListas.proveedores" [value]="">{{ "" }}</option>
+        </select>
       </div>
 
       <!-- <div [innerHtml]='msg' *ngIf="msg"></div>
