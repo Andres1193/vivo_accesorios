@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListadoComponent } from './listado-general/components/listado/listado.component';
 import { LoginComponent } from './login/components/login/login.component';
 // import { ModalEliminarComponent } from './producto/components/modal-eliminar/modal-eliminar.component';
-import { EditarComponentProducto } from './producto/components/producto/editar/editar.component';
+import { EditarComponentProducto } from './producto/components/producto/editar-producto/editar-producto.component';
 import { EditarRecetaComponent } from './receta/components/editar-receta/editar-receta.component';
 import { EditarProveedorComponent } from './proveedor/components/editar-proveedor/editar-proveedor.component';
 import { RegistroProveedorComponent } from './proveedor/components/registro-proveedor/registro-proveedor.component';
@@ -11,7 +11,7 @@ import { RegistroUsuarioComponent } from './usuario/components/registro-usuario/
 import { RegistroRecetaComponent } from './receta/components/registro-receta/registro-receta.component';
 import { RegistroComponentMateriasCrudas } from './materias/components/materias-crudas/registro-materias-crudas/registro-materias-crudas.component';
 import { RegistroClienteComponent } from './cliente/components/registro-cliente/registro-cliente.component';
-import { RegistroComponentProducto } from './producto/components/producto/registro/registro.component';
+import { RegistroComponentProducto } from './producto/components/producto/registro-producto/registro-producto.component';
 
 
 

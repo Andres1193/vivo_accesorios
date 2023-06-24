@@ -4,9 +4,9 @@ import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { ProductoService } from 'src/app/producto/services/producto.service';
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  selector: 'app-registro-producto',
+  templateUrl: './registro-producto.component.html',
+  styleUrls: ['./registro-producto.component.css']
 })
 export class RegistroComponentProducto {
   public productoForm: FormGroup;

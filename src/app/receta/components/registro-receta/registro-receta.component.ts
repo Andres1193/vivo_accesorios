@@ -3,7 +3,7 @@ import { Receta } from '../../interfaces/receta.interface';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-registro',
+  selector: 'app-registro-receta',
   templateUrl: './registro-receta.component.html',
   styleUrls: ['./registro-receta.component.css']
 })

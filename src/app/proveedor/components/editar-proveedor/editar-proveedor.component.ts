@@ -4,7 +4,7 @@ import { ProveedorService } from '../../services/proveedor.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-editar',
+  selector: 'app-editar-proveedor',
   templateUrl: './editar-proveedor.component.html',
   styleUrls: ['./editar-proveedor.component.css']
 })

@@ -4,7 +4,7 @@ import { Proveedor } from '../../../../proveedor/interfaces/proveedor.interface'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-registro',
+  selector: 'app-registro-materias-listas',
   templateUrl: './registro-materias-listas.component.html',
   styleUrls: ['./registro-materias-listas.component.css']
 })

@@ -16,6 +16,7 @@ import { ProveedorModule } from "./proveedor/proveedor.module";
 import { MateriasModule } from "./materias/materias.module";
 import { ClienteModule } from './cliente/cliente.module';
 import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
+import { MaterialEmpaqueModule } from "./material-empaque/material-empaque.module";
 
 
 
@@ -39,7 +40,8 @@ import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
     ProveedorModule,
     MateriasModule,
     ClienteModule,
-    ModalEliminarModule
+    ModalEliminarModule,
+    MaterialEmpaqueModule
   ],
   providers: [],
   bootstrap: [AppComponent]

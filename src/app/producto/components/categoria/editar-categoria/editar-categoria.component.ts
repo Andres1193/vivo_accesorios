@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Categoria } from 'src/app/producto/interfaces/categoria.interface';
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  selector: 'app-editar-categoria',
+  templateUrl: './editar-categoria.component.html',
+  styleUrls: ['./editar-categoria.component.css']
 })
-export class RegistroComponentCategoria {
+export class EditarComponentCategoria {
 
   public categoria: Categoria = {
     codigoCategoria: 0,
@@ -14,7 +14,8 @@ export class RegistroComponentCategoria {
     estado: 'a',
   }
 
-  crearCategoria(){
+  actualizarCategoria(){
 
   }
+
 }
