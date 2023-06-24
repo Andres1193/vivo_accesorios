@@ -7,9 +7,8 @@
 }
 
 .content .AsideListado img {
-  height: 15%;
+  height: 20%;
   width: 40%;
-  scale: .9;
   padding-top: 25px;
   box-sizing: content-box;
 }
@@ -22,6 +21,39 @@ nav {
 nav li {
   list-style-type:none;
 }
+
+nav li label{
+  padding: 8px 0px 0px 15px;
+}
+
+.dropBar{
+  all:unset
+}
+
+.dropBar {
+  width: 100%;
+}
+
+mat-form-field {
+  margin-bottom: 20px; /* Espacio entre campos */
+}
+
+.mat-select {
+  width: 100%;
+  background-color: green;
+}
+
+.mat-option a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black; /* Color del texto */
+}
+
+.mat-option a:hover {
+  background-color: #a5be6b; /* Color de fondo al pasar el cursor */
+}
+
 
 .container {
   position: relative;

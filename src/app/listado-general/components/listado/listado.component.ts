@@ -16,6 +16,8 @@ export class ListadoComponent {
 
   flagContent: boolean = false;
 
+  
+
   searchItem: string = '';
 
 
