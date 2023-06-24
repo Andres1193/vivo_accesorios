@@ -1,56 +1,151 @@
 @import url(https://fonts.googleapis.com/css?family=Karla);
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
 
-h2 {
-  margin-bottom: 25px;
-  font-size: 40px;
+.principal {
+  width: 100%;
+  height: 100%;
+  background-color: #efefef;
 }
 
-.wrap{
-  padding:120px 0;
-  color:#39323B;
-  width:400px;
-  font-family:'Karla';
-  margin:0 auto;
-  text-align:center;
+.formulario {
+  top: 30px;
+  background-color: #ffffff;
+  width: 75%;
+  height: 500px;
+  max-width: 100%;
+  margin: auto;
+  position: relative;
+  box-shadow: 0 0 5px 0.2px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+
+}
+.componente {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-input{
-  font-family:'Ubuntu';
-  font-weight:300;
-  border:0;
-  border-bottom:1px solid #AE837B;
-  width:100%;
-  height:36px;
-  font-size:20px;
-  margin-top: 30px;
+label {
+  margin: 20px 0px 0px 100px;
 }
 
-input:focus{
-  outline:none;
-  box-shadow:none;
-  background:#ae837b34;
+input {
+  position: relative;
+  left: 48px;
+  width: 300px;
+  height: 30px;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  padding: 2%;
+  margin: 10px 200px 4px 40px;
 }
 
-button{
-  border:0;
-  background:transparent;
-  padding:5px;
-  position:relative;
-  outline:0;
+#nombre, #correo, #usuario{
+  display: flex;
+  position: relative;
+  width: 600px;
+  margin: 10px 300px 15px 40px;
+  padding: 1.6%;
 }
 
-button:hover {
-  cursor: pointer;
+#usuario{
+  margin: 10px 100px 15px 40px;
+  padding: 1.8%;
+}
+
+.bloque {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 0px 80px;
+  border-bottom: 1px solid #929090;
+  color: #000000;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+input:focus {
+  border: 1.5px solid #AE837B;
+  outline: none;
+}
+
+#guardar,
+#cancelar {
+  position: relative; 
+  width: 120px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#guardar {
+  top: 0px;
+  background-color: #ae837bce;
+  left: 84.5%;
+}
+
+#cancelar {
+  top: 30px;
+  background-color: white;
+  left: 75%;
+}
+
+#cancelar:active,
+#cancelar:focus {
+  background-color: #D3D3D3;
+  transition: 50ms;
+}
+
+#guardar:active,
+#guardar:focus {
+  background-color: #90726C;
+  transition: 50ms;
 }
 
 
 
-.registrar{
-  background:#AE837B;
-  color:#fff;
-  font-size: 18px;
-  float:center;
-  margin-top: 20px;
-  border-radius: 5px;
+.principal h1 {
+  position: relative;
+  top: 70;
+  padding: 0% 0% 0% 8%;
+  text-align: left;
+  font-size: 22px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+@media (max-width: 768px) {
+  .formulario {
+    width: 70%;
+    height: 84%;
+  }
+
+  input {
+    width: 200px;
+    height: 41px;
+  }
+
+  .principal {
+    width: 265%;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .formulario {
+    width: 40%;
+    height: 97%;
+  }
+
+  input {
+    width: 200px;
+    height: 41px;
+  }
+
+  .principal {
+    width: 265%;
+  }
 }

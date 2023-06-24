@@ -12,4 +12,5 @@ export interface MateriasPrimas {
     costo_total_unitario: number;
     estado: string;
     proveedores: Proveedor[];
+    stock: number;
 }

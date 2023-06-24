@@ -20,7 +20,8 @@ export class EditarComponentMateriasCrudas {
     costo_unitario: 0,
     costo_total_unitario: 0,
     estado: '',
-    proveedores: []
+    proveedores: [],
+    stock: 0
   }
 
   opcionSeleccionadaCategoria: string = '';
@@ -48,13 +49,41 @@ export class EditarComponentMateriasCrudas {
       precio_linea: [0, Validators.required],
       unidad_medida: [0, Validators.required],
       costo_unitario: [0, Validators.required],
-      costo_total_unitario: [0, Validators.required]
+      costo_total_unitario: [0, Validators.required],
+      stock: [0, Validators.required]
     });
   }
 
   actualizarMateriasCrudas(){
     if (this.materiaCrudasForm.valid) {
       // Acciones para crear el producto utilizando this.materiasListas
+    }
+  }
+
+    //Seleccionar una imagen;
+    url: any;
+    msg = "";
+  
+
+  selectFile(event: any) {
+    if (!event.target.files[0] || event.target.files[0].length == 0) {
+      this.msg = 'Debe seleccionar una imagen';
+      return;
+    }
+
+    var mimeType = event.target.files[0].type;
+
+    if (mimeType.match(/image\/*/) == null) {
+      this.msg = "Solo soporta imagenes";
+      return;
+    }
+
+    var reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+
+    reader.onload = (_event) => {
+      this.msg = "";
+      this.url = reader.result;
     }
   }
 

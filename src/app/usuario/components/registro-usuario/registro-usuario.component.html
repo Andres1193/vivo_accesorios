@@ -1,10 +1,45 @@
-<div class='registro'>
-    <h1>Registro</h1>
+<!-- <a routerLink="/home"></a> -->
+<router-outlet></router-outlet>
+
+<div class="principal">
+  <h1 id="titulo_principal">Nuevo usuario</h1>
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
+  <div class="formulario">
+    <form >
+    <h2 class="bloque">INFORMACIÓN DE CONTACTO</h2>
+      <div class="componente">
+        <label for="Nombre">Nombre:</label>
+        <input type="text" formControlName="nombre" id="Nombre">
+      </div>
+
+      <div class="componente">
+        <label for="correo">Correo:</label>
+        <input type="text" formControlName="correo" id="correo">
+      </div>
+
+      <div class="componente">
+        <label for="usuario">Usuario:</label>
+        <input type="text" formControlName="usuario" id="usuario">
+      </div>
+
+      <div class="componente">
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" formControlName="contrasena" id="contrasena">
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<!-- <div class='wrap'>
+    <h2>Edicion</h2>
       <form>
           <input type='text' name="nombre" id='nombre' placeholder='Nombre' [(ngModel)]="usuario.nombre">
           <input type='text' name="usuario" id='usuario' placeholder='Usuario' [(ngModel)]="usuario.nom_usuario">
           <input type='text' name='correo' id='correo' placeholder='Correo' [(ngModel)]="usuario.correo">
           <input type='password' name='contrasena' id='contrasena' placeholder='Contraseña' [(ngModel)]="usuario.contrasena">
       </form>
-    <button class='registrar' (click)="crearUsuario()">Registrar</button>
-  </div>
+    <button class='registrar' (click)="actualizarUsuario()">Actualizar</button>
+</div> -->

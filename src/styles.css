@@ -2,21 +2,21 @@
 @import "~bootstrap/dist/css/bootstrap.css"
 
 html;
-body, h2{
+body{
     font-size: 17px;
 }
 
 *{
     font-family: "Times New Roman";
+    color: black;
 }
 
 body{
     height: 100%;
 }
 
-h1 {
-    font-size: 24px;
-}
+
+
 
 
 

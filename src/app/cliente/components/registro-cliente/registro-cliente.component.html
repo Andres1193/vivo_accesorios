@@ -2,7 +2,7 @@
 <router-outlet></router-outlet>
 
 <div class="principal">
-  <h1>Registrar cliente</h1>
+  <h1 id="titulo_principal">Nuevo cliente</h1>
   <div id="cancelar">Cancelar</div>
   <div id="guardar">Guardar</div>
   <div class="formulario">
@@ -24,43 +24,29 @@
       </div>
 
       <div class="componente">
-        <label for="correo">Correo:</label>
-        <input type="text" formControlName="correo" id="correo">
-      </div>
-
-      <div class="componente">
         <label for="direccion">Dirección:</label>
         <input type="text" formControlName="direccion" id="direccion">
-      </div>
-
-      <div class="componente">
-        <label for="telefono">Telefono:</label>
-        <input type="text" formControlName="telefono" id="telefono">
-      </div>
-       
-      <div class="componente">
-        <label for="direccion">Dirección:</label>
-        <input type="text" [readonly]="true" formControlName="direccion"
-          id="direccion">
       </div>
 
       <div class="componente">
         <label for="ciudad">Ciudad:</label>
         <input type="text" formControlName="ciudad" id="ciudad">
       </div>
+      
+      <div class="componente">
+        <label for="correo">Correo:</label>
+        <input type="text" formControlName="correo" id="correo">
+      </div>
 
-      <!-- <div [innerHtml]='msg' *ngIf="msg"></div>
-      <label for="file-input" class="custom-file-input">
-        <img [src]="url" *ngIf="url" id="imagen">
-        <input type="file" id="file-input" (change)="selectFile($event)">
-      </label> -->
+      <div class="componente">
+        <label for="telefono">Telefono:</label>
+        <input type="text" formControlName="telefono" id="telefono">
+      </div>
 
     </form>
 
   </div>
 </div>
-
-
 
 <!-- <div class='wrap'>
     <h2>Registro</h2>
