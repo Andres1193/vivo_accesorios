@@ -66,4 +66,32 @@ export class RegistroComponentMateriasListas {
     }
   }
 
+  
+    //Seleccionar una imagen;
+    url: any;
+    msg = "";
+  
+
+  selectFile(event: any) {
+    if (!event.target.files[0] || event.target.files[0].length == 0) {
+      this.msg = 'Debe seleccionar una imagen';
+      return;
+    }
+
+    var mimeType = event.target.files[0].type;
+
+    if (mimeType.match(/image\/*/) == null) {
+      this.msg = "Solo soporta imagenes";
+      return;
+    }
+
+    var reader = new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+
+    reader.onload = (_event) => {
+      this.msg = "";
+      this.url = reader.result;
+    }
+  }
+
 }
