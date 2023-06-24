@@ -2,9 +2,12 @@
 @import "~bootstrap/dist/css/bootstrap.css"
 
 html;
-body, h2 {
-    font-family: "Times New Roman", Times, serif;
-    font-size: 16px;
+body, h2{
+    font-size: 17px;
+}
+
+*{
+    font-family: "Times New Roman";
 }
 
 body{
@@ -17,5 +20,3 @@ h1 {
 
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

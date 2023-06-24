@@ -1,4 +1,44 @@
-div{
-  background-color: #efefef;
+.estilo_modal{
+  margin: auto;
+  width: 45%;
+  height: 70%;
+  background-color: white;
+  border: 55px solid #ae837bc1;
+  border-radius: 5px;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 3.3%;
+  display: inline-block;
 }
 
+.contenedor .botonAceptar,
+.contenedor .botonCancelar{
+  width: 10%;
+  height: 6%;
+  top: 36%;
+  position: absolute;
+  border: none;
+  border-radius: 2px;
+  color: white;
+  font-size: 16.5px;
+  font-weight: 300;
+}
+
+.contenedor .botonAceptar{
+  right: 55.5%;
+  background-color: #1BB324;
+}
+
+.contenedor .botonCancelar{
+  right: 35.5%;
+  background-color: #E13C3C;
+}
+
+.contenedor{
+  top: 10%;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+}
