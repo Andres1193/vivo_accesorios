@@ -11,7 +11,7 @@ import { Producto } from 'src/app/producto/interfaces/producto.interface';
 
 export class ListadoComponent {
 
-  public isCollapsed = false;
+  public isCollapsed = true;
 
   public frontActual: string = 'Cliente'; // frontActual
 
