@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SwitchService } from 'src/app/ServicioModal/switch.service';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { ProductoService } from 'src/app/producto/services/producto.service';
 
@@ -9,9 +8,8 @@ import { ProductoService } from 'src/app/producto/services/producto.service';
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponentProducto implements OnInit{
-  public modalSwitch:boolean = false;
-  // public productoForm: FormGroup;
+export class RegistroComponentProducto {
+  public productoForm: FormGroup;
   public producto: Producto = {
     idProducto: 0,
     codigoProducto: '',
@@ -23,29 +21,21 @@ export class RegistroComponentProducto implements OnInit{
     estado: 'a',
   };
 
-  constructor(private serviceModal: SwitchService){
-
+  constructor(private formBuilder: FormBuilder, private productoService: ProductoService) {
+    this.productoForm = this.formBuilder.group({
+      codigoProducto: ['', Validators.required],
+      nombre: ['', Validators.required],
+      costo_Producto: [0, Validators.required],
+      porcent_Utilidad: [0, Validators.required],
+      precio_Producto: [0, Validators.required],
+    });
   }
 
-  ngOnInit(): void {
-      this.serviceModal.$modal.subscribe((valor)=> this.modalSwitch = valor)
+  crearProducto() {
+    if (this.productoForm.valid) {
+      // Acciones para crear el producto utilizando this.producto
+    }
   }
-
-  // constructor(private formBuilder: FormBuilder, private productoService: ProductoService) {
-  //   this.productoForm = this.formBuilder.group({
-  //     codigoProducto: ['', Validators.required],
-  //     nombre: ['', Validators.required],
-  //     costo_Producto: [0, Validators.required],
-  //     porcent_Utilidad: [0, Validators.required],
-  //     precio_Producto: [0, Validators.required],
-  //   });
-  // }
-
-  // crearProducto() {
-  //   if (this.productoForm.valid) {
-  //     // Acciones para crear el producto utilizando this.producto
-  //   }
-  // }
 
   //Seleccionar una imagen;
   url: any;
@@ -71,10 +61,5 @@ export class RegistroComponentProducto implements OnInit{
       this.msg = "";
       this.url = reader.result;
     }
-  }
-
-  //ventana modal
-  AbrirModal(){
-    this.modalSwitch = true;
   }
 }
