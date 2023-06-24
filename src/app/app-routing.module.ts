@@ -23,7 +23,7 @@ const routes: Routes = [
     { path: 'producto', component: RegistroComponentProducto, pathMatch:'full'},
     { path: 'proveedor', component: RegistroProveedorComponent, pathMatch:'full'},
     { path: 'usuario', component: RegistroUsuarioComponent, pathMatch:'full'},
-    { path: 'Receta', component: RegistroRecetaComponent, pathMatch:'full'},
+    { path: 'receta', component: RegistroRecetaComponent, pathMatch:'full'},
     { path: 'cliente', component: RegistroClienteComponent, pathMatch:'full'},
     { path: 'mp_crudas', component: RegistroComponentMateriasCrudas, pathMatch:'full'},
     { path: 'mp_listas', component: RegistroComponentMateriasCrudas, pathMatch:'full'},
