@@ -1,38 +1,3 @@
-<div class="principal">
-  <div class="formulario">
-    <h1 >Materia Lista</h1>
-    <form [formGroup]="materiaListaForm" (ngSubmit)="crearMateriaLista()">
-      <div class="formulario__input">
-        <input type="text" formControlName="desc_mp"
-          placeholder="Descripcion">
-        <input type="text" formControlName="categoria_mp" 
-          placeholder="Categoria">
-        <input type="number" formControlName="cant_linea"
-          placeholder="Cantidad linea">
-        <input type="number" formControlName="precio_linea"
-          placeholder="Precio linea">
-        <input type="text" formControlName="unidad_medida"
-          placeholder="Unidad medida">
-        <input type="number" formControlName="costo_unitario"
-          placeholder="Costo unitario">
-        <input type="number" formControlName="costo_total_unitario"
-          placeholder="Costo unitario">
-        <input type="number" formControlName="costo_banio_linea"
-          placeholder="Costo baño linea">
-        <input type="number" formControlName="cantidad_banada"
-          placeholder="Cantidad bañada">
-        <input type="number" formControlName="costo_banio_un"
-          placeholder="Costo baño unidad">
-        <select>
-          <option *ngFor="let proveedor of materiasListas.proveedores">{{ proveedor }}</option>
-        </select>
-        <!-- hacer el select de proveedores -->
-      </div>
-      <button type="submit">Crear Materia Lista</button>
-    </form>
-  </div>
-</div>
-
 
 <!-- <div class='wrap'>
     <h2>Registro</h2>
