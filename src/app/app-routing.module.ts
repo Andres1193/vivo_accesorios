@@ -13,6 +13,7 @@ import { RegistroComponentMateriasCrudas } from './materias/components/materias-
 import { RegistroClienteComponent } from './cliente/components/registro-cliente/registro-cliente.component';
 import { RegistroComponentProducto } from './producto/components/producto/registro/registro.component';
 import { RegistroComponentMateriasListas } from './materias/components/materias-listas/registro-materias-listas/registro-materias-listas.component';
+import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
     { path: 'cliente', component: RegistroClienteComponent, pathMatch:'full'},
     { path: 'mp_crudas', component: RegistroComponentMateriasCrudas, pathMatch:'full'},
     { path: 'mp_listas', component: RegistroComponentMateriasListas, pathMatch:'full'},
+    { path: 'modal', component: ModalEliminarComponent, pathMatch:'full'},
     // { path: 'register', component: SignInComponent },
     
     { path: '**', redirectTo: '/home' }

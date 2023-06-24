@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { ProductoService } from 'src/app/producto/services/producto.service';
+import { ServiceModalService } from 'src/app/serviciosModal/service-modal.service';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.css']
 })
-export class RegistroComponentProducto {
+export class RegistroComponentProducto implements OnInit{
   public productoForm: FormGroup;
   public producto: Producto = {
     idProducto: 0,
@@ -21,7 +22,11 @@ export class RegistroComponentProducto {
     estado: 'a',
   };
 
-  constructor(private formBuilder: FormBuilder, private productoService: ProductoService) {
+  ngOnInit(): void {
+      this.modalService.$modal.subscribe((valor)=>this.modalSwitch = valor)
+  }
+
+  constructor(private modalService:ServiceModalService, private formBuilder: FormBuilder, private productoService: ProductoService) {
     this.productoForm = this.formBuilder.group({
       codigoProducto: ['', Validators.required],
       nombre: ['', Validators.required],
@@ -61,5 +66,13 @@ export class RegistroComponentProducto {
       this.msg = "";
       this.url = reader.result;
     }
+  }
+
+  //modal
+
+  modalSwitch:boolean= false;
+
+  openModal(){
+    this.modalSwitch = true;
   }
 }
