@@ -5,9 +5,9 @@ import { ProductoService } from 'src/app/producto/services/producto.service';
 import { ServiceModalService } from 'src/app/serviciosModal/service-modal.service';
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  selector: 'app-registro-producto',
+  templateUrl: './registro-producto.component.html',
+  styleUrls: ['./registro-producto.component.css']
 })
 export class RegistroComponentProducto implements OnInit{
   public productoForm: FormGroup;

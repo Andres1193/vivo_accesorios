@@ -1,0 +1,100 @@
+<!-- <a routerLink="/home"></a> -->
+<router-outlet></router-outlet>
+
+<div class="principal">
+  <h1>Registrar materia lista</h1>
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
+  <div class="formulario">
+    <h2 class="bloque">INFORMACIÓN GENERAL</h2>
+    <form [formGroup]="materialEmpaqueForm" (ngSubmit)="crearMaterialEmpaque()">
+      <div class="componente">
+        <label for="estado">Tipo material de empaque:</label>
+        <input type="text" formControlName="estado_me" id="estado">
+      </div>
+
+      <div class="componente">
+        <label for="proveedor">Codigo proveedor:</label>
+        <input type="number" [readonly]="true" formControlName="codigo_proveedor" id="proveedor">
+      </div>
+
+      <div class="componente">
+        <label for="categoria">Proveedor:</label>
+        <select [(ngModel)]="opcionSeleccionadaProveedor" (change)="seleccionarOpcionProveedor(opcionSeleccionadaProveedor)">
+          <option *ngFor="let proveedor of materialEmpaque.proveedores" [value]="">{{ "" }}</option>
+        </select>>
+      </div>
+
+      <div class="componente">
+        <label for="categoria">Codigo interno:</label>
+        <input type="number" [readonly]="true" formControlName="codigo_categoria"
+          id="categoria">
+      </div>
+
+      <div class="componente">
+        <label for="unidad">Categoria:</label>
+        <select [(ngModel)]="opcionSeleccionadaCategoria" (change)="seleccionarOpcionCategoria(opcionSeleccionadaCategoria)">
+          <option *ngFor="let categoria of materialEmpaque.categorias" [value]="">{{ "" }}</option>
+        </select>
+      </div>
+
+      <div class="componente">
+        <label for="nombre">Nombre:</label>
+        <input type="text" formControlName="nombre"
+          id="nombre">
+      </div>
+
+      <!-- <div [innerHtml]='msg' *ngIf="msg"></div>
+      <label for="file-input" class="custom-file-input">
+        <img [src]="url" *ngIf="url" id="imagen">
+        <input type="file" id="file-input" (change)="selectFile($event)">
+      </label> -->
+
+    </form>
+
+  </div>
+
+  <div class="formulario">
+    <h2 class="bloque">COMPOSICIÓN</h2>
+    <hr>
+    <form [formGroup]="materialEmpaqueForm" (ngSubmit)="crearMaterialEmpaque()">
+      <div class="componente">
+        <label for="estado">Tipo material de empaque:</label>
+        <input type="text" formControlName="estado_me" id="estado">
+      </div>
+
+      <div class="componente">
+        <label for="proveedor">Codigo proveedor:</label>
+        <input type="number" [readonly]="true" formControlName="codigo_proveedor" id="proveedor">
+      </div>
+
+      <div class="componente">
+        <label for="categoria">Proveedor:</label>
+        <select [(ngModel)]="opcionSeleccionadaProveedor" (change)="seleccionarOpcionProveedor(opcionSeleccionadaProveedor)">
+          <option *ngFor="let proveedor of materialEmpaque.proveedores" [value]="">{{ "" }}</option>
+        </select>>
+      </div>
+
+      <div class="componente">
+        <label for="categoria">Codigo interno:</label>
+        <input type="number" [readonly]="true" formControlName="codigo_categoria"
+          id="categoria">
+      </div>
+
+      <div class="componente">
+        <label for="unidad">Categoria:</label>
+        <select [(ngModel)]="opcionSeleccionadaCategoria" (change)="seleccionarOpcionCategoria(opcionSeleccionadaCategoria)">
+          <option *ngFor="let categoria of materialEmpaque.categorias" [value]="">{{ "" }}</option>
+        </select>
+      </div>
+
+      <div class="componente">
+        <label for="nombre">Nombre:</label>
+        <input type="text" formControlName="nombre"
+          id="nombre">
+      </div>
+
+    </form>
+
+  </div>
+</div>

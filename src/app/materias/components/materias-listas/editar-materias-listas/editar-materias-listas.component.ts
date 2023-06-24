@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MateriasListas } from 'src/app/materias/interfaces/materias-listas.interface';
 
 @Component({
-  selector: 'app-editar',
+  selector: 'app-editar-materias-listas',
   templateUrl: './editar-materias-listas.component.html',
   styleUrls: ['./editar-materias-listas.component.css']
 })
