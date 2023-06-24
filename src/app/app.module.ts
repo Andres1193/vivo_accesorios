@@ -12,6 +12,7 @@ import { ModalEliminarModule } from "./producto/components/modal-eliminar/modal-
 import { MatSelectModule } from "@angular/material/select";
 import { ListadoGeneralModule } from "./listado-general/listado-general.module";
 import { MatFormFieldModule } from "@angular/material/form-field";
+import { RecetaModule } from "./receta/receta.module";
 
 
 
@@ -32,7 +33,8 @@ import { MatFormFieldModule } from "@angular/material/form-field";
     RouterModule,
     MatFormFieldModule,
     MatSelectModule,
-    ListadoGeneralModule
+    ListadoGeneralModule,
+    RecetaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
