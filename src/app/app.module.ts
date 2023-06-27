@@ -16,6 +16,7 @@ import { ProveedorModule } from "./proveedor/proveedor.module";
 import { MateriasModule } from "./materias/materias.module";
 import { ClienteModule } from './cliente/cliente.module';
 import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
+import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -36,7 +37,9 @@ import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
     ProveedorModule,
     MateriasModule,
     ClienteModule,
-    ModalEliminarModule
+    ModalEliminarModule,
+    NgbModule,
+    NgbCollapseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
