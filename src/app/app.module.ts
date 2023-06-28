@@ -17,6 +17,8 @@ import { MateriasModule } from "./materias/materias.module";
 import { ClienteModule } from './cliente/cliente.module';
 import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
 import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { MaterialEmpaqueModule } from "./material-empaque/material-empaque.module";
+import { PedidoModule } from "./pedido/pedido.module";
 
 
 
@@ -40,7 +42,10 @@ import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     ModalEliminarModule,
     NgbModule,
     NgbCollapseModule,
-    UsuarioModule
+    UsuarioModule,
+    MaterialEmpaqueModule,
+    PedidoModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { Pedido } from '../../interfaces/pedido.interface';
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  selector: 'app-registro-pedido',
+  templateUrl: './registro-pedido.component.html',
+  styleUrls: ['./registro-pedido.component.css']
 })
-export class RegistroComponent {
+export class RegistroPedidoComponent {
 
   // public pedido: Pedido = {
   //   codigoPedido: number;
