@@ -3,7 +3,7 @@ import { Cliente } from '../../interfaces/cliente.interfaces';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-registro',
+  selector: 'app-registro-cliente',
   templateUrl: './registro-cliente.component.html',
   styleUrls: ['./registro-cliente.component.css']
 })

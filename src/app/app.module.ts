@@ -39,7 +39,8 @@ import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     ClienteModule,
     ModalEliminarModule,
     NgbModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    UsuarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
