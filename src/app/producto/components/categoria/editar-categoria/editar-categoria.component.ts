@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Categoria } from 'src/app/producto/interfaces/categoria.interface';
 
 @Component({
@@ -7,11 +8,16 @@ import { Categoria } from 'src/app/producto/interfaces/categoria.interface';
   styleUrls: ['./editar-categoria.component.css']
 })
 export class EditarComponentCategoria {
-
+  public categoriaForm: FormGroup;
   public categoria: Categoria = {
     codigoCategoria: 0,
-    desc_categoria: '',
-    estado: 'a',
+    desc_categoria: ''
+  }
+
+  constructor(private formBuilder: FormBuilder) {
+    this.categoriaForm = this.formBuilder.group({
+      desc_categoria: ['', Validators.required]
+    });
   }
 
   actualizarCategoria(){
