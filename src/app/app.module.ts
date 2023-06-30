@@ -11,7 +11,10 @@ import { RecetaModule } from "./receta/receta.module";
 import { ProveedorModule } from "./proveedor/proveedor.module";
 import { MateriasModule } from "./materias/materias.module";
 import { ClienteModule } from './cliente/cliente.module';
+import { Login } from "./login/interfaces/login.interface";
 import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginModule } from "./login/login.module";
+import { UsuarioModule } from "./usuario/usuario.module";
 
 
 
@@ -31,7 +34,9 @@ import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     RecetaModule,
     ProveedorModule,
     MateriasModule,
-    ClienteModule
+    ClienteModule,
+    LoginModule,
+    UsuarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
