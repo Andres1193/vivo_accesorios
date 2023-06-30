@@ -15,6 +15,10 @@ import { RecetaModule } from "./receta/receta.module";
 import { ProveedorModule } from "./proveedor/proveedor.module";
 import { MateriasModule } from "./materias/materias.module";
 import { ClienteModule } from './cliente/cliente.module';
+import { ModalEliminarModule } from "./modal-eliminar/modal-eliminar.module";
+import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { MaterialEmpaqueModule } from "./material-empaque/material-empaque.module";
+import { PedidoModule } from "./pedido/pedido.module";
 
 
 
@@ -34,7 +38,8 @@ import { ClienteModule } from './cliente/cliente.module';
     RecetaModule,
     ProveedorModule,
     MateriasModule,
-    ClienteModule
+    ClienteModule,
+    ModalEliminarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

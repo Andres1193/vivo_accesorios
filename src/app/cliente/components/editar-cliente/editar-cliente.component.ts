@@ -3,7 +3,7 @@ import { Cliente } from '../../interfaces/cliente.interfaces';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-editar',
+  selector: 'app-editar-cliente',
   templateUrl: './editar-cliente.component.html',
   styleUrls: ['./editar-cliente.component.css']
 })

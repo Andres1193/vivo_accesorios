@@ -1,0 +1,54 @@
+<!-- <a routerLink="/home"></a> -->
+<router-outlet></router-outlet>
+
+<div class="principal">
+  <h1>Editar pedido</h1>
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
+  <div class="formulario">
+    <h2 class="bloque">INFORMACIÓN GENERAL</h2>
+    <form [formGroup]="pedidoForm" (ngSubmit)="actualizarPedido()">
+      <div class="componente">
+        <label for="codigo">Cliente:</label>
+        <select [(ngModel)]="opcionSeleccionada" (change)="seleccionarOpcion(opcionSeleccionada)">
+            <option *ngFor="let pedido of pedido.clientes" [value]="pedido">{{ pedido }}</option>
+        </select>
+      </div>
+
+      <div class="componente">
+        <label for="fecha">Fecha:</label>
+        <input type="text" formControlName="fecha" id="fecha">
+      </div>
+
+      <div class="componente">
+        <label for="cantidad">Producto:</label>
+        <select [(ngModel)]="opcionSeleccionada" (change)="seleccionarOpcion(opcionSeleccionada)">
+            <option *ngFor="let cliente of pedido.clientes" [value]="cliente">{{ cliente }}</option>
+        </select>
+      </div>
+
+      <div class="componente">
+        <label for="cantidad">Cantidad:</label>
+        <input type="text" formControlName="cantidad" id="cantidad">
+      </div>
+
+      <div id="anadir">
+        Añadir
+      </div>
+
+      <div class="componente">
+        <label for="valor">Productos:</label>
+        <textarea [ngModel]=""></textarea>
+      </div>
+
+      <!-- <div [innerHtml]='msg' *ngIf="msg"></div>
+      <label for="file-input" class="custom-file-input">
+        <img [src]="url" *ngIf="url" id="imagen">
+        <input type="file" id="file-input" (change)="selectFile($event)">
+      </label> -->
+
+    </form>
+
+  </div>
+</div>
+

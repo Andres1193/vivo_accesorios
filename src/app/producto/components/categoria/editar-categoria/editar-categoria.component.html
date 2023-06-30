@@ -1,7 +1,20 @@
-<div class='wrap'>
-    <h2>Edicion</h2>
-      <form>
-          <input type='text' name="desc_categoria" id='codigo_Producto' placeholder='Codigo producto' [(ngModel)]="categoria.desc_categoria">
-      </form>
-    <button class='registrar' (click)="actualizarCategoria()">Actualizar</button>
+<!-- <a routerLink="/home"></a> -->
+<router-outlet></router-outlet>
+
+<div class="principal">
+  <h1>Editar categoria</h1>
+  <div id="cancelar">Cancelar</div>
+  <div id="guardar">Guardar</div>
+  <div class="formulario">
+    <h2 class="bloque">INFORMACIÓN GENERAL</h2>
+    <form [formGroup]="categoriaForm" (ngSubmit)="actualizarCategoria()">
+
+      <div class="componente">
+        <label for="descripcion">Descripción:</label>
+        <input type="text" formControlName="desc_categoria" id="descripcion">
+      </div>
+
+    </form>
+
   </div>
+</div>

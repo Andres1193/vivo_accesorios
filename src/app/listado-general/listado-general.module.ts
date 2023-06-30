@@ -8,7 +8,6 @@ import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "../app-routing.module";
 import { ListadoComponent } from "./components/listado/listado.component";
 import { ProductoModule } from "../producto/producto.module";
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { NgbCollapseModule, NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
