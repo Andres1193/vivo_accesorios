@@ -2,9 +2,9 @@
 <router-outlet></router-outlet>
 
 <div class="principal">
-  <h1>Nuevo producto</h1>
-  <div id="cancelar">Cancelar</div>
-  <div id="guardar">Guardar</div>
+  <h1>Nuevo producto</h1>  
+  <label id="cancelar">Cancelar</label>
+  <label id="guardar">Guardar</label>
   <div class="formulario">
     <h2 class="bloque">INFORMACIÓN GENERAL</h2>
     <form [formGroup]="productoForm" (ngSubmit)="crearProducto()">
@@ -41,7 +41,9 @@
         <input type="file" id="file-input" (change)="selectFile($event)">
       </label>
 
-    </form>
+      </form>
+      
+    <label id="crear-categoria">Crear categoria</label>
 
   </div>
 </div>
