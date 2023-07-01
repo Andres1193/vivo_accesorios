@@ -60,13 +60,13 @@ export class ListadoComponent {
 
   public cliente: Cliente = {
     identificacion: '',
-    nombre: '',
-    apellido: '',
+    nombres: '',
+    apellidos: '',
     correo: '',
-    direccion: '',
     telefono: '',
+    direccion: '',
     ciudad: '',
-    estado:'a'
+    estado:'Activo'
   };
 
   @Input() clientes: Cliente[] = [];

@@ -1,44 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Proveedor } from '../interfaces/proveedor.interface';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProveedorService {
 
+  apiUrl = "http://127.0.0.1:8000/usuarios/api/proveedores/"
+
   constructor(private http: HttpClient) { }
 
-  public crearProveedor(proveedor: Proveedor){
-
-    //defino la url donde esta el servicio
-    let  url ='http://localhost/VivoAccesorios/ProveedorService.php';
-       let header=new HttpHeaders();
-       header.append('Content-Type','aplication/json')
-       header.append('Access-Control-Allow-Methods','"POST"')
-       header.append('Access-Control-Allow-Origin','http://localhost');
-       return this.http.post(url,JSON.stringify(proveedor),{headers:header});
+  getProveeedores() {
+    return this.http.get(this.apiUrl);
   }
 
- public getProveedor(p: Proveedor | null = null){
- 
-  let  url ='http://localhost/tiendaservice/ProveedorService.php';
-     let header=new HttpHeaders();
-     header.append('Content-Type','aplication/json')
-     header.append('Access-Control-Allow-Methods','"GET"')
-     header.append('Access-Control-Allow-Origin','http://localhost');
-
-     return this.http.get<Proveedor[]>(url,{headers:header});
+  crearProveeedor(proveedor: Proveedor) {
+    return this.http.post(this.apiUrl, proveedor);
   }
 
-  public actualizarProveedor(proveedor: Proveedor) : Observable<Proveedor> {
-    let  url ='http://localhost/VivoAccesorios/Proveedorervice.php';
-    let header = new HttpHeaders();
-    header.append('Content-Type', 'aplication/json')
-    header.append('Access-Control-Allow-Methods', '"POST, GET,DELETE,PUT"')
-    header.append('Access-Control-Allow-Origin', 'http://localhost');
-    return this.http.put<Proveedor>(url, JSON.stringify(proveedor), { headers: header });
+  actualizarProveeedor(proveedorId: number, proveedor: Proveedor) {
+    const url = `${this.apiUrl}${proveedorId}/`;
+    return this.http.put(url, proveedor);
+  }
+
+  eliminarProveeedor(proveedorId: number) {
+    const url = `${this.apiUrl}${proveedorId}/`;
+    return this.http.delete(url);
   }
 
 }

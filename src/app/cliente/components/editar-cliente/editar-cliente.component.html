@@ -3,10 +3,11 @@
 
 <div class="principal">
   <h1 id="titulo_principal">Editar cliente</h1>
-  <div id="cancelar">Cancelar</div>
-  <div id="guardar">Guardar</div>
-  <div class="formulario">
-    <form [formGroup]="clienteForm" (ngSubmit)="actualizarCliente()">
+  <form [formGroup]="clienteForm" (ngSubmit)="actualizarCliente()">
+    <button type="submit" id="cancelar">Cancelar</button>
+    <button type="submit" id="guardar">Guardar</button>
+    <div class="formulario">
+      <h2 class="bloque">INFORMACIÓN DE CONTACTO</h2>
       <div class="componente">
         <label for="identificacion">Identificación:</label>
         <input type="text" formControlName="identificacion" id="identificacion">
@@ -14,12 +15,12 @@
 
       <div class="componente">
         <label for="nombre">Nombre:</label>
-        <input type="text" formControlName="nombre" id="nombre">
+        <input type="text" formControlName="nombres" id="nombres">
       </div>
 
       <div class="componente">
         <label for="apellido">Apellido:</label>
-        <input type="text" formControlName="apellido" id="apellido">
+        <input type="text" formControlName="apellidos" id="apellidos">
       </div>
 
       <div class="componente">
@@ -28,19 +29,13 @@
       </div>
 
       <div class="componente">
-        <label for="direccion">Dirección:</label>
-        <input type="text" formControlName="direccion" id="direccion">
-      </div>
-
-      <div class="componente">
         <label for="telefono">Telefono:</label>
         <input type="text" formControlName="telefono" id="telefono">
       </div>
-       
+
       <div class="componente">
         <label for="direccion">Dirección:</label>
-        <input type="text" [readonly]="true" formControlName="direccion"
-          id="direccion">
+        <input type="text" formControlName="direccion" id="direccion">
       </div>
 
       <div class="componente">
@@ -48,11 +43,9 @@
         <input type="text" formControlName="ciudad" id="ciudad">
       </div>
 
-    </form>
-
-  </div>
+    </div>
+  </form>
 </div>
-
 
 <!-- <div class='wrap'>
     <h2>Edicion</h2>
