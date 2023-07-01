@@ -2,8 +2,8 @@
 <!-- <router-outlet></router-outlet> -->
 
 <div class="principal">
-  <h1 id="titulo_principal">Nuevo usuario</h1>
-  <form [formGroup]="UsuarioForm" >
+  <h1 id="titulo_principal">Nuevo usuario</h1> 
+  <form [formGroup]="UsuarioForm" (ngSubmit)="crearUsuario()">
     <button type="submit" id="cancelar">Cancelar</button>
     <button type="submit" id="guardar">Guardar</button>
     <div class="formulario">

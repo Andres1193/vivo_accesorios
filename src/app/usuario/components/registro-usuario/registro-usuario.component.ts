@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -23,11 +23,11 @@ export class RegistroUsuarioComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
     this.UsuarioForm = this.formBuilder.group({
-      nombre: ['', Validators.required],
-      nom_usuario: ['', Validators.required],
-      correo: ['', Validators.required],
-      contrasena: ['', Validators.required],
-      estado: ['', Validators.required],
+      nombre: new FormControl(''),
+      nom_usuario: new FormControl(''),
+      correo: new FormControl(''),
+      contrasena: new FormControl(''),
+      estado: new FormControl('Activo')
     });
   }
 
@@ -36,35 +36,28 @@ export class RegistroUsuarioComponent implements OnInit {
 
   }
 
-  // getUsuarios(): void {
-  //   this.usuarioService
-  //     .getUsuarios()
-  //     .subscribe((usuarios) => (this.usuarios = usuarios));
-  // }
+  crearUsuario() {
+    if (this.UsuarioForm.valid) {
+      this.usuarioService.crearUsuario(this.UsuarioForm.value).subscribe(
+        (response) => {
+          // Manejar la respuesta exitosa
+          console.log('Usuario creado:', response);
+        }
+        // (error) => {
+        //   // Manejar el error
+        //   console.error('Error al crear el producto:', error);
+        // }
+      );
+    }
 
-  // crearProducto() {
-  //   if (this.productoForm.valid) {
-      // Acciones para crear el producto utilizando this.producto
-  //   }
-
-  // crearProducto() {
-  //   if (this.UsuarioForm.valid) {
-  //     this.usuarioService.crearUsuario(this.usuario).subscribe(
-  //       (response) => {
-  //         // Manejar la respuesta exitosa
-  //         console.log('Producto creado:', response);
-  //       },
-  //       (error) => {
-  //         // Manejar el error
-  //         console.error('Error al crear el producto:', error);
-  //       }
-  //     );
-
-  //   }
-  // }
+  }
 
 
 
 }
+
+
+
+
 
 
