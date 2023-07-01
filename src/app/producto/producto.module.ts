@@ -9,7 +9,7 @@ import { EditarComponentCategoria } from './components/categoria/editar-categori
 import { AppRoutingModule } from '../app-routing.module';
 import { RouterModule } from '@angular/router';
 
-
+ 
 
 @NgModule({
     declarations: [

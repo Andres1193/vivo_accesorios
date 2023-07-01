@@ -1,7 +1,7 @@
-import { Component, Input, OnInit,Type } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -9,55 +9,57 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./registro-usuario.component.css'],
 
 })
-export class RegistroUsuarioComponent {
+export class RegistroUsuarioComponent implements OnInit {
+
+  public UsuarioForm: FormGroup;
+  public usuario: Usuario = {
+    nombre: '',
+    nom_usuario: '',
+    correo: '',
+    contrasena: '',
+    estado: ''
+  };
+
+  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService) {
+    this.UsuarioForm = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      nom_usuario: ['', Validators.required],
+      correo: ['', Validators.required],
+      contrasena: ['', Validators.required],
+      estado: ['', Validators.required],
+    });
+  }
+
+
+  ngOnInit(): void {
+
+  }
+
+  // getUsuarios(): void {
+  //   this.usuarioService
+  //     .getUsuarios()
+  //     .subscribe((usuarios) => (this.usuarios = usuarios));
+  // }
+
+
+  crearProducto() {
+    if (this.UsuarioForm.valid) {
+      this.usuarioService.crearUsuario(this.usuario).subscribe(
+        (response) => {
+          // Manejar la respuesta exitosa
+          console.log('Producto creado:', response);
+        },
+        (error) => {
+          // Manejar el error
+          console.error('Error al crear el producto:', error);
+        }
+      );
+
+    }
+  }
 
   
 
-  // public usuario: Usuario = {
-  //   nombre: '',
-  //   nom_usuario: '',
-  //   correo: '',
-  //   contrasena: '',
-  //   estado: ''
-  // };
-
-  constructor (private usuarioService: UsuarioService) { }
-
-  // @Input() usuarios: Usuario[] = [];
-
-  // ngOnInit(): void {
-  //   this.usuarioService.getUsuarios().subscribe(
-  //     resp=> {
-  //       console.log(resp);
-  //       this.usuarios = resp;
-  //     }
-  //   );
-
-
-  // crearUsuario() {
-  //   if ( this.usuario.nombre.length === 0 ) {
-  //     return ;
-  //   } else if ( this.usuario.nom_usuario.length === 0 ) {
-  //     return ;
-  //   } else if ( this.usuario.correo.length === 0 ) {
-  //     return ;
-  //   } else if ( this.usuario.contrasena.length === 0 ) {
-  //     return ;
-  //   } else {
-
-  //     this.usuarioService.crearUsuario(this.usuario).subscribe(resp=>{
-  //       this.usuario = {
-  //         nombre: '',
-  //         nom_usuario: '',
-  //         correo: '',
-  //         contrasena: '',
-  //         estado: ''
-  //       };
-  //     });
-
-
-  //   }
-
-  // }
 }
+
 
