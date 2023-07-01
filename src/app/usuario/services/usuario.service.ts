@@ -28,5 +28,4 @@ export class UsuarioService {
     const url = `${this.apiUrl}${usuarioId}/`;
     return this.http.delete(url);
   }
-
 }

@@ -35,21 +35,13 @@ export class RegistroUsuarioComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-  // getUsuarios(): void {
-  //   this.usuarioService
-  //     .getUsuarios()
-  //     .subscribe((usuarios) => (this.usuarios = usuarios));
-  // }
-
-
  
   crearUsuario() {
     // if (this.UsuarioForm.valid) {
       this.usuarioService.crearUsuario(this.usuario).subscribe(
         (response) => {
           // Manejar la respuesta exitosa
-          console.log('Producto creado:', response);
+          console.log('Usuario creado:', response);
         }
         // (error) => {
         //   // Manejar el error
