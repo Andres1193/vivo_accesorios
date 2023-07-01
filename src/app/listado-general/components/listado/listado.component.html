@@ -103,7 +103,7 @@
     </div>
   </div>
 
- <div class="container" *ngIf="!flagContent">
+  <div class="container" *ngIf="!flagContent">
     <div class="Top">
       <div class="head">
         <h2>{{ frontActual }}</h2>
@@ -132,12 +132,9 @@
         </thead>
         <tbody>
 
-          <ng-container *ngFor="let proveedor of imprimirProveedores()">
-            <tr >
-              <td *ngFor="let key of getPropiedades(proveedor)">{{ proveedor[key] }}</td>
-            </tr>
-          </ng-container>
-            <tr class="rows">
+          <ng-container *ngFor="let item of listados">
+            <tr>
+              <td *ngFor="let key of getPropiedades(item)">{{ item[key] }}</td>
               <td>
                 <ul class="actionsButton">
                   <li>
@@ -184,7 +181,8 @@
                 </ul>
               </td>
             </tr>
-          </tbody>
-        </table>
-      </div>
+          </ng-container>
+        </tbody>
+      </table>
     </div>
+  </div>
