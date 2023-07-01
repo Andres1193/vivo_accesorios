@@ -11,6 +11,8 @@ import { Producto } from 'src/app/producto/interfaces/producto.interface';
 
 export class ListadoComponent {
 
+  public crear = '';
+
   public isCollapsed = true;
 
   public frontActual: string = 'Cliente'; // frontActual
@@ -89,6 +91,10 @@ export class ListadoComponent {
 
   selectLista(name: string): void {
     this.frontActual = name;
+    if(name == 'Producto'){
+      this.crear = 'registro_producto';
+    }
+    
   }
 
   getAtributos(): string[] {
