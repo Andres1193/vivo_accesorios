@@ -19,16 +19,16 @@ export class EditarUsuarioComponent {
 
   constructor(private usuarioService: UsuarioService) {}
 
-  ngOnInit(): void {
-    this.usuarioService.getUsuarios(this.usuario).subscribe(resp =>{
-      this.usuario =  resp[0];
-      console.log(resp);
-    });
-  }
+  // ngOnInit(): void {
+  //   this.usuarioService.getUsuarios(this.usuario).subscribe(resp =>{
+  //     this.usuario =  resp[0];
+  //     console.log(resp);
+  //   });
+  // }
 
-  actualizarUsuario(){
-    this.usuarioService.actualizarUsuario(this.usuario).subscribe(resp =>{
-      console.log(resp);
-    });
-  }
+  // actualizarUsuario(){
+  //   this.usuarioService.actualizarUsuario(this.usuario).subscribe(resp =>{
+  //     console.log(resp);
+  //   });
+  // }
 }

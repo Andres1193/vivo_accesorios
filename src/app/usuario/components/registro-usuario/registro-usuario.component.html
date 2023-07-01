@@ -3,11 +3,11 @@
 
 <div class="principal">
   <h1 id="titulo_principal">Nuevo usuario</h1>
-  <div id="cancelar">Cancelar</div>
-  <div id="guardar">Guardar</div>
-  <div class="formulario">
-    <form >
-    <h2 class="bloque">INFORMACIÓN DE CONTACTO</h2>
+  <form [formGroup]="UsuarioForm" (ngSubmit)="crearUsuario()">
+    <button type="submit" id="cancelar">Cancelar</button>
+    <button type="submit" id="guardar">Guardar</button>
+    <div class="formulario">
+      <h2 class="bloque">INFORMACIÓN DE CONTACTO</h2>
       <div class="componente">
         <label for="Nombre">Nombre:</label>
         <input type="text" formControlName="nombre" id="Nombre">
@@ -20,16 +20,15 @@
 
       <div class="componente">
         <label for="usuario">Usuario:</label>
-        <input type="text" formControlName="usuario" id="usuario">
+        <input type="text" formControlName="nom_usuario" id="nom_usuario">
       </div>
 
       <div class="componente">
         <label for="contrasena">Contraseña:</label>
         <input type="password" formControlName="contrasena" id="contrasena">
       </div>
-
-    </form>
-  </div>
+    </div>
+  </form>
 </div>
 
 <!-- <div class='wrap'>
@@ -42,5 +41,3 @@
       </form>
     <button class='registrar' (click)="actualizarUsuario()">Actualizar</button>
 </div> -->
-
-

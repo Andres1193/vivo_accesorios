@@ -41,22 +41,19 @@ export class RegistroUsuarioComponent implements OnInit {
   //     .subscribe((usuarios) => (this.usuarios = usuarios));
   // }
 
-  // crearProducto() {
-  //   if (this.productoForm.valid) {
-      // Acciones para crear el producto utilizando this.producto
-  //   }
-
-  crearProducto() {
+  crearUsuario() {
+    console.log(this.usuario)
     if (this.UsuarioForm.valid) {
+      console.log('crear')
       this.usuarioService.crearUsuario(this.usuario).subscribe(
         (response) => {
-          // Manejar la respuesta exitosa
           console.log('Producto creado:', response);
-        },
-        (error) => {
-          // Manejar el error
-          console.error('Error al crear el producto:', error);
         }
+        // ,
+        // (error) => {
+        //   // Manejar el error
+        //   console.error('Error al crear el producto:', error);
+        // }
       );
 
     }
