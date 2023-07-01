@@ -112,7 +112,7 @@
                 <button class="imageButton" (click)="showModal()" >
                   <img src="../../../../assets/icons/🦆 icon _cross_.svg" alt="Mostrar/ocultar">
                 </button>
-                <app-modal ></app-modal>
+                <app-modal *ngIf="!flag" ></app-modal>
 
               </li>
             </ul>

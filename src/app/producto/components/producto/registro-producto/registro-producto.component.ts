@@ -8,7 +8,7 @@ import { ProductoService } from 'src/app/producto/services/producto.service';
   templateUrl: './registro-producto.component.html',
   styleUrls: ['./registro-producto.component.css']
 })
-export class RegistroComponentProducto implements OnInit{
+export class RegistroComponentProducto {
   public productoForm: FormGroup;
   public producto: Producto = {
     idProducto: 0,
@@ -21,9 +21,7 @@ export class RegistroComponentProducto implements OnInit{
     estado: 'a',
   };
 
-  ngOnInit(): void {
 
-  }
 
   constructor(private formBuilder: FormBuilder, private productoService: ProductoService) {
 
