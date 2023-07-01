@@ -25,7 +25,9 @@ import { ModalComponent } from './modal/modal.component';
         RouterModule,
         NgbModule,
         ProductoModule,
-        NgbCollapseModule
+        NgbCollapseModule,
+        ModalComponent
+
     ]
 })
 export class ListadoGeneralModule {}

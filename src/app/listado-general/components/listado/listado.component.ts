@@ -22,6 +22,8 @@ export class ListadoComponent {
 
   flagContent: boolean = false;
 
+  flag=true;
+
   searchItem: string = '';
 
   ngOnInit(): void {
@@ -102,7 +104,6 @@ export class ListadoComponent {
 
   getAtributos(): string[] {
     let atributos: string[] = [''];
-
     if (this.frontActual.match('Cliente')) {
       atributos = this.columnCliente;
     } else if (this.frontActual.match('Provedor')) {
@@ -110,8 +111,6 @@ export class ListadoComponent {
     } else if (this.frontActual.match('Producto')) {
       atributos = this.columnProducto;
     }
-
-
     return atributos;
   }
 
@@ -124,10 +123,8 @@ export class ListadoComponent {
     this.showCreate();
   }
 
-  showModal(): void {
-    this.router.navigate(['/modalEliminar']);
+  showModal():void {
+    this.flag=!this.flag;
   }
-
-  
 
 }

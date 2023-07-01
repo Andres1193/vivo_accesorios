@@ -3,6 +3,7 @@ import { Usuario } from '../../interfaces/usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro-usuario.component.html',
@@ -46,23 +47,23 @@ export class RegistroUsuarioComponent implements OnInit {
       // Acciones para crear el producto utilizando this.producto
   //   }
 
-  crearProducto() {
-    if (this.UsuarioForm.valid) {
-      this.usuarioService.crearUsuario(this.usuario).subscribe(
-        (response) => {
-          // Manejar la respuesta exitosa
-          console.log('Producto creado:', response);
-        },
-        (error) => {
-          // Manejar el error
-          console.error('Error al crear el producto:', error);
-        }
-      );
+  // crearProducto() {
+  //   if (this.UsuarioForm.valid) {
+  //     this.usuarioService.crearUsuario(this.usuario).subscribe(
+  //       (response) => {
+  //         // Manejar la respuesta exitosa
+  //         console.log('Producto creado:', response);
+  //       },
+  //       (error) => {
+  //         // Manejar el error
+  //         console.error('Error al crear el producto:', error);
+  //       }
+  //     );
 
-    }
-  }
+  //   }
+  // }
 
-  
+
 
 }
 
