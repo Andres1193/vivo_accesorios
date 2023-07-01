@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { ProductoService } from 'src/app/producto/services/producto.service';
-import { ServiceModalService } from 'src/app/serviciosModal/service-modal.service';
 
 @Component({
   selector: 'app-registro-producto',
@@ -23,17 +22,20 @@ export class RegistroComponentProducto implements OnInit{
   };
 
   ngOnInit(): void {
-      
+
   }
 
   constructor(private formBuilder: FormBuilder, private productoService: ProductoService) {
+
     this.productoForm = this.formBuilder.group({
       codigoProducto: ['', Validators.required],
       nombre: ['', Validators.required],
       costo_Producto: [0, Validators.required],
       porcent_Utilidad: [0, Validators.required],
-      precio_Producto: [0, Validators.required],
+      precio_Producto: [0, Validators.required]
+
     });
+
   }
 
   crearProducto() {

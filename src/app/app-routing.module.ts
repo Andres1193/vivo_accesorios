@@ -18,6 +18,7 @@ import { EditarUsuarioComponent } from './usuario/components/editar-usuario/edit
 import { EditarClienteComponent } from './cliente/components/editar-cliente/editar-cliente.component';
 import { EditarComponentMateriasCrudas } from './materias/components/materias-crudas/editar-materias-crudas/editar-materias-crudas.component';
 import { EditarComponentMateriasListas } from './materias/components/materias-listas/editar-materias-listas/editar-materias-listas.component';
+import { ModalComponent } from './listado-general/modal/modal.component';
 
 
 
@@ -40,8 +41,9 @@ const routes: Routes = [
     { path: 'editar_mp_crudas', component: EditarComponentMateriasCrudas, pathMatch:'full'},
     { path: 'registro_mp_listas', component: RegistroComponentMateriasListas, pathMatch:'full'},
     { path: 'editar_mp_listas', component: EditarComponentMateriasListas, pathMatch:'full'},
+    { path: 'modalEliminar', component: ModalComponent, pathMatch:'full'},
     // { path: 'register', component: SignInComponent },
-    
+
     { path: '**', redirectTo: '/home' }
   ];
 

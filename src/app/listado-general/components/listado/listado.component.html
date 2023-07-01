@@ -3,7 +3,8 @@
     <img class="logo" src="../../../../assets/imgs/Vivo Blanco 1.png" alt="Logo" />
     <nav>
       <li>
-        <button type="button" class="btnColapse" (click)="isCollapsed = ! isCollapsed"
+        <button type="button" class="btnColapse"
+          (click)="isCollapsed = ! isCollapsed"
           [attr.aria-expanded]="!isCollapsed">
           <span>Materias Primas</span>
         </button>
@@ -12,7 +13,7 @@
             <label (click)="selectLista('Listas')">Listas</label>
           </li>
           <li>
-            <label (click)="selectLista('Listas')">Listas</label>
+            <label (click)="selectLista('Listas')">Crudas</label>
           </li>
         </div>
       </li>
@@ -31,8 +32,8 @@
       <li>
         <label (click)="selectLista('')">Receta</label>
       </li>
-</nav>
-</aside>
+    </nav>
+  </aside>
 
 <div *ngIf="flagContent">
   <div [ngSwitch]="frontActual">
@@ -72,7 +73,7 @@
     </div>
     <div class="TopButtons">
       <div id="export"><img src="../../../../assets/icons/🦆 icon _download_.svg" alt="">Exportar</div>
-      <div id="create" (click)="showCreate()"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">Crear</div>
+      <a [href]="crear"><div id="create"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">Crear</div></a>
       
     </div>
   </div>
@@ -110,7 +111,7 @@
               <li>
                 <button class="imageButton">
                   <img src="../../../../assets/icons/🦆 icon _cross_.svg" alt="Mostrar/ocultar">
-                </button> 
+                </button>
 
               </li>
             </ul>
@@ -119,5 +120,4 @@
       </tbody>
     </table>
   </div>
-</div>
 </div>

@@ -2,7 +2,8 @@ import { Component, Input } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
-
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -10,6 +11,8 @@ import { Producto } from 'src/app/producto/interfaces/producto.interface';
 })
 
 export class ListadoComponent {
+
+  constructor(private router: Router) {}
 
   public opcion = '';
 
@@ -19,10 +22,10 @@ export class ListadoComponent {
 
   flagContent: boolean = false;
 
-
-
   searchItem: string = '';
 
+  ngOnInit(): void {
+  }
 
   public proveedor: Proveedor = {
     cod_proveedor: '',
@@ -94,7 +97,7 @@ export class ListadoComponent {
     if(name == 'Producto'){
       this.opcion = 'registro_producto';
     }
-    
+
   }
 
   getAtributos(): string[] {
@@ -108,16 +111,21 @@ export class ListadoComponent {
       atributos = this.columnProducto;
     }
 
+
     return atributos;
   }
 
-  public showCreate(): void {
+  showCreate(): void {
     this.flagContent = !this.flagContent;
     this.opcion = '1';
   }
 
   callToShow(): void {
     this.showCreate();
+  }
+
+  showModal(): void {
+    this.router.navigate(['/modalEliminar']);
   }
 
 }
