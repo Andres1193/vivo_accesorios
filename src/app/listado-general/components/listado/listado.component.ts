@@ -18,7 +18,7 @@ import { ProveedorService } from 'src/app/proveedor/services/proveedor.service';
 
 export class ListadoComponent {
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal, 
+  constructor(config: NgbModalConfig, private modalService: NgbModal,
     private proveedorService: ProveedorService) {
 
     config.backdrop = 'static';
@@ -35,7 +35,7 @@ export class ListadoComponent {
 
   flagContent: boolean = false;
 
-  flag=true;
+  flag = true;
 
   searchItem: string = '';
 
@@ -54,25 +54,26 @@ export class ListadoComponent {
 
   @Input() proveedores: Proveedor[] = [];
 
-  getProveedores(){
+  getProveedores() {
     return this.proveedorService.getProveeedores().subscribe(
       (proveedores: Proveedor[]) => {
         console.log(proveedores)
         this.proveedores = proveedores;
       }
       // (error: any) => {
-        // // Manejar el error
+      // // Manejar el error
       // }
     );
   }
 
-  imprimirProveedores(){
+  imprimirProveedores() {
     return this.proveedores
   }
 
 
-  getPropiedades(proveedor: any){
-    return Object.keys(proveedor);
+  getPropiedades(proveedor: any) {
+    const keys = Object.keys(proveedor);
+    return keys.slice(1);
   }
 
   public columnProveedor: string[] = [
@@ -95,7 +96,7 @@ export class ListadoComponent {
     telefono: '',
     direccion: '',
     ciudad: '',
-    estado:'Activo'
+    estado: 'Activo'
   };
 
   @Input() clientes: Cliente[] = [];
@@ -118,7 +119,7 @@ export class ListadoComponent {
     porcent_Utilidad: 0,
     precio_Producto: 0,
     estado: 'Activo',
-    stock:0,
+    stock: 0,
     idPedido: '' // TODO: acceder a la base de datos para consultar el pedido
   };
 
@@ -239,7 +240,7 @@ export class ListadoComponent {
 
   selectLista(name: string): void {
     this.frontActual = name;
-    if(this.opcion != ""){
+    if (this.opcion != "") {
       this.showCreate("");
     }
 
@@ -282,8 +283,8 @@ export class ListadoComponent {
   //   this.showCreate();
   // }
 
-  showModal():void {
-    this.flag=!this.flag;
+  showModal(): void {
+    this.flag = !this.flag;
   }
 
   @Output() lanzarModal = new EventEmitter<void>();

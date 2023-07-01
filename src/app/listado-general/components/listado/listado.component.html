@@ -134,7 +134,9 @@
 
           <ng-container *ngFor="let proveedor of imprimirProveedores()">
             <tr >
+              
               <td *ngFor="let key of getPropiedades(proveedor)">{{ proveedor[key] }}</td>
+
             </tr>
           </ng-container>
             <tr class="rows">
