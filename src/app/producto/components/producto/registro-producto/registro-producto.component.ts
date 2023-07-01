@@ -23,10 +23,10 @@ export class RegistroComponentProducto implements OnInit{
   };
 
   ngOnInit(): void {
-      this.modalService.$modal.subscribe((valor)=>this.modalSwitch = valor)
+      
   }
 
-  constructor(private modalService:ServiceModalService, private formBuilder: FormBuilder, private productoService: ProductoService) {
+  constructor(private formBuilder: FormBuilder, private productoService: ProductoService) {
     this.productoForm = this.formBuilder.group({
       codigoProducto: ['', Validators.required],
       nombre: ['', Validators.required],
@@ -68,11 +68,4 @@ export class RegistroComponentProducto implements OnInit{
     }
   }
 
-  //modal
-
-  modalSwitch:boolean= false;
-
-  openModal(){
-    this.modalSwitch = true;
-  }
 }
