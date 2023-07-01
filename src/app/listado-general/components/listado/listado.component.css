@@ -35,8 +35,9 @@ nav li label:active, #listItems:active{
   opacity: .5;
 }
 
-nav li label:active, #listItems:after{
-  background-color: 90726C;
+#listItems:active, #listItems:after{
+  background-color: #90726C;
+  border-left: solid  1px #FFF;
 }
 
 .container {
@@ -318,10 +319,12 @@ h2 {
   .content {
     display: flex;
     height: 100%;
+
     background: #E1E1E1;
   }
   .AsideListado{
-    width:15%;
-    min-width: 15%;
+    width:250px;
+
+    max-width: 900px;
   }
 }

@@ -1,6 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Karla);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
-
 .principal {
   width: 100%;
   height: 100%;
@@ -50,15 +47,15 @@ input {
   font-size: 16px;
 }
 
-
-input:focus{
+input:focus {
   border: 1.5px solid #AE837B;
   outline: none;
 }
 
-#guardar, #cancelar{
+#guardar,
+#cancelar {
   text-align: center;
-  position:relative;
+  position: relative;
   width: 120px;
   height: 30px;
   border-radius: 8px;
@@ -66,20 +63,21 @@ input:focus{
   justify-content: center;
   align-items: center;
 }
-#guardar{
+
+#guardar {
   top: 20px;
   background-color: #ae837bce;
   left: 84.5%;
-} 
+}
 
-#cancelar{
+#cancelar {
   top: 50px;
   background-color: white;
   left: 75%;
 }
 
 #cancelar:active,
-#cancelar:focus{
+#cancelar:focus {
   background-color: #D3D3D3;
   transition: 50ms;
 }
@@ -101,7 +99,7 @@ input:focus{
   background-color: #EFEFEF;
   border: none;
   border-radius: 10px;
-  background: #EFEFEF url('../../../../../assets/icons/🦆 icon _camera alt_.svg')  no-repeat center / cover;
+  background: #EFEFEF url('../../../../../assets/icons/🦆 icon _camera alt_.svg') no-repeat center / cover;
   background-size: 22% 10%;
 }
 
@@ -113,15 +111,14 @@ input:focus{
   cursor: pointer;
 }
 
-.custom-file-input #imagen{
+.custom-file-input #imagen {
   width: 100%;
   height: 100%;
   border-radius: 10px;
   background-color: #EFEFEF;
 }
 
-
-.mensaje{
+.mensaje {
   position: absolute;
   color: #a80000;
   left: 69.5%;
@@ -145,10 +142,10 @@ input:focus{
     width: 200px;
     height: 41px;
   }
-  .principal {
-    width: 265%;
-  }
 
+  .principal {
+    width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -162,7 +159,7 @@ input:focus{
     height: 41px;
   }
 
-    .principal {
-      width: 265%;
+  .principal {
+    width: 100%;
   }
 }
