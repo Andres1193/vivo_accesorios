@@ -12,7 +12,7 @@ export class ProveedorService {
   constructor(private http: HttpClient) { }
 
   getProveeedores() {
-    return this.http.get(this.apiUrl);
+    return this.http.get<Proveedor[]>(this.apiUrl);
   }
 
   crearProveeedor(proveedor: Proveedor) {
