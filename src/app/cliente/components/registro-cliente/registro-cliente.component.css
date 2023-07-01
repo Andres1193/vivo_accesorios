@@ -69,13 +69,14 @@ input:focus {
 
 #guardar,
 #cancelar {
-  position: relative;
+  position: relative; 
   width: 120px;
   height: 30px;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-color: transparent;
 }
 
 #guardar {
@@ -90,19 +91,17 @@ input:focus {
   left: 75%;
 }
 
-#cancelar:active,
-#cancelar:focus {
-  background-color: #D3D3D3;
-  transition: 50ms;
-}
-
-#guardar:active,
-#guardar:focus {
+#guardar:active{
   background-color: #90726C;
-  transition: 50ms;
 }
 
+#cancelar:active {
+  background-color: #D3D3D3;
+}
 
+#cancelar:active {
+  background-color: #D3D3D3;
+}
 
 .principal h1 {
   position: relative;

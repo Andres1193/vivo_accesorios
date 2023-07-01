@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Proveedor } from '../../interfaces/proveedor.interface';
 import { ProveedorService } from '../../services/proveedor.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-proveedor',
@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class EditarProveedorComponent {
   public proveedorForm: FormGroup;
+  public idProveedor: number = 0;
   public proveedor: Proveedor = {
     cod_proveedor: '',
     nombre: '',
@@ -25,16 +26,33 @@ export class EditarProveedorComponent {
 
   constructor(private formBuilder: FormBuilder, private proveedorService: ProveedorService) {
     this.proveedorForm = this.formBuilder.group({
-      nombre: ['', Validators.required],
-      telefono_1: ['', Validators.required],
-      direccion: ['', Validators.required],
-      ciudad: ['', Validators.required]
+
+      cod_proveedor: new FormControl(''),
+      nombre: new FormControl(''),
+      telefono_1: new FormControl(''),
+      telefono_2: new FormControl(''),
+      telefono_3: new FormControl(''),
+      telefono_4: new FormControl(''),
+      telefono_5: new FormControl(''),
+      direccion: new FormControl(''),
+      ciudad: new FormControl(''),
+      estado: new FormControl('Activo')
+
     });
   }
 
-  actualizarProveedor(){
-    this.proveedorService.actualizarProveedor(this.proveedor).subscribe(resp =>{
-      console.log(resp);
-    });
-  }
+  actualizarProveedor() {
+    if (this.proveedorForm.valid) {
+      this.proveedorService.actualizarProveeedor(this.idProveedor,this.proveedorForm.value).subscribe(
+        (response) => {
+          // Manejar la respuesta exitosa
+          console.log('Proveedor editado:', response);
+        }
+        // (error) => {
+        //   // Manejar el error
+        //   console.error('Error al crear el producto:', error);
+        // }
+      );
+    }
+  } 
 }

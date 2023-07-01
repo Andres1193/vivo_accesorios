@@ -3,11 +3,11 @@
 
 <div class="principal">
   <h1 id="titulo_principal">Nuevo cliente</h1>
-  <div id="cancelar">Cancelar</div>
-  <div id="guardar">Guardar</div>
-  <div class="formulario">
-    <h2 class="bloque">INFORMACIÓN GENERAL</h2>
-    <form [formGroup]="clienteForm" (ngSubmit)="crearCliente()">
+  <form [formGroup]="clienteForm" (ngSubmit)="crearCliente()">
+    <button type="submit" id="cancelar">Cancelar</button>
+    <button type="submit" id="guardar">Guardar</button>
+    <div class="formulario">
+      <h2 class="bloque">INFORMACIÓN DE CONTACTO</h2>
       <div class="componente">
         <label for="identificacion">Identificación:</label>
         <input type="text" formControlName="identificacion" id="identificacion">
@@ -15,12 +15,22 @@
 
       <div class="componente">
         <label for="nombre">Nombre:</label>
-        <input type="text" formControlName="nombre" id="nombre">
+        <input type="text" formControlName="nombres" id="nombres">
       </div>
 
       <div class="componente">
         <label for="apellido">Apellido:</label>
-        <input type="text" formControlName="apellido" id="apellido">
+        <input type="text" formControlName="apellidos" id="apellidos">
+      </div>
+
+      <div class="componente">
+        <label for="correo">Correo:</label>
+        <input type="text" formControlName="correo" id="correo">
+      </div>
+
+      <div class="componente">
+        <label for="telefono">Telefono:</label>
+        <input type="text" formControlName="telefono" id="telefono">
       </div>
 
       <div class="componente">
@@ -32,20 +42,9 @@
         <label for="ciudad">Ciudad:</label>
         <input type="text" formControlName="ciudad" id="ciudad">
       </div>
-      
-      <div class="componente">
-        <label for="correo">Correo:</label>
-        <input type="text" formControlName="correo" id="correo">
-      </div>
 
-      <div class="componente">
-        <label for="telefono">Telefono:</label>
-        <input type="text" formControlName="telefono" id="telefono">
-      </div>
-
-    </form>
-
-  </div>
+    </div>
+  </form>
 </div>
 
 <!-- <div class='wrap'>
