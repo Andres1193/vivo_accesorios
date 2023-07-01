@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
@@ -249,6 +249,12 @@ export class ListadoComponent {
 
   showModal():void {
     this.flag=!this.flag;
+  }
+
+  @Output() lanzarModal = new EventEmitter<void>();
+
+  llamarMetodo(): void {
+    this.lanzarModal.emit();
   }
 
 }

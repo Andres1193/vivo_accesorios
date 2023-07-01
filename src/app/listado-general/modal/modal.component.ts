@@ -17,4 +17,6 @@ export class ModalComponent {
   open<Type>(content: Type): void {
     this.modalService.open(content);
   }
+
+
 }
