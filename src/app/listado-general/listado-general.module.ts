@@ -13,8 +13,7 @@ import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
     declarations: [
-        ListadoComponent,
-        ModalComponent
+        ListadoComponent
     ],
     imports: [
         CommonModule,

@@ -56,26 +56,33 @@ input:focus{
   outline: none;
 }
 
-#guardar, #cancelar{
+#guardar, #cancelar, #crear-categoria{
   text-align: center;
   position:relative;
   width: 120px;
   height: 30px;
   border-radius: 8px;
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
+  left: 54%;
 }
 #guardar{
   top: 20px;
   background-color: #ae837bce;
   left: 84.5%;
 }
-
 #cancelar{
-  top: 50px;
   background-color: white;
-  left: 75%;
+}
+
+#crear-categoria, #guardar{
+  background-color: #ae837bce;
+}
+
+#crear-categoria{
+  top: 13%;
+  left: 0%;
 }
 
 #cancelar:active,
@@ -84,6 +91,8 @@ input:focus{
   transition: 50ms;
 }
 
+#crear-categoria:active,
+#crear-categoria:focus,
 #guardar:active,
 #guardar:focus {
   background-color: #90726C;
@@ -137,7 +146,7 @@ input:focus{
 
 @media screen {
     .custom-file-input{
-      
+
     }
 }
 

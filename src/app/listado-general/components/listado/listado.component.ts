@@ -11,6 +11,8 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class ListadoComponent {
 
+  public crear = '';
+
   public isCollapsed = true;
 
   public frontActual: string = 'Cliente'; // frontActual
@@ -86,6 +88,10 @@ export class ListadoComponent {
 
   selectLista(name: string): void {
     this.frontActual = name;
+    if(name == 'Producto'){
+      this.crear = 'registro_producto';
+    }
+    
   }
 
   getAtributos(): string[] {
