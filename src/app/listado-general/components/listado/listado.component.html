@@ -103,13 +103,6 @@
     </div>
   </div>
 
-<div class="container" *ngIf="!flagContent">
-  <div class="Top">
-    <div class="head">
-      <h2>{{ frontActual }}</h2>
-      <div class="searchBox" id="search">
-        <img src="../../../../assets/icons/🦆 icon _search_.svg" alt="searchIcon">
-        <input type="text" [(ngModel)]="searchItem" />
   <div class="container" *ngIf="!flagContent">
     <div class="Top">
       <div class="head">
@@ -141,9 +134,7 @@
 
           <ng-container *ngFor="let proveedor of imprimirProveedores()">
             <tr >
-              
               <td *ngFor="let key of getPropiedades(proveedor)">{{ proveedor[key] }}</td>
-
             </tr>
           </ng-container>
             <tr class="rows">
