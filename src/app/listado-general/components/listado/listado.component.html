@@ -17,7 +17,7 @@
         </div>
       </li>
       <li>
-        <label (click)="showCreate()">Material de empaques</label>
+        <label>Material de empaques</label>
       </li>
       <li>
         <label (click)="selectLista('Producto')">Productos</label>
@@ -35,8 +35,31 @@
 </aside>
 
 <div *ngIf="flagContent">
-  <!-- <app-registro></app-registro> -->
+  <div [ngSwitch]="frontActual">
+    <div *ngSwitchCase="'Producto'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-producto></app-registro-producto>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-producto></app-editar-producto>
+      </div>
+    </div>
+    <div *ngSwitchCase="2">
+      <!-- Contenido cuando opcion es igual a 2 -->
+      <p>Opción 2 seleccionada.</p>
+    </div>
+    <div *ngSwitchCase="3">
+      <!-- Contenido cuando opcion es igual a 3 -->
+      <p>Opción 3 seleccionada.</p>
+    </div>
+    <div *ngSwitchDefault>
+      <!-- Contenido cuando opcion no coincide con ningún caso anterior -->
+      <p>Opción no válida.</p>
+    </div>
+  </div>
 </div>
+
+
 
 <div class="container" *ngIf="!flagContent">
   <div class="Top">
@@ -49,7 +72,7 @@
     </div>
     <div class="TopButtons">
       <div id="export"><img src="../../../../assets/icons/🦆 icon _download_.svg" alt="">Exportar</div>
-      <a [href]="crear"><div id="create"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">Crear</div></a>
+      <div id="create" (click)="showCreate()"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">Crear</div>
       
     </div>
   </div>

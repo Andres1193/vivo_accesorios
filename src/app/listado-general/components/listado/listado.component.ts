@@ -11,7 +11,7 @@ import { Producto } from 'src/app/producto/interfaces/producto.interface';
 
 export class ListadoComponent {
 
-  public crear = '';
+  public opcion = '';
 
   public isCollapsed = true;
 
@@ -92,7 +92,7 @@ export class ListadoComponent {
   selectLista(name: string): void {
     this.frontActual = name;
     if(name == 'Producto'){
-      this.crear = 'registro_producto';
+      this.opcion = 'registro_producto';
     }
     
   }
@@ -111,8 +111,13 @@ export class ListadoComponent {
     return atributos;
   }
 
-  showCreate(): void {
+  public showCreate(): void {
     this.flagContent = !this.flagContent;
+    this.opcion = '1';
+  }
+
+  callToShow(): void {
+    this.showCreate();
   }
 
 }
