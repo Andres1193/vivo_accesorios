@@ -23,7 +23,7 @@ nav li {
   list-style-type:none;
 }
 
-nav li label, .listItems{
+nav li label, #listItems, .btnColapse{
   padding: 8px 0px 0px 15px;
   border: none;
   background: none;

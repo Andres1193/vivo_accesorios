@@ -9,12 +9,11 @@ import { AppRoutingModule } from "../app-routing.module";
 import { ListadoComponent } from "./components/listado/listado.component";
 import { ProductoModule } from "../producto/producto.module";
 import { NgbCollapseModule, NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
     declarations: [
-        ListadoComponent,
-        ModalEliminarComponent
+        ListadoComponent
     ],
     imports: [
         CommonModule,

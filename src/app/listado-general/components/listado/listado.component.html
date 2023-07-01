@@ -13,7 +13,7 @@
             <label (click)="selectLista('Listas')">Listas</label>
           </li>
           <li>
-            <label (click)="selectLista('Listas')">Listas</label>
+            <label (click)="selectLista('Listas')">Crudas</label>
           </li>
         </div>
       </li>
@@ -39,71 +39,62 @@
     <!-- <app-registro></app-registro> -->
   </div>
 
-  <div class="container" *ngIf="!flagContent">
-    <div class="Top">
-      <div class="head">
-        <h2>{{ frontActual }}</h2>
-        <div class="searchBox" id="search">
-          <img src="../../../../assets/icons/🦆 icon _search_.svg"
-            alt="searchIcon">
-          <input type="text" [(ngModel)]="searchItem" />
-        </div>
-      </div>
-      <div class="TopButtons">
-        <div id="export"><img
-            src="../../../../assets/icons/🦆 icon _download_.svg" alt>Exportar</div>
-        <div id="create"><img
-            src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt>Crear</div>
+<div class="container" *ngIf="!flagContent">
+  <div class="Top">
+    <div class="head">
+      <h2>{{ frontActual }}</h2>
+      <div class="searchBox" id="search">
+        <img src="../../../../assets/icons/🦆 icon _search_.svg" alt="searchIcon">
+        <input type="text" [(ngModel)]="searchItem" />
       </div>
     </div>
-    <div class="table-responsive">
-      <table class="custom-table">
-        <thead>
-          <tr>
-            <th class="columns" *ngFor="let atributo of getAtributos()">{{
-              atributo }}</th>
-            <th class="columns">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="rows">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-              <ul class="actionsButton">
-                <li>
-                  <button class="imageButton">
-                    <img src="../../../../assets/icons/🦆 icon _eye_.svg"
-                      alt="Mostrar/ocultar">
-                  </button>
-                </li>
-                <li>
-                  <button class="imageButton">
-                    <img src="../../../../assets/icons/🦆 icon _pen_.svg"
-                      alt="Mostrar/ocultar">
-                  </button>
-                </li>
-                <li>
-                  <button class="imageButton">
-                    <img
-                      src="../../../../assets/icons/🦆 icon _lightbulb on_.svg"
-                      alt="Mostrar/ocultar">
-                  </button>
-                </li>
-                <li>
-                  <button class="imageButton">
-                    <img src="../../../../assets/icons/🦆 icon _cross_.svg"
-                      alt="Mostrar/ocultar">
-                  </button>
-                </li>
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="TopButtons">
+      <div id="export"><img src="../../../../assets/icons/🦆 icon _download_.svg" alt="">Exportar</div>
+      <a [href]="crear"><div id="create"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">Crear</div></a>
+      
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th class="columns" *ngFor="let atributo of getAtributos()">{{ atributo }}</th>
+          <th class="columns">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="rows">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <ul class="actionsButton">
+              <li>
+                <button class="imageButton">
+                  <img src="../../../../assets/icons/🦆 icon _eye_.svg" alt="Mostrar/ocultar">
+                </button>
+              </li>
+              <li>
+                <button class="imageButton">
+                  <img src="../../../../assets/icons/🦆 icon _pen_.svg" alt="Mostrar/ocultar">
+                </button>
+              </li>
+              <li>
+                <button class="imageButton">
+                  <img src="../../../../assets/icons/🦆 icon _lightbulb on_.svg" alt="Mostrar/ocultar">
+                </button>
+              </li>
+              <li>
+                <button class="imageButton">
+                  <img src="../../../../assets/icons/🦆 icon _cross_.svg" alt="Mostrar/ocultar">
+                </button>
 
-    </div>
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

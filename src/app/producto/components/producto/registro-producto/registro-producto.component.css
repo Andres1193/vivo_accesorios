@@ -67,9 +67,14 @@ input:focus{
   align-items: center;
   left: 54%;
 }
+#guardar{
+  top: 20px;
+  background-color: #ae837bce;
+  left: 84.5%;
+}
 #cancelar{
   background-color: white;
-} 
+}
 
 #crear-categoria, #guardar{
   background-color: #ae837bce;
@@ -100,7 +105,7 @@ input:focus{
   width: 26%;
   height: 60%;
   position: absolute;
-  display: flex; 
+  display: flex;
   cursor: pointer;
   background-color: #EFEFEF;
   border: none;
@@ -137,6 +142,12 @@ input:focus{
   padding: 0% 0% 0% 7%;
   text-align: left;
   font-size: 22px;
+}
+
+@media screen {
+    .custom-file-input{
+
+    }
 }
 
 @media (max-width: 768px) {
