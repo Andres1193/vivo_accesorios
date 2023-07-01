@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
-
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -17,10 +17,7 @@ export class ListadoComponent {
 
   flagContent: boolean = false;
 
-
-
   searchItem: string = '';
-
 
   public proveedor: Proveedor = {
     cod_proveedor: '',
@@ -108,5 +105,10 @@ export class ListadoComponent {
   showCreate(): void {
     this.flagContent = !this.flagContent;
   }
+
+  MODALS: { [name: string]: any } = {
+    focusFirst: NgbdModalConfirm
+
+  };
 
 }

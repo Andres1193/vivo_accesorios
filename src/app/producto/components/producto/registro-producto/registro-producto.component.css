@@ -70,7 +70,7 @@ input:focus{
   top: 20px;
   background-color: #ae837bce;
   left: 84.5%;
-} 
+}
 
 #cancelar{
   top: 50px;
@@ -133,6 +133,12 @@ input:focus{
   padding: 0% 0% 0% 7%;
   text-align: left;
   font-size: 22px;
+}
+
+@media screen {
+    .custom-file-input{
+      
+    }
 }
 
 @media (max-width: 768px) {

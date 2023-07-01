@@ -12,7 +12,7 @@
             <label (click)="selectLista('Listas')">Listas</label>
           </li>
           <li>
-            <label (click)="selectLista('Listas')">Listas</label>
+            <label (click)="selectLista('Listas')">Crudas</label>
           </li>
         </div>
       </li>
@@ -56,7 +56,7 @@
     <table class="custom-table">
       <thead>
         <tr>
-          <th class="columns" *ngFor="let atributo of getAtributos()">{{ atributo }}</th>
+          <th class="columns" *ngFor="let atributo of getAtributos()"> {{ atributo }} </th>
           <th class="columns">Acciones</th>
         </tr>
       </thead>
@@ -84,10 +84,10 @@
                 </button>
               </li>
               <li>
+                <button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button>
                 <button class="imageButton">
                   <img src="../../../../assets/icons/🦆 icon _cross_.svg" alt="Mostrar/ocultar">
                 </button>
-
               </li>
             </ul>
           </td>
