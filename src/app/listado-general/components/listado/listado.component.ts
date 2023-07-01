@@ -8,6 +8,7 @@ import { Receta } from 'src/app/receta/interfaces/receta.interface';
 import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
 import { MateriasListas } from 'src/app/materias/interfaces/materias-listas.interface';
 import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.interfaces';
+import { ProveedorService } from 'src/app/proveedor/services/proveedor.service';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -17,7 +18,9 @@ import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.inte
 
 export class ListadoComponent {
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal) {
+  constructor(config: NgbModalConfig, private modalService: NgbModal, 
+    private proveedorService: ProveedorService) {
+
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -37,6 +40,7 @@ export class ListadoComponent {
   searchItem: string = '';
 
   ngOnInit(): void {
+    this.getProveedores();
   }
 
   public proveedor: Proveedor = {
@@ -45,10 +49,31 @@ export class ListadoComponent {
     telefono_1: '',
     direccion: '',
     ciudad: '',
-    estado: 'a',
+    estado: 'Activo',
   };
 
   @Input() proveedores: Proveedor[] = [];
+
+  getProveedores(){
+    return this.proveedorService.getProveeedores().subscribe(
+      (proveedores: Proveedor[]) => {
+        console.log(proveedores)
+        this.proveedores = proveedores;
+      }
+      // (error: any) => {
+        // // Manejar el error
+      // }
+    );
+  }
+
+  imprimirProveedores(){
+    return this.proveedores
+  }
+
+
+  getPropiedades(proveedor: any){
+    return Object.keys(proveedor);
+  }
 
   public columnProveedor: string[] = [
     'Nombre',
@@ -88,7 +113,7 @@ export class ListadoComponent {
     costo_Producto: 0,
     porcent_Utilidad: 0,
     precio_Producto: 0,
-    estado: 'a',
+    estado: 'Activo',
     stock:0,
     idPedido: '' // TODO: acceder a la base de datos para consultar el pedido
   };
@@ -188,7 +213,7 @@ export class ListadoComponent {
     unidad_medida: '',
     costo_unitario: 0,
     costo_total_unitario: 0,
-    estado: '',
+    estado: 'Activo',
     proveedores: [],
     stock: 0
   }
