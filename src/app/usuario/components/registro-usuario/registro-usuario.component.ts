@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit,Type } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario.interface';
 import { UsuarioService } from '../../services/usuario.service';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-registro',
@@ -10,13 +11,15 @@ import { UsuarioService } from '../../services/usuario.service';
 })
 export class RegistroUsuarioComponent {
 
-  public usuario: Usuario = {
-    nombre: '',
-    nom_usuario: '',
-    correo: '',
-    contrasena: '',
-    estado: ''
-  };
+  
+
+  // public usuario: Usuario = {
+  //   nombre: '',
+  //   nom_usuario: '',
+  //   correo: '',
+  //   contrasena: '',
+  //   estado: ''
+  // };
 
   constructor (private usuarioService: UsuarioService) { }
 
@@ -31,29 +34,30 @@ export class RegistroUsuarioComponent {
   //   );
 
 
-  crearUsuario() {
-    if ( this.usuario.nombre.length === 0 ) {
-      return ;
-    } else if ( this.usuario.nom_usuario.length === 0 ) {
-      return ;
-    } else if ( this.usuario.correo.length === 0 ) {
-      return ;
-    } else if ( this.usuario.contrasena.length === 0 ) {
-      return ;
-    } else {
+  // crearUsuario() {
+  //   if ( this.usuario.nombre.length === 0 ) {
+  //     return ;
+  //   } else if ( this.usuario.nom_usuario.length === 0 ) {
+  //     return ;
+  //   } else if ( this.usuario.correo.length === 0 ) {
+  //     return ;
+  //   } else if ( this.usuario.contrasena.length === 0 ) {
+  //     return ;
+  //   } else {
 
-      this.usuarioService.crearUsuario(this.usuario).subscribe(resp=>{
-        this.usuario = {
-          nombre: '',
-          nom_usuario: '',
-          correo: '',
-          contrasena: '',
-          estado: ''
-        };
-      });
+  //     this.usuarioService.crearUsuario(this.usuario).subscribe(resp=>{
+  //       this.usuario = {
+  //         nombre: '',
+  //         nom_usuario: '',
+  //         correo: '',
+  //         contrasena: '',
+  //         estado: ''
+  //       };
+  //     });
 
 
-    }
+  //   }
 
-  }
+  // }
 }
+
