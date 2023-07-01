@@ -44,8 +44,8 @@ export class RegistroUsuarioComponent implements OnInit {
 
 
  
-  crearProducto() {
-    if (this.UsuarioForm.valid) {
+  crearUsuario() {
+    // if (this.UsuarioForm.valid) {
       this.usuarioService.crearUsuario(this.usuario).subscribe(
         (response) => {
           // Manejar la respuesta exitosa
@@ -65,6 +65,6 @@ export class RegistroUsuarioComponent implements OnInit {
 
 
 
-}
+
 
 
