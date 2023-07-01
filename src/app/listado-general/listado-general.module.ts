@@ -35,7 +35,9 @@ import { PedidoModule } from "../pedido/pedido.module";
         RecetaModule,
         ClienteModule,
         MateriasModule,
-        PedidoModule
+        PedidoModule,
+        ModalComponent
+
     ]
 })
 export class ListadoGeneralModule {}
