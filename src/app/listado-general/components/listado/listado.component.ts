@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { Receta } from 'src/app/receta/interfaces/receta.interface';
 import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
@@ -12,12 +12,18 @@ import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.inte
   selector: 'app-listado',
   templateUrl: './listado.component.html',
   styleUrls: ['./listado.component.css'],
+  providers: [NgbModalConfig, NgbModal],
 })
 
 export class ListadoComponent {
 
-  constructor(private router: Router) {}
-
+  constructor(config: NgbModalConfig, private modalService: NgbModal) {
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
+  open<Type>(content: Type): void {
+    this.modalService.open(content);
+  }
   public opcion = '';
 
   public isCollapsed = true;
@@ -207,7 +213,7 @@ export class ListadoComponent {
     if(this.opcion != ""){
       this.showCreate("");
     }
-    
+
   }
 
   getAtributos(): string[] {

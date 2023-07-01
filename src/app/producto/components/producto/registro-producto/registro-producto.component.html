@@ -2,11 +2,12 @@
 
 <div class="principal">
   <h1>Nuevo producto</h1>
-  <label id="cancelar">Cancelar</label>
-  <label id="guardar">Guardar</label>
+
   <div class="formulario">
     <h2 class="bloque">INFORMACIÓN GENERAL</h2>
     <form [formGroup]="productoForm" (ngSubmit)="crearProducto()">
+      <button type="button" id="cancelar">Cancelar</button>
+      <button type="submit" id="guardar">Guardar</button>
       <div class="componente">
         <label for="codigo">Codigo producto:</label>
         <input type="text" formControlName="codigoProducto" id="codigo">
