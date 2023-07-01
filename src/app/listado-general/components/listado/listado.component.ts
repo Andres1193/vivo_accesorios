@@ -6,6 +6,8 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { Receta } from 'src/app/receta/interfaces/receta.interface';
 import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
+import { MateriasListas } from 'src/app/materias/interfaces/materias-listas.interface';
+import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.interfaces';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -136,6 +138,70 @@ export class ListadoComponent {
     'Productos'
   ];
 
+  public lista: MateriasListas = {
+    cod_interno: '',
+    desc_mp: '',
+    categoria_mp: [],
+    cant_linea: 0,
+    precio_linea: 0,
+    unidad_medida: '',
+    costo_unitario: 0,
+    costo_total_unitario: 0,
+    estado: '',
+    costo_banio_linea: 0,
+    cantidad_banada: 0,
+    costo_banio_un: 0,
+    proveedores: [],
+    stock: 0
+  }
+
+  @Input() listas: MateriasListas[] = [];
+
+  public columnMateriasListas: string[] = [
+    'Código Materia Lista',
+    'Descripcion',
+    'Categoria',
+    'Cantidad Linea',
+    'Precio Linea',
+    'Unidad de Medida',
+    'Costo Unitario',
+    'Costo Total Unitario',
+    'Costo Baño Linea',
+    'Cantidad Bañada',
+    'Costo Baño Unidad',
+    'Proveedores',
+    'Stock',
+  ];
+
+  public cruda: MateriasCrudas = {
+    cod_interno: '',
+    desc_mp: '',
+    categoria_mp: [],
+    cant_linea: 0,
+    precio_linea: 0,
+    unidad_medida: '',
+    costo_unitario: 0,
+    costo_total_unitario: 0,
+    estado: '',
+    proveedores: [],
+    stock: 0
+  }
+
+  @Input() crudas: MateriasCrudas[] = [];
+
+  public columnMateriasCrudas: string[] = [
+    'Código Materia Lista',
+    'Descripcion',
+    'Categoria',
+    'Cantidad Linea',
+    'Precio Linea',
+    'Unidad de Medida',
+    'Costo Unitario',
+    'Costo Total Unitario',
+    'Proveedores',
+    'Stock',
+  ];
+
   selectLista(name: string): void {
     this.frontActual = name;
     if(this.opcion != ""){
@@ -156,7 +222,11 @@ export class ListadoComponent {
       atributos = this.columnReceta;
     } else if (this.frontActual.match('Pedido')) {
       atributos = this.columnPedido;
-    } 
+    } else if (this.frontActual.match('Listas')) {
+      atributos = this.columnMateriasListas;
+    } else if (this.frontActual.match('Crudas')) {
+      atributos = this.columnMateriasCrudas;
+    }
     return atributos;
   }
 
