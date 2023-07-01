@@ -3,7 +3,8 @@
     <img class="logo" src="../../../../assets/imgs/Vivo Blanco 1.png" alt="Logo" />
     <nav>
       <li>
-        <button type="button" class="btnColapse" (click)="isCollapsed = ! isCollapsed"
+        <button type="button" class="btnColapse"
+          (click)="isCollapsed = ! isCollapsed"
           [attr.aria-expanded]="!isCollapsed">
           <span>Materias Primas</span>
         </button>
@@ -31,12 +32,12 @@
       <li>
         <label (click)="selectLista('')">Receta</label>
       </li>
-</nav>
-</aside>
+    </nav>
+  </aside>
 
-<div *ngIf="flagContent">
-  <!-- <app-registro></app-registro> -->
-</div>
+  <div *ngIf="flagContent">
+    <!-- <app-registro></app-registro> -->
+  </div>
 
 <div class="container" *ngIf="!flagContent">
   <div class="Top">
@@ -57,7 +58,7 @@
     <table class="custom-table">
       <thead>
         <tr>
-          <th class="columns" *ngFor="let atributo of getAtributos()"> {{ atributo }} </th>
+          <th class="columns" *ngFor="let atributo of getAtributos()">{{ atributo }}</th>
           <th class="columns">Acciones</th>
         </tr>
       </thead>
@@ -85,10 +86,10 @@
                 </button>
               </li>
               <li>
-
                 <button class="imageButton">
                   <img src="../../../../assets/icons/🦆 icon _cross_.svg" alt="Mostrar/ocultar" (click)="showModal()">
                 </button>
+
               </li>
             </ul>
           </td>
@@ -96,5 +97,4 @@
       </tbody>
     </table>
   </div>
-</div>
 </div>
