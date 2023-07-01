@@ -14,6 +14,10 @@ import { EditarClienteComponent } from './components/editar-cliente/editar-clien
     RegistroClienteComponent,
     EditarClienteComponent
   ],
+  exports: [
+    RegistroClienteComponent,
+    EditarClienteComponent
+  ],
   imports: [
     CommonModule,
     ClienteRoutingModule,

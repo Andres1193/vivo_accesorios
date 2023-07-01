@@ -19,6 +19,12 @@ import { AppRoutingModule } from '../app-routing.module';
     RegistroComponentMateriasListas,
     EditarComponentMateriasListas
   ],
+  exports: [
+    RegistroComponentMateriasCrudas,
+    EditarComponentMateriasCrudas,
+    RegistroComponentMateriasListas,
+    EditarComponentMateriasListas
+  ],
   imports: [
     CommonModule,
     MateriasRoutingModule,

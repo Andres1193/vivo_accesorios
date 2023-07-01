@@ -14,6 +14,10 @@ import { EditarProveedorComponent } from './components/editar-proveedor/editar-p
     RegistroProveedorComponent,
     EditarProveedorComponent
   ],
+  exports: [
+    RegistroProveedorComponent,
+    EditarProveedorComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,

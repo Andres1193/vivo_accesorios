@@ -4,6 +4,8 @@ import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { Receta } from 'src/app/receta/interfaces/receta.interface';
+import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -18,7 +20,7 @@ export class ListadoComponent {
 
   public isCollapsed = true;
 
-  public frontActual: string = 'Cliente'; // frontActual
+  public frontActual: string = ''; // frontActual
 
   flagContent: boolean = false;
 
@@ -92,12 +94,52 @@ export class ListadoComponent {
     'Stock'
   ];
 
+  public receta: Receta = {
+    codigo_mp: 0,
+    descripcion_mp: '',
+    cantidad: 0,
+    unidad_medida: [],
+    costo_unitario: 0,
+    costo_total_unitario: 0
+  }
+
+  @Input() recetas: Receta[] = [];
+
+  public columnReceta: string[] = [
+    'Código Materia Prima',
+    'Descripcion',
+    'Cantidad',
+    'Unidad de Medida',
+    'Costo Unitario',
+    'Costo Total Unitario'
+  ];
+
+  public pedido: Pedido = {
+    codigoPedido: 0,
+    fecha: new Date,
+    clientes: [],
+    valor_total: 0,
+    cantidad: 0,
+    productos: []
+  }
+
+  @Input() pedidos: Pedido[] = [];
+
+  public columnPedido: string[] = [
+    'Código Pedido',
+    'Fecha',
+    'cliente',
+    'Valor Total',
+    'Cantidad',
+    'Productos'
+  ];
+
   selectLista(name: string): void {
     this.frontActual = name;
-    if(name == 'Producto'){
-      this.opcion = 'registro_producto';
+    if(this.opcion != ""){
+      this.showCreate("");
     }
-
+    
   }
 
   getAtributos(): string[] {
@@ -109,25 +151,35 @@ export class ListadoComponent {
       atributos = this.columnProveedor;
     } else if (this.frontActual.match('Producto')) {
       atributos = this.columnProducto;
-    }
+    } else if (this.frontActual.match('Receta')) {
+      atributos = this.columnReceta;
+    } else if (this.frontActual.match('Pedido')) {
+      atributos = this.columnPedido;
+    } 
 
 
     return atributos;
   }
 
-  showCreate(): void {
+  showCreate(opcion: string): void {
     this.flagContent = !this.flagContent;
-    this.opcion = '1';
+    this.opcion = opcion;
+    // if(opcion != ""){
+    //   switch (this.frontActual) {
+    //     case "Producto":
+    //       if(opcion == "1"){
+    //         this.router.navigate(['/registro_producto']);
+    //       }
+    //   }
+    // }
   }
 
-  callToShow(): void {
-    this.showCreate();
-  }
+  // callToShow(): void {
+  //   this.showCreate();
+  // }
 
   showModal(): void {
     this.router.navigate(['/modalEliminar']);
   }
-
-  
 
 }
