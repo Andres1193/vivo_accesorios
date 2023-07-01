@@ -103,6 +103,13 @@
     </div>
   </div>
 
+<div class="container" *ngIf="!flagContent">
+  <div class="Top">
+    <div class="head">
+      <h2>{{ frontActual }}</h2>
+      <div class="searchBox" id="search">
+        <img src="../../../../assets/icons/🦆 icon _search_.svg" alt="searchIcon">
+        <input type="text" [(ngModel)]="searchItem" />
   <div class="container" *ngIf="!flagContent">
     <div class="Top">
       <div class="head">

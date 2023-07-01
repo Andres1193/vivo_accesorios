@@ -77,11 +77,15 @@ export class ListadoComponent {
   }
 
   public columnProveedor: string[] = [
+    'Codigo',
     'Nombre',
-    'Apellido',
-    'Correo',
+    'telefono_1',
+    'telefono_2',
+    'telefono_3',
+    'telefono_4',
+    'telefono_5',
     'Dirección',
-    'Telefono',
+    'Ciudad',
   ];
 
   public cliente: Cliente = {
