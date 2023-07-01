@@ -30,6 +30,10 @@ export class RegistroUsuarioComponent {
   //     }
   //   );
 
+  // crearProducto() {
+  //   if (this.productoForm.valid) {
+      // Acciones para crear el producto utilizando this.producto
+  //   }
 
   crearUsuario() {
     if ( this.usuario.nombre.length === 0 ) {

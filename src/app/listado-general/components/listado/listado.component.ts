@@ -3,6 +3,7 @@ import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -10,6 +11,8 @@ import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class ListadoComponent {
+
+  constructor(private router: Router) {}
 
   public crear = '';
 
@@ -20,6 +23,9 @@ export class ListadoComponent {
   flagContent: boolean = false;
 
   searchItem: string = '';
+
+  ngOnInit(): void {
+  }
 
   public proveedor: Proveedor = {
     cod_proveedor: '',
@@ -91,7 +97,7 @@ export class ListadoComponent {
     if(name == 'Producto'){
       this.crear = 'registro_producto';
     }
-    
+
   }
 
   getAtributos(): string[] {
@@ -105,16 +111,17 @@ export class ListadoComponent {
       atributos = this.columnProducto;
     }
 
+
     return atributos;
   }
+
 
   showCreate(): void {
     this.flagContent = !this.flagContent;
   }
 
-  MODALS: { [name: string]: any } = {
-    focusFirst: NgbdModalConfirm
-
-  };
+  showModal(): void {
+    this.router.navigate(['/modalEliminar']);
+  }
 
 }
