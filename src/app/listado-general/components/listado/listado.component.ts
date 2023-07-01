@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, Type } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
@@ -9,6 +9,7 @@ import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
 import { MateriasListas } from 'src/app/materias/interfaces/materias-listas.interface';
 import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.interfaces';
 import { ProveedorService } from 'src/app/proveedor/services/proveedor.service';
+import { ClienteService } from 'src/app/cliente/services/cliente.service';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -19,7 +20,7 @@ import { ProveedorService } from 'src/app/proveedor/services/proveedor.service';
 export class ListadoComponent {
 
   constructor(config: NgbModalConfig, private modalService: NgbModal,
-    private proveedorService: ProveedorService) {
+    private proveedorService: ProveedorService,  private clienteService: ClienteService) {
 
     config.backdrop = 'static';
     config.keyboard = false;
@@ -39,8 +40,13 @@ export class ListadoComponent {
 
   searchItem: string = '';
 
+  public listados: any[] = [];
+
+
   ngOnInit(): void {
     this.getProveedores();
+    this.imprimirListados();
+    this.getClientes();
   }
 
   public proveedor: Proveedor = {
@@ -57,7 +63,6 @@ export class ListadoComponent {
   getProveedores() {
     return this.proveedorService.getProveeedores().subscribe(
       (proveedores: Proveedor[]) => {
-        console.log(proveedores)
         this.proveedores = proveedores;
       }
       // (error: any) => {
@@ -66,15 +71,63 @@ export class ListadoComponent {
     );
   }
 
-  imprimirProveedores() {
-    return this.proveedores
+  getClientes() {
+    return this.clienteService.getClientes().subscribe(
+      (clientes: Cliente[]) => {
+        // console.log(proveedores)
+        this.clientes = clientes;
+      }
+      // (error: any) => {
+      // // Manejar el error
+      // }
+    );
   }
 
-
-  getPropiedades(proveedor: any) {
-    const keys = Object.keys(proveedor);
-    return keys.slice(1);
+  getPropiedades(objecto: object) {
+    const keys = Object.keys(objecto);
+    return keys.slice(1, keys.length - 1);
   }
+
+ 
+  imprimirListados(){
+        
+    if (this.frontActual.match('Cliente')) {
+      this.listados = this.clientes;
+    } else if (this.frontActual.match('Provedor')) {
+      this.listados = this.proveedores;
+    }  
+    // else if (this.frontActual.match('Producto')) {
+    //   listados = this.columnProducto;
+    // } else if (this.frontActual.match('Receta')) {
+    //   listados = this.columnReceta;
+    // } else if (this.frontActual.match('Pedido')) {
+    //   listados = this.columnPedido;
+    // } else if (this.frontActual.match('Listas')) {
+    //   listados = this.columnMateriasListas;
+    // } else if (this.frontActual.match('Crudas')) {
+    //   listados = this.columnMateriasCrudas;
+    // }
+    
+    console.log(this.listados)
+  
+  }
+
+  // getProveedores() {
+  //   return this.proveedorService.getProveeedores().subscribe(
+  //     (proveedores: Proveedor[]) => {
+  //       console.log(proveedores)
+  //       this.proveedores = proveedores;
+  //     }
+  //     // (error: any) => {
+  //     // // Manejar el error
+  //     // }
+  //   );
+  // }
+
+  // getPropiedadesProveedor(proveedor: any) {
+  //   const keys = Object.keys(proveedor);
+  //   return keys.slice(1, keys.length - 1);
+  // }
 
   public columnProveedor: string[] = [
     'Codigo',
@@ -243,6 +296,7 @@ export class ListadoComponent {
     if (this.opcion != "") {
       this.showCreate("");
     }
+    this.imprimirListados();
 
   }
 

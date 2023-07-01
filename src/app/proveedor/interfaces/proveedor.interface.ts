@@ -1,5 +1,3 @@
-
-
 export interface Proveedor {
     [key: string]: any;
     cod_proveedor: string;
