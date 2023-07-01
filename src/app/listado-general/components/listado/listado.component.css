@@ -30,9 +30,13 @@ nav li label, #listItems, .btnColapse{
   cursor: pointer;
 }
 
-nav li label:hover, .listItems:hover,
-nav li label:active, .listItems:active{
+nav li label:hover, #listItems:hover,
+nav li label:active, #listItems:active{
   opacity: .5;
+}
+
+nav li label:active, #listItems:after{
+  background-color: 90726C;
 }
 
 .container {
