@@ -2,7 +2,7 @@
 <router-outlet></router-outlet>
 
 <div class="principal">
-  <h1>Nuevo producto</h1>  
+  <h1>Nuevo producto</h1>
   <label id="cancelar">Cancelar</label>
   <label id="guardar">Guardar</label>
   <div class="formulario">
@@ -37,12 +37,12 @@
 
       <div class="mensaje" [innerHtml]='msg' *ngIf="msg"></div>
       <label for="file-input" class="custom-file-input">
-        <img [src]="url" *ngIf="url" id="imagen">
+        <img [src]="url" *ngIf="url" id="imagen" alt="">
         <input type="file" id="file-input" (change)="selectFile($event)">
       </label>
 
       </form>
-      
+
     <label id="crear-categoria">Crear categoria</label>
 
   </div>

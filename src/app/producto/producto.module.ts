@@ -19,6 +19,10 @@ import { RouterModule } from '@angular/router';
         RegistroComponentCategoria,
     ],
     exports: [
+        RegistroComponentProducto,
+        EditarComponentProducto,
+        EditarComponentCategoria,
+        RegistroComponentCategoria,
     ],
     imports: [
         CommonModule,

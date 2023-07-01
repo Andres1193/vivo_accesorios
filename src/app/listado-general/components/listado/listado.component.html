@@ -18,7 +18,7 @@
         </div>
       </li>
       <li>
-        <label (click)="showCreate()">Material de empaques</label>
+        <label>Material de empaques</label>
       </li>
       <li>
         <label (click)="selectLista('Producto')">Productos</label>
@@ -35,9 +35,32 @@
     </nav>
   </aside>
 
-  <div *ngIf="flagContent">
-    <!-- <app-registro></app-registro> -->
+<div *ngIf="flagContent">
+  <div [ngSwitch]="frontActual">
+    <div *ngSwitchCase="'Producto'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-producto></app-registro-producto>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-producto></app-editar-producto>
+      </div>
+    </div>
+    <div *ngSwitchCase="2">
+      <!-- Contenido cuando opcion es igual a 2 -->
+      <p>Opción 2 seleccionada.</p>
+    </div>
+    <div *ngSwitchCase="3">
+      <!-- Contenido cuando opcion es igual a 3 -->
+      <p>Opción 3 seleccionada.</p>
+    </div>
+    <div *ngSwitchDefault>
+      <!-- Contenido cuando opcion no coincide con ningún caso anterior -->
+      <p>Opción no válida.</p>
+    </div>
   </div>
+</div>
+
+
 
 <div class="container" *ngIf="!flagContent">
   <div class="Top">

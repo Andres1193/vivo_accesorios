@@ -41,6 +41,10 @@ export class RegistroUsuarioComponent implements OnInit {
   //     .subscribe((usuarios) => (this.usuarios = usuarios));
   // }
 
+  // crearProducto() {
+  //   if (this.productoForm.valid) {
+      // Acciones para crear el producto utilizando this.producto
+  //   }
 
   crearProducto() {
     if (this.UsuarioForm.valid) {

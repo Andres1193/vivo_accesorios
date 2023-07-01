@@ -22,17 +22,20 @@ export class RegistroComponentProducto implements OnInit{
   };
 
   ngOnInit(): void {
-      
+
   }
 
   constructor(private formBuilder: FormBuilder, private productoService: ProductoService) {
+
     this.productoForm = this.formBuilder.group({
       codigoProducto: ['', Validators.required],
       nombre: ['', Validators.required],
       costo_Producto: [0, Validators.required],
       porcent_Utilidad: [0, Validators.required],
-      precio_Producto: [0, Validators.required],
+      precio_Producto: [0, Validators.required]
+
     });
+
   }
 
   crearProducto() {
