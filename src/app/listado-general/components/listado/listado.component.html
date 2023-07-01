@@ -13,7 +13,7 @@
             <label (click)="selectLista('Listas')">Listas</label>
           </li>
           <li>
-            <label (click)="selectLista('Listas')">Crudas</label>
+            <label (click)="selectLista('Crudas')">Crudas</label>
           </li>
         </div>
       </li>
@@ -27,16 +27,35 @@
         <label (click)="selectLista('Provedor')">Proveedores</label>
       </li>
       <li>
-        <label (click)="selectLista('Cliente')">Usuarios</label>
+        <label (click)="selectLista('Cliente')">Clientes</label>
       </li>
       <li>
-        <label (click)="selectLista('')">Receta</label>
+        <label (click)="selectLista('Receta')">Receta</label>
+      </li>
+      <li>
+        <label (click)="selectLista('Pedido')">Pedido</label>
       </li>
     </nav>
   </aside>
 
 <div *ngIf="flagContent">
   <div [ngSwitch]="frontActual">
+    <div *ngSwitchCase="'Listas'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-materias-listas></app-registro-materias-listas>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-materias-listas></app-editar-materias-listas>
+      </div>
+    </div>
+    <div *ngSwitchCase="'Crudas'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-materias-crudas></app-registro-materias-crudas>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-materias-crudas></app-editar-materias-crudas>
+      </div>
+    </div>
     <div *ngSwitchCase="'Producto'">
       <div *ngIf="opcion == '1'">
         <app-registro-producto></app-registro-producto>
@@ -45,16 +64,40 @@
         <app-editar-producto></app-editar-producto>
       </div>
     </div>
-    <div *ngSwitchCase="2">
-      <!-- Contenido cuando opcion es igual a 2 -->
-      <p>Opción 2 seleccionada.</p>
+    <div *ngSwitchCase="'Provedor'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-proveedor></app-registro-proveedor>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-proveedor></app-editar-proveedor>
+      </div>
     </div>
-    <div *ngSwitchCase="3">
-      <!-- Contenido cuando opcion es igual a 3 -->
-      <p>Opción 3 seleccionada.</p>
+    <div *ngSwitchCase="'Cliente'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-cliente></app-registro-cliente>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-cliente></app-editar-cliente>
+      </div>
+    </div>
+    <div *ngSwitchCase="'Receta'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-receta></app-registro-receta>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-receta></app-editar-receta>
+      </div>
+    </div>
+    <div *ngSwitchCase="'Pedido'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-pedido></app-registro-pedido>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-pedido></app-editar-pedido>
+      </div>
     </div>
     <div *ngSwitchDefault>
-      <!-- Contenido cuando opcion no coincide con ningún caso anterior -->
+
       <p>Opción no válida.</p>
     </div>
   </div>
@@ -73,7 +116,7 @@
     </div>
     <div class="TopButtons">
       <div id="export"><img src="../../../../assets/icons/🦆 icon _download_.svg" alt="">Exportar</div>
-      <a [href]=""><div id="create"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">Crear</div></a>
+      <div id="create" (click)="showCreate('1')"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt="">Crear</div>
 
     </div>
   </div>
@@ -99,7 +142,7 @@
                 </button>
               </li>
               <li>
-                <button class="imageButton">
+                <button class="imageButton" (click)="showCreate('2')">
                   <img src="../../../../assets/icons/🦆 icon _pen_.svg" alt="Mostrar/ocultar">
                 </button>
               </li>

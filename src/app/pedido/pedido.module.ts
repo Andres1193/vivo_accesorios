@@ -14,7 +14,10 @@ import { EditarPedidoComponent } from './components/editar-pedido/editar-pedido.
   declarations: [
     RegistroPedidoComponent,
     EditarPedidoComponent
-
+  ],
+  exports: [
+    RegistroPedidoComponent,
+    EditarPedidoComponent
   ],
   imports: [
     CommonModule,
