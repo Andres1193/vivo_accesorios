@@ -1,41 +1,50 @@
-@import url(https://fonts.googleapis.com/css?family=Karla);
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
 
 .principal {
   width: 100%;
   height: 100%;
   background-color: #efefef;
+
 }
 
 .formulario {
-  top: 30px;
+  top: 80px;
+  bottom: 0px;
   background-color: #ffffff;
   width: 85%;
   height: 70%;
-  max-width: 100%;
-  margin: auto;
+  margin: 0 auto;
   position: relative;
   box-shadow: 0 0 5px 0.2px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
 
-.componente {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
+#ngForm{
+  height: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-label {
-  margin: 30px 0px 0px 80px;
+.componente,  .custom-file-input, .custom-file-input #imagen,
+ .custom-file-input input[type="file"] {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(60px, auto);
+}
+
+.componente label {
+  margin-left:  80px;
+  padding: 1%;
 }
 
 input {
   width: 300px;
-  height: 30px;
+  height: 6px;
   border: 1.5px solid black;
   border-radius: 10px;
-  padding: 4%;
-  margin: 10px 70px 15px 80px;
+  padding: 3%;
+  margin: 0px 70px 0px 80px;
 }
 
 .bloque {
@@ -50,7 +59,6 @@ input {
   font-size: 16px;
 }
 
-
 input:focus{
   border: 1.5px solid #AE837B;
   outline: none;
@@ -62,16 +70,18 @@ input:focus{
   width: 120px;
   height: 30px;
   border-radius: 8px;
-  /* display: flex; */
+  top: -128px;
   justify-content: center;
   align-items: center;
-  left: 54%;
+  left: 64%;
+  border: none;
 }
+
 #guardar{
-  top: 20px;
   background-color: #ae837bce;
-  left: 84.5%;
+  left: 73%;
 }
+
 #cancelar{
   background-color: white;
 }
@@ -81,7 +91,7 @@ input:focus{
 }
 
 #crear-categoria{
-  top: 13%;
+  top: -250px;
   left: 0%;
 }
 
@@ -100,12 +110,11 @@ input:focus{
 }
 
 .custom-file-input {
-  top: 18%;
+  top: -305px;
   left: 63%;
   width: 26%;
   height: 60%;
-  position: absolute;
-  display: flex;
+  position:relative;
   cursor: pointer;
   background-color: #EFEFEF;
   border: none;
@@ -125,10 +134,11 @@ input:focus{
 .custom-file-input #imagen{
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
   border-radius: 10px;
   background-color: #EFEFEF;
 }
-
 
 .mensaje{
   position: absolute;
@@ -144,40 +154,14 @@ input:focus{
   font-size: 22px;
 }
 
-@media screen {
-    .custom-file-input{
-
-    }
-}
-
-@media (max-width: 768px) {
-  .formulario {
-    width: 70%;
-    height: 84%;
-  }
-
-  input {
-    width: 200px;
-    height: 41px;
-  }
-  .principal {
-    width: 265%;
-  }
-
-}
-
 @media (max-width: 480px) {
   .formulario {
+    height: 60%;
     width: 40%;
-    height: 97%;
+    max-height: 80%;
   }
 
-  input {
-    width: 200px;
-    height: 41px;
-  }
-
-    .principal {
-      width: 265%;
+  .componente input {
+    grid-auto-rows: auto;
   }
 }
