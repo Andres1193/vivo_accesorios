@@ -325,9 +325,9 @@ h2 {
   }
 
   .AsideListado{
-    width:20%;
+    width:15%;
     height: 100%;
-    
+    min-width: 15%;
     min-height: 20%;
   }
 }

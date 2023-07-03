@@ -91,8 +91,8 @@ input:focus{
 }
 
 #crear-categoria{
-  top: -250px;
-  left: 0%;
+  top: 10px;
+  left: 20%;
 }
 
 #cancelar:active,
@@ -111,9 +111,9 @@ input:focus{
 
 .custom-file-input {
   top: -305px;
-  left: 63%;
+  left: 70%;
   width: 26%;
-  height: 60%;
+  height: 120%;
   position:relative;
   cursor: pointer;
   background-color: #EFEFEF;
@@ -161,7 +161,5 @@ input:focus{
     max-height: 80%;
   }
 
-  .componente input {
-    grid-auto-rows: auto;
-  }
+
 }
