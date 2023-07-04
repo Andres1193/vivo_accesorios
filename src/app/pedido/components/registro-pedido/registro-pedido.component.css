@@ -18,7 +18,7 @@
   position: relative;
   box-shadow: 0 0 5px 0.2px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  
+
 }
 
 .componente {
@@ -67,7 +67,7 @@ input:focus {
 
 #guardar,
 #cancelar {
-  position: relative; 
+  position: relative;
   width: 120px;
   height: 30px;
   border-radius: 8px;
@@ -116,7 +116,7 @@ a{
   background-color: #EFEFEF;
   border: none;
   border-radius: 10px;
-  background: #EFEFEF url('../../../../../assets/icons/🦆 icon _camera alt_.svg') no-repeat center / cover;
+  background: #EFEFEF url('../../../../assets/icons/🦆 icon _camera alt_.svg') no-repeat center / cover;
   background-size: 22% 10%;
 }
 
@@ -139,7 +139,7 @@ a{
   position: absolute;
   display: inline-block;
   color: #a80000;
-   left: 69.5%; 
+   left: 69.5%;
 }
 
 .principal h1 {
