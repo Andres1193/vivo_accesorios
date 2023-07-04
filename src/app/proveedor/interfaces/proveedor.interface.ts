@@ -1,6 +1,5 @@
-
-
 export interface Proveedor {
+    [key: string]: any;
     cod_proveedor: string;
     nombre: string;
     telefono_1: string;

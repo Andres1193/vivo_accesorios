@@ -30,9 +30,14 @@ nav li label, #listItems, .btnColapse{
   cursor: pointer;
 }
 
-nav li label:hover, .listItems:hover,
-nav li label:active, .listItems:active{
+nav li label:hover, #listItems:hover,
+nav li label:active, #listItems:active{
   opacity: .5;
+}
+
+#listItems:active, #listItems:after{
+  background-color: #90726C;
+  border-left: solid  1px #FFF;
 }
 
 .container {
@@ -314,10 +319,15 @@ h2 {
   .content {
     display: flex;
     height: 100%;
+    max-height: 100%;
+    min-height: 100%;
     background: #E1E1E1;
   }
+
   .AsideListado{
     width:15%;
+    height: 100%;
     min-width: 15%;
+    min-height: 20%;
   }
 }

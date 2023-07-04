@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, Type } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
@@ -8,6 +8,8 @@ import { Receta } from 'src/app/receta/interfaces/receta.interface';
 import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
 import { MateriasListas } from 'src/app/materias/interfaces/materias-listas.interface';
 import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.interfaces';
+import { ProveedorService } from 'src/app/proveedor/services/proveedor.service';
+import { ClienteService } from 'src/app/cliente/services/cliente.service';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -17,7 +19,7 @@ import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.inte
 
 export class ListadoComponent {
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal, private route: ActivatedRoute) {
+  constructor(config: NgbModalConfig, private modalService: NgbModal) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -35,9 +37,12 @@ export class ListadoComponent {
 
   flagContent: boolean = false;
 
-  flag=true;
+  flag = true;
 
   searchItem: string = '';
+
+  ngOnInit(): void {
+  }
 
   public proveedor: Proveedor = {
     cod_proveedor: '',
@@ -45,17 +50,90 @@ export class ListadoComponent {
     telefono_1: '',
     direccion: '',
     ciudad: '',
-    estado: 'a',
+    estado: 'Activo',
   };
 
   @Input() proveedores: Proveedor[] = [];
 
+  getProveedores() {
+    return this.proveedorService.getProveeedores().subscribe(
+      (proveedores: Proveedor[]) => {
+        this.proveedores = proveedores;
+      }
+      // (error: any) => {
+      // // Manejar el error
+      // }
+    );
+  }
+
+  getClientes() {
+    return this.clienteService.getClientes().subscribe(
+      (clientes: Cliente[]) => {
+        // console.log(proveedores)
+        this.clientes = clientes;
+      }
+      // (error: any) => {
+      // // Manejar el error
+      // }
+    );
+  }
+
+  getPropiedades(objecto: object) {
+    const keys = Object.keys(objecto);
+    return keys.slice(1, keys.length - 1);
+  }
+
+ 
+  imprimirListados(){
+        
+    if (this.frontActual.match('Cliente')) {
+      this.listados = this.clientes;
+    } else if (this.frontActual.match('Provedor')) {
+      this.listados = this.proveedores;
+    }  
+    // else if (this.frontActual.match('Producto')) {
+    //   listados = this.columnProducto;
+    // } else if (this.frontActual.match('Receta')) {
+    //   listados = this.columnReceta;
+    // } else if (this.frontActual.match('Pedido')) {
+    //   listados = this.columnPedido;
+    // } else if (this.frontActual.match('Listas')) {
+    //   listados = this.columnMateriasListas;
+    // } else if (this.frontActual.match('Crudas')) {
+    //   listados = this.columnMateriasCrudas;
+    // }
+    
+    console.log(this.listados)
+  
+  }
+
+  // getProveedores() {
+  //   return this.proveedorService.getProveeedores().subscribe(
+  //     (proveedores: Proveedor[]) => {
+  //       console.log(proveedores)
+  //       this.proveedores = proveedores;
+  //     }
+  //     // (error: any) => {
+  //     // // Manejar el error
+  //     // }
+  //   );
+  // }
+
+  // getPropiedadesProveedor(proveedor: any) {
+  //   const keys = Object.keys(proveedor);
+  //   return keys.slice(1, keys.length - 1);
+  // }
+
   public columnProveedor: string[] = [
+    'Codigo',
     'Nombre',
-    'Apellido',
-    'Correo',
+    'telefono_1',
+    'telefono_2',
+    'telefono_3',
+    'telefono_4',
+    'telefono_5',
     'Dirección',
-    'Telefono',
+    'Ciudad',
   ];
 
   public cliente: Cliente = {
@@ -66,7 +144,7 @@ export class ListadoComponent {
     telefono: '',
     direccion: '',
     ciudad: '',
-    estado:'Activo'
+    estado: 'Activo'
   };
 
   @Input() clientes: Cliente[] = [];
@@ -88,8 +166,8 @@ export class ListadoComponent {
     costo_Producto: 0,
     porcent_Utilidad: 0,
     precio_Producto: 0,
-    estado: 'a',
-    stock:0,
+    estado: 'Activo',
+    stock: 0,
     idPedido: '' // TODO: acceder a la base de datos para consultar el pedido
   };
 
@@ -188,7 +266,7 @@ export class ListadoComponent {
     unidad_medida: '',
     costo_unitario: 0,
     costo_total_unitario: 0,
-    estado: '',
+    estado: 'Activo',
     proveedores: [],
     stock: 0
   }
@@ -210,9 +288,10 @@ export class ListadoComponent {
 
   selectLista(name: string): void {
     this.frontActual = name;
-    if(this.opcion != ""){
+    if (this.opcion != "") {
       this.showCreate("");
     }
+
   }
 
   getAtributos(): string[] {
@@ -252,8 +331,8 @@ export class ListadoComponent {
   //   this.showCreate();
   // }
 
-  showModal():void {
-    this.flag=!this.flag;
+  showModal(): void {
+    this.flag = !this.flag;
   }
 
   @Output() lanzarModal = new EventEmitter<void>();
