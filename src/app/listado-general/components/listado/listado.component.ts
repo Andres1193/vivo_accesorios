@@ -19,12 +19,13 @@ import { ClienteService } from 'src/app/cliente/services/cliente.service';
 
 export class ListadoComponent {
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal) {
+  constructor(config: NgbModalConfig, private modalService: NgbModal,
+    private proveedorService: ProveedorService,  private clienteService: ClienteService) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
 
-
+  public listados: any[] = [];
 
   open<Type>(content: Type): void {
     this.modalService.open(content);

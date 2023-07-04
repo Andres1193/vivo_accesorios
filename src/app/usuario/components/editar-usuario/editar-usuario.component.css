@@ -95,6 +95,11 @@ input:focus {
   left: 75%;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
 #guardar:active{
   background-color: #90726C;
 }
