@@ -45,6 +45,9 @@ export class ListadoComponent {
   ngOnInit(): void {
   }
 
+  public noLeidos: string[] = ['No hay stock en primas', 'Ya no queda espacio en listas'];
+  public mensajes: string[] = ['Se ha ingresado algo', 'Ya casi se termina'];
+
   public proveedor: Proveedor = {
     cod_proveedor: '',
     nombre: '',
@@ -148,7 +151,25 @@ export class ListadoComponent {
     estado: 'Activo'
   };
 
-  @Input() clientes: Cliente[] = [];
+  @Input() clientes: Cliente[] = [
+    { identificacion: '1234',
+      nombres: 'Frank',
+      apellidos: 'Gil',
+      correo: 'frank@gmail.com',
+      telefono: '222',
+      direccion: 'avenida',
+      ciudad: 'Yumbo',
+      estado: 'A'}
+      ,
+      { identificacion: '7874',
+      nombres: 'Alejandra',
+      apellidos: 'Yepes',
+      correo: 'alejandra@gmail.com',
+      telefono: '12244',
+      direccion: 'Norte',
+      ciudad: 'Cali',
+      estado: 'A'}
+  ];
 
   public columnCliente: string[] = [
     'Identificación',
@@ -292,7 +313,7 @@ export class ListadoComponent {
     if (this.opcion != "") {
       this.showCreate("");
     }
-
+    this.imprimirListados();
   }
 
   getAtributos(): string[] {
