@@ -25,8 +25,8 @@ export class RegistroClienteComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private clienteService: ClienteService) {
     this.clienteForm = this.formBuilder.group({
       identificacion: new FormControl(''),
-      nombre:         new FormControl(''),
-      apellido:       new FormControl(''),
+      nombres:         new FormControl(''),
+      apellidos:       new FormControl(''),
       correo:         new FormControl(''),
       direccion:      new FormControl(''),
       telefono:       new FormControl(''),

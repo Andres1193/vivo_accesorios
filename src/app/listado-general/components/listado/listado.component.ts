@@ -3,7 +3,7 @@ import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Receta } from 'src/app/receta/interfaces/receta.interface';
 import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
 import { MateriasListas } from 'src/app/materias/interfaces/materias-listas.interface';
@@ -21,10 +21,12 @@ export class ListadoComponent {
 
   constructor(config: NgbModalConfig, private modalService: NgbModal,
     private proveedorService: ProveedorService,  private clienteService: ClienteService) {
-
     config.backdrop = 'static';
     config.keyboard = false;
   }
+
+  public listados: any[] = [];
+
   open<Type>(content: Type): void {
     this.modalService.open(content);
   }
@@ -40,14 +42,11 @@ export class ListadoComponent {
 
   searchItem: string = '';
 
-  public listados: any[] = [];
-
-
   ngOnInit(): void {
-    this.getProveedores();
-    this.imprimirListados();
-    this.getClientes();
   }
+
+  public noLeidos: string[] = ['No hay stock en primas', 'Ya no queda espacio en listas'];
+  public mensajes: string[] = ['Se ha ingresado algo', 'Ya casi se termina'];
 
   public proveedor: Proveedor = {
     cod_proveedor: '',
@@ -152,7 +151,25 @@ export class ListadoComponent {
     estado: 'Activo'
   };
 
-  @Input() clientes: Cliente[] = [];
+  @Input() clientes: Cliente[] = [
+    { identificacion: '1234',
+      nombres: 'Frank',
+      apellidos: 'Gil',
+      correo: 'frank@gmail.com',
+      telefono: '222',
+      direccion: 'avenida',
+      ciudad: 'Yumbo',
+      estado: 'A'}
+      ,
+      { identificacion: '7874',
+      nombres: 'Alejandra',
+      apellidos: 'Yepes',
+      correo: 'alejandra@gmail.com',
+      telefono: '12244',
+      direccion: 'Norte',
+      ciudad: 'Cali',
+      estado: 'A'}
+  ];
 
   public columnCliente: string[] = [
     'Identificación',
@@ -297,7 +314,6 @@ export class ListadoComponent {
       this.showCreate("");
     }
     this.imprimirListados();
-
   }
 
   getAtributos(): string[] {

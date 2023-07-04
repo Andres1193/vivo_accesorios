@@ -85,6 +85,11 @@ input:focus {
   left: 75%;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
 #cancelar:active,
 #cancelar:focus {
   background-color: #D3D3D3;

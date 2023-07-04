@@ -4,7 +4,7 @@
 <div class="principal">
   <h1>Nuevo proveedor</h1>
   <form [formGroup]="proveedorForm" (ngSubmit)="crearProveedor()">
-    <button type="submit" id="cancelar">Cancelar</button>
+    <button type="submit" id="cancelar"><a href="/home">Cancelar</a></button>
     <button type="submit" id="guardar">Guardar</button>
     <div class="formulario">
       <h2 class="bloque">INFORMACIÓN DE CONTACTO</h2>
@@ -45,8 +45,7 @@
 
       <div class="componente">
         <label for="direccion">Dirección:</label>
-        <input type="text" [readonly]="true" formControlName="direccion"
-          id="direccion">
+        <input type="text" formControlName="direccion" id="direccion">
       </div>
 
       <div class="componente">

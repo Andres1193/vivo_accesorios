@@ -1,41 +1,75 @@
 <div class="content">
   <aside class="AsideListado">
     <img class="logo" src="../../../../assets/imgs/Vivo Blanco 1.png" alt="Logo" />
-    <nav>
-      <li>
-        <button type="button" class="btnColapse"
-          (click)="isCollapsed = ! isCollapsed"
-          [attr.aria-expanded]="!isCollapsed">
-          <span>Materias Primas</span>
-        </button>
-        <div id="listItems" [(ngbCollapse)]="isCollapsed">
-          <li>
-            <label (click)="selectLista('Listas')">Listas</label>
-          </li>
-          <li>
-            <label (click)="selectLista('Crudas')">Crudas</label>
-          </li>
+    <button class="imageButton">
+      <img src="../../../../assets/icons/Vector.svg"
+        alt="Mostrar/ocultar">
+      <img src="../../../../assets/icons/🦆 icon _bell ringing_.svg"
+        alt="Mostrar/ocultar">
+    </button>
+    <div *ngIf="false">
+      <nav>
+        <li>
+          <button type="button" class="btnColapse"
+            (click)="isCollapsed = ! isCollapsed"
+            [attr.aria-expanded]="!isCollapsed">
+            <span>Materias Primas</span>
+          </button>
+          <div id="listItems" [(ngbCollapse)]="isCollapsed">
+            <li>
+              <label (click)="selectLista('Listas')">Listas</label>
+            </li>
+            <li>
+              <label (click)="selectLista('Crudas')">Crudas</label>
+            </li>
+          </div>
+        </li>
+        <li>
+          <label>Material de empaques</label>
+        </li>
+        <li>
+          <label (click)="selectLista('Producto')">Productos</label>
+        </li>
+        <li>
+          <label (click)="selectLista('Provedor')">Proveedores</label>
+        </li>
+        <li>
+          <label (click)="selectLista('Cliente')">Clientes</label>
+        </li>
+        <li>
+          <label (click)="selectLista('Receta')">Receta</label>
+        </li>
+        <li>
+          <label (click)="selectLista('Pedido')">Pedido</label>
+        </li>
+      </nav>
+    </div>
+    <div *ngIf="true">
+      <h2>Notificaciones</h2>
+      <div ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>No leídos</button>
+          </h2>
+          <div ngbAccordionCollapse>
+              <!-- <li *ngFor="let noLeido of noLeidos">{{noLeido}}</li> -->
+              <label *ngFor="let noLeido of noLeidos">{{noLeido}}</label>
+          </div>
         </div>
-      </li>
-      <li>
-        <label>Material de empaques</label>
-      </li>
-      <li>
-        <label (click)="selectLista('Producto')">Productos</label>
-      </li>
-      <li>
-        <label (click)="selectLista('Provedor')">Proveedores</label>
-      </li>
-      <li>
-        <label (click)="selectLista('Cliente')">Clientes</label>
-      </li>
-      <li>
-        <label (click)="selectLista('Receta')">Receta</label>
-      </li>
-      <li>
-        <label (click)="selectLista('Pedido')">Pedido</label>
-      </li>
-    </nav>
+      </div>
+
+      <div ngbAccordion>
+        <div ngbAccordionItem>
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>Mensajes</button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <!-- <li *ngFor="let msj of mensajes">{{msj}}</li> -->
+            <label *ngFor="let msj of mensajes">{{msj}}</label>
+        </div>
+        </div>
+      </div>
+    </div>
   </aside>
 
   <div *ngIf="flagContent">

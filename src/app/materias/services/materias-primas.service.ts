@@ -1,0 +1,33 @@
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MateriasPrimasService {
+
+  constructor(private http: HttpClient) {}
+
+
+
+  apiUrl = "http://127.0.0.1:8000/usuarios/api/usuarios/"
+
+
+  // getUsuarios() {
+  //   return this.http.get<Usuario[]>(this.apiUrl);
+  // }
+
+  // crearUsuario(usuario: Usuario) {
+  //   return this.http.post(this.apiUrl, usuario);
+  // }
+
+  // actualizarUsuario(usuarioId: number, usuario: Usuario) {
+  //   const url = `${this.apiUrl}${usuarioId}/`;
+  //   return this.http.put(url, usuario);
+  // }
+
+  // eliminarUsuario(usuarioId: number) {
+  //   const url = `${this.apiUrl}${usuarioId}/`;
+  //   return this.http.delete(url);
+  // }
+}
