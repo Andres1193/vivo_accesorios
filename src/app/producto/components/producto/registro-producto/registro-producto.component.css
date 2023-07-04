@@ -76,6 +76,11 @@ input:focus{
   background-color: white;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
 #crear-categoria, #guardar{
   background-color: #ae837bce;
 }

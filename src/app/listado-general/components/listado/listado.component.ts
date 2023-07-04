@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Receta } from 'src/app/receta/interfaces/receta.interface';
 import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
 import { MateriasListas } from 'src/app/materias/interfaces/materias-listas.interface';
@@ -17,10 +17,13 @@ import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.inte
 
 export class ListadoComponent {
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal) {
+  constructor(config: NgbModalConfig, private modalService: NgbModal, private route: ActivatedRoute) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
+
+
+
   open<Type>(content: Type): void {
     this.modalService.open(content);
   }
@@ -35,9 +38,6 @@ export class ListadoComponent {
   flag=true;
 
   searchItem: string = '';
-
-  ngOnInit(): void {
-  }
 
   public proveedor: Proveedor = {
     cod_proveedor: '',
@@ -213,7 +213,6 @@ export class ListadoComponent {
     if(this.opcion != ""){
       this.showCreate("");
     }
-
   }
 
   getAtributos(): string[] {
