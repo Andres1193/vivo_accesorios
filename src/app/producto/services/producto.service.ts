@@ -7,37 +7,26 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductoService { 
+  
+  apiUrl = "http://127.0.0.1:8000/productos/api/productos/"
 
   constructor(private http: HttpClient) { }
 
-  public crearProducto(producto: Producto){
-
-    //defino la url donde esta el servicio
-    let  url ='http://localhost/VivoAccesorios/ProductoService.php';
-       let header=new HttpHeaders();
-       header.append('Content-Type','aplication/json')
-       header.append('Access-Control-Allow-Methods','"POST"')
-       header.append('Access-Control-Allow-Origin','http://localhost');
-       return this.http.post(url,JSON.stringify(producto),{headers:header});
+  getProductos() {
+    return this.http.get<Producto[]>(this.apiUrl);
   }
 
- public getProducto(p: Producto | null = null){
- 
-  let  url ='http://localhost/tiendaservice/ProductoService.php';
-     let header=new HttpHeaders();
-     header.append('Content-Type','aplication/json')
-     header.append('Access-Control-Allow-Methods','"GET"')
-     header.append('Access-Control-Allow-Origin','http://localhost');
-
-     return this.http.get<Producto[]>(url,{headers:header});
+  crearProducto(Producto: Producto) {
+    return this.http.post(this.apiUrl, Producto);
   }
 
-  public actualizarProducto(producto: Producto) : Observable<Producto> {
-    let  url ='http://localhost/VivoAccesorios/ProductoService.php';
-    let header = new HttpHeaders();
-    header.append('Content-Type', 'aplication/json')
-    header.append('Access-Control-Allow-Methods', '"POST, GET,DELETE,PUT"')
-    header.append('Access-Control-Allow-Origin', 'http://localhost');
-    return this.http.put<Producto>(url, JSON.stringify(producto), { headers: header });
+  actualizarProducto(ProductoId: number, Producto: Producto) {
+    const url = `${this.apiUrl}${ProductoId}/`;
+    return this.http.put(url, Producto);
+  }
+
+  eliminarProducto(ProductoId: number) {
+    const url = `${this.apiUrl}${ProductoId}/`;
+    return this.http.delete(url);
   }
 }

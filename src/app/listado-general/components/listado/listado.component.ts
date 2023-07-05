@@ -11,6 +11,7 @@ import { ClienteService } from 'src/app/cliente/services/cliente.service';
 import { MateriasPrimas } from 'src/app/materias/interfaces/materias-primas.interface';
 import { MateriasPrimasService } from 'src/app/materias/services/materias-primas.service';
 import { Categoria } from '../../../producto/interfaces/categoria.interface';
+import { ProductoService } from 'src/app/producto/services/producto.service';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -24,7 +25,7 @@ export class ListadoComponent {
 
   constructor(config: NgbModalConfig, private modalService: NgbModal,
     private proveedorService: ProveedorService,  private clienteService: ClienteService,
-    private MateriasPrimasService: MateriasPrimasService) {
+    private MateriasPrimasService: MateriasPrimasService, private prodService: ProductoService) {
     config.backdrop = 'static';
     config.keyboard = false;
 
@@ -95,6 +96,14 @@ export class ListadoComponent {
     );
   }
 
+  getProducto() {
+    return this.prodService.getProductos().subscribe(
+      (productos: Producto[]) => {
+        this.productos = productos;
+      }
+    );
+  }
+
   getPropiedades(objecto: any) {
     const keys = Object.keys(objecto);
     return keys.slice(1, keys.length - 1);
@@ -105,10 +114,10 @@ export class ListadoComponent {
       this.listados = this.clientes;
     } else if (this.frontActual.match('Provedor')) {
       this.listados = this.proveedores;
-    }
-    // else if (this.frontActual.match('Producto')) {
-    //   listados = this.columnProducto;
-    // } else if (this.frontActual.match('Receta')) {
+    }else if (this.frontActual.match('Producto')) {
+      this.listados = this.productos;
+    } 
+    // else if (this.frontActual.match('Receta')) {
     //   listados = this.columnReceta;
     // } else if (this.frontActual.match('Pedido')) {
     //   listados = this.columnPedido;
@@ -163,15 +172,13 @@ export class ListadoComponent {
 
   public producto: Producto = {
     idProducto: 0,
-    codigoProducto: '',
+    cod_producto: '',
     nombre: '',
-    costo_Producto: 0,
     porcent_Utilidad: 0,
     precio_Producto: 0,
-    estado: 'Activo',
+    bodega: '',
     stock: 0,
-    idPedido: '', // TODO: acceder a la base de datos para consultar el pedido
-    categoria: this.categoria
+    estado: 'Activo',
   };
 
   @Input() productos: Producto[] = [];

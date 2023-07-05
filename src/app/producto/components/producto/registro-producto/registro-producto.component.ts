@@ -26,19 +26,16 @@ export class RegistroComponentProducto {
 
   public producto: Producto = {
     idProducto: 0,
-    codigoProducto: '',
+    cod_producto: '',
     nombre: '',
-    costo_Producto: 0,
     porcent_Utilidad: 0,
     precio_Producto: 0,
+    bodega: '',
     stock: 0,
     estado: 'Activo',
-    categoria: {
-      codigoCategoria: 0,
-      desc_categoria: '',
-      estado: 'Activo',
-    },
   };
+
+
 
   constructor(
     private formBuilder: FormBuilder,
