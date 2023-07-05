@@ -78,15 +78,18 @@ export class RegistroComponentMateriasCrudas implements OnInit {
   }
 
   crearMateriasCrudas() {
-    this.materiaCrudasForm.value.nomProveedor = this.materiaCrudasForm.value.opcionSeleccionada.nombre
-    //    // if (this.materiaCrudasForm.valid) {
 
-    this.mpService.crearMateriasPrimas(this.materiaCrudasForm.value).subscribe(
-      (response) => {
-        // Manejar la respuesta exitosa
-        console.log('Materia prima creada:', response);
-      }
-    );
+    if (this.materiaCrudasForm.valid) {
+
+      this.mpService.crearMateriasPrimas(this.materiaCrudasForm.value).subscribe(
+        (response) => {
+          // Manejar la respuesta exitosa
+          console.log('Materia prima creada:', response);
+        }
+      );
+    } else {
+      alert('Faltan llenar campos');
+    }
   }
 
   //Seleccionar una imagen;

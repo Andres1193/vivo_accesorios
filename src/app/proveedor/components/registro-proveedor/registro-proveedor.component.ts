@@ -51,6 +51,8 @@ export class RegistroProveedorComponent {
         //   console.error('Error al crear el producto:', error);
         // }
       );
+    } else{
+      alert('Faltan llenar campos' );
     }
 
   }
