@@ -11,7 +11,6 @@ export class MateriasPrimasService {
 
   apiUrl = "http://127.0.0.1:8000/mp/api/materiasPrimas/"
 
-  
   obtenerDatosFiltrados(valor: string) {
     let params = { valor: valor };
     return this.http.get<MateriasPrimas>(this.apiUrl, { params });

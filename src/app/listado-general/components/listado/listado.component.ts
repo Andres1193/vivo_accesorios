@@ -9,6 +9,7 @@ import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
 import { ProveedorService } from 'src/app/proveedor/services/proveedor.service';
 import { ClienteService } from 'src/app/cliente/services/cliente.service';
 import { MateriasPrimas } from 'src/app/materias/interfaces/materias-primas.interface';
+import { MateriasPrimasService } from 'src/app/materias/services/materias-primas.service';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -21,7 +22,8 @@ export class ListadoComponent {
 
 
   constructor(config: NgbModalConfig, private modalService: NgbModal,
-    private proveedorService: ProveedorService,  private clienteService: ClienteService) {
+    private proveedorService: ProveedorService,  private clienteService: ClienteService,
+    private MateriasPrimasService: MateriasPrimasService) {
     config.backdrop = 'static';
     config.keyboard = false;
 
@@ -66,6 +68,7 @@ export class ListadoComponent {
     return this.proveedorService.getProveeedores().subscribe(
       (proveedores: Proveedor[]) => {
         this.proveedores = proveedores;
+        
       }
       // (error: any) => {
       // // Manejar el error
@@ -76,8 +79,23 @@ export class ListadoComponent {
   getClientes() {
     return this.clienteService.getClientes().subscribe(
       (clientes: Cliente[]) => {
-        // console.log(proveedores)
         this.clientes = clientes;
+        
+        
+      }
+      // (error: any) => {
+      // // Manejar el error
+      // }
+    );
+  }
+
+
+  getMp() {
+    return this.MateriasPrimasService.getMateriasPrimas().subscribe(
+      (crudas: MateriasPrimas[]) => {
+        console.log(crudas)
+        // console.log(proveedores)
+        this.crudas = crudas;
       }
       // (error: any) => {
       // // Manejar el error
@@ -92,7 +110,6 @@ export class ListadoComponent {
 
 
   imprimirListados(){
-
     if (this.frontActual.match('Cliente')) {
       this.listados = this.clientes;
     } else if (this.frontActual.match('Provedor')) {
@@ -104,13 +121,12 @@ export class ListadoComponent {
     //   listados = this.columnReceta;
     // } else if (this.frontActual.match('Pedido')) {
     //   listados = this.columnPedido;
-    // } else if (this.frontActual.match('Listas')) {
-    //   listados = this.columnMateriasListas;
-    // } else if (this.frontActual.match('Crudas')) {
-    //   listados = this.columnMateriasCrudas;
-    // }
+    // } 
+    else if (this.frontActual.match('Crudas')) {
+      this.listados = this.crudas;
+    }
 
-    console.log(this.listados)
+    console.log(this.crudas)
 
   }
 
@@ -154,25 +170,7 @@ export class ListadoComponent {
     estado: 'Activo'
   };
 
-  @Input() clientes: Cliente[] = [
-    { identificacion: '1234',
-      nombres: 'Frank',
-      apellidos: 'Gil',
-      correo: 'frank@gmail.com',
-      telefono: '222',
-      direccion: 'avenida',
-      ciudad: 'Yumbo',
-      estado: 'A'}
-      ,
-      { identificacion: '7874',
-      nombres: 'Alejandra',
-      apellidos: 'Yepes',
-      correo: 'alejandra@gmail.com',
-      telefono: '12244',
-      direccion: 'Norte',
-      ciudad: 'Cali',
-      estado: 'A'}
-  ];
+  @Input() clientes: Cliente[] = [];
 
   public columnCliente: string[] = [
     'Identificación',
@@ -247,21 +245,6 @@ export class ListadoComponent {
     'Productos'
   ];
 
-  // public lista: MateriasListas = {
-  //   cod_interno: '',
-  //   tipo_materia_prima: [],
-  //   desc_mp: '',
-  //   cant_linea: 0,
-  //   precio_linea: 0,
-  //   unidad_medida: '',
-  //   costo_unitario: 0,
-  //   costo_total_unitario: 0,
-  //   bodega: '',
-  //   proveedores: [],
-  //   stock: 0,
-  //   estado: 'Activo'
-  // }
-
 
   public cruda: MateriasPrimas = {
     cod_interno: '',
@@ -283,16 +266,19 @@ export class ListadoComponent {
   @Input() crudas: MateriasPrimas[] = [];
 
   public columnMateriasCrudas: string[] = [
-    'Código Materia Lista',
+    'Código Materia prima',
+    'Tipo de Materia Prima',
     'Descripcion',
-    'Categoria',
     'Cantidad Linea',
     'Precio Linea',
     'Unidad de Medida',
     'Costo Unitario',
     'Costo Total Unitario',
-    'Proveedores',
-    'Stock',
+    'Cantidad de Baño de Línea',
+    'Cantidad bañada',
+    'Costo Baño Unitario',
+    'Bodega',
+    'Stock'
   ];
 
   selectLista(name: string): void {
