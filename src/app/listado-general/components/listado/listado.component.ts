@@ -19,10 +19,13 @@ import { ClienteService } from 'src/app/cliente/services/cliente.service';
 
 export class ListadoComponent {
 
+
+
   constructor(config: NgbModalConfig, private modalService: NgbModal,
     private proveedorService: ProveedorService,  private clienteService: ClienteService) {
     config.backdrop = 'static';
     config.keyboard = false;
+
   }
 
   public listados: any[] = [];
@@ -30,6 +33,7 @@ export class ListadoComponent {
   open<Type>(content: Type): void {
     this.modalService.open(content);
   }
+
   public opcion = '';
 
   public isCollapsed = true;
@@ -87,14 +91,14 @@ export class ListadoComponent {
     return keys.slice(1, keys.length - 1);
   }
 
- 
+
   imprimirListados(){
-        
+
     if (this.frontActual.match('Cliente')) {
       this.listados = this.clientes;
     } else if (this.frontActual.match('Provedor')) {
       this.listados = this.proveedores;
-    }  
+    }
     // else if (this.frontActual.match('Producto')) {
     //   listados = this.columnProducto;
     // } else if (this.frontActual.match('Receta')) {
@@ -106,9 +110,9 @@ export class ListadoComponent {
     // } else if (this.frontActual.match('Crudas')) {
     //   listados = this.columnMateriasCrudas;
     // }
-    
+
     console.log(this.listados)
-  
+
   }
 
   // getProveedores() {
