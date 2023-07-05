@@ -53,6 +53,7 @@ export class ListadoComponent {
     this.getProveedores();
     this.getClientes();
     this.getMp();
+    this.getProducto();
   }
 
   public noLeidos: string[] = ['No hay stock en primas', 'Ya no queda espacio en listas'];
@@ -175,7 +176,7 @@ export class ListadoComponent {
     cod_producto: '',
     nombre: '',
     porcent_Utilidad: 0,
-    precio_Producto: 0,
+    precio_producto: 0,
     bodega: '',
     stock: 0,
     estado: 'Activo',

@@ -42,9 +42,9 @@ nav li label:active, #listItems:active{
 .container {
   position: relative;
   display: flex;
-  flex-flow: row wrap;
+  /* flex-flow: row wrap; */
   align-items: left;
-  flex-direction: row;
+  flex-direction: column;
   background: #E1E1E1;
 }
 

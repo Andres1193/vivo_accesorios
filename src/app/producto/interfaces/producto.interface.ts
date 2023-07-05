@@ -6,7 +6,7 @@ export interface Producto {
     cod_producto: string;
     nombre: string;
     porcent_Utilidad: number;
-    precio_Producto: number;
+    precio_producto: number;
     bodega: string;
     stock: number;
     estado: string;

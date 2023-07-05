@@ -29,7 +29,7 @@ export class RegistroComponentProducto {
     cod_producto: '',
     nombre: '',
     porcent_Utilidad: 0,
-    precio_Producto: 0,
+    precio_producto: 0,
     bodega: '',
     stock: 0,
     estado: 'Activo',
