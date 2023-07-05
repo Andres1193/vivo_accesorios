@@ -120,23 +120,6 @@ export class ListadoComponent {
 
   }
 
-  // getProveedores() {
-  //   return this.proveedorService.getProveeedores().subscribe(
-  //     (proveedores: Proveedor[]) => {
-  //       console.log(proveedores)
-  //       this.proveedores = proveedores;
-  //     }
-  //     // (error: any) => {
-  //     // // Manejar el error
-  //     // }
-  //   );
-  // }
-
-  // getPropiedadesProveedor(proveedor: any) {
-  //   const keys = Object.keys(proveedor);
-  //   return keys.slice(1, keys.length - 1);
-  // }
-
   public columnProveedor: string[] = [
     'Codigo',
     'Nombre',
