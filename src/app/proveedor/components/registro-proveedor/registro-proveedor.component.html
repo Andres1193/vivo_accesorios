@@ -2,7 +2,7 @@
 <router-outlet></router-outlet>
 
 <div class="principal">
-  <h1>Nuevo proveedor</h1>
+  <h1>Editar proveedor</h1>
   <form [formGroup]="proveedorForm" (ngSubmit)="crearProveedor()">
     <button type="submit" id="cancelar"><a href="/home">Cancelar</a></button>
     <button type="submit" id="guardar">Guardar</button>
@@ -19,31 +19,6 @@
       </div>
 
       <div class="componente">
-        <label for="telefono">Telefono 1:</label>
-        <input type="text" formControlName="telefono_1" id="telefono">
-      </div>
-
-      <div class="componente">
-        <label for="telefono">Telefono 2:</label>
-        <input type="text" formControlName="telefono_2" id="telefono">
-      </div>
-
-      <div class="componente">
-        <label for="telefono">Telefono 3:</label>
-        <input type="text" formControlName="telefono_3" id="telefono">
-      </div>
-
-      <div class="componente">
-        <label for="telefono">Telefono 4:</label>
-        <input type="text" formControlName="telefono_4" id="telefono">
-      </div>
-
-      <div class="componente">
-        <label for="telefono">Telefono 5:</label>
-        <input type="text" formControlName="telefono_5" id="telefono">
-      </div>
-
-      <div class="componente">
         <label for="direccion">Dirección:</label>
         <input type="text" formControlName="direccion" id="direccion">
       </div>
@@ -53,23 +28,34 @@
         <input type="text" formControlName="ciudad" id="ciudad">
       </div>
 
+      <div class="otroComponente">
+        <div class="componente">
+          <label for="telefono_1">Telefono 1:</label>
+          <input type="text" formControlName="telefono_1" id="telefono">
+        </div>
+
+        <div class="componente">
+          <label for="telefono_2">Telefono 2:</label>
+          <input type="text" formControlName="telefono_2" id="telefono">
+        </div>
+
+        <div class="componente">
+          <label for="telefono_3">Telefono 3:</label>
+          <input type="text" formControlName="telefono_3" id="telefono">
+        </div>
+
+        <div class="componente">
+          <label for="telefono_4">Telefono 4:</label>
+          <input type="text" formControlName="telefono_4" id="telefono">
+        </div>
+
+        <div class="componente">
+          <label for="telefono_5">Telefono 5:</label>
+          <input type="text" formControlName="telefono_5" id="telefono">
+        </div>
+
+      </div>
+
     </div>
   </form>
 </div>
-
-
-
-<!-- <div class='wrap'>
-    <h2>Registro</h2>
-      <form>
-          <input type='text' name="nombre" id='nombre' placeholder='Nombre' [(ngModel)]="proveedor.nombre">
-          <input type='text' name="telefono1" id='telefono1' placeholder='Telefono 1' [(ngModel)]="proveedor.telefono_1">
-          <input type='text' name="telefono2" id='telefono2' placeholder='Telefono 2' [(ngModel)]="proveedor.telefono_2">
-          <input type='text' name="telefono3" id='telefono3' placeholder='Telefono 3' [(ngModel)]="proveedor.telefono_3">
-          <input type='text' name="telefono4" id='telefono4' placeholder='Telefono 4' [(ngModel)]="proveedor.telefono_4">
-          <input type='text' name="telefono5" id='telefono5' placeholder='Telefono 5' [(ngModel)]="proveedor.telefono_5">
-          <input type='text' name='direccion' id='direccion' placeholder='Dirección' [(ngModel)]="proveedor.direccion">
-          <input type='text' name='ciudad' id='ciudad' placeholder='Ciudad' [(ngModel)]="proveedor.ciudad">
-      </form>
-    <button class='registrar' (click)="crearProveedor()">Registrar</button>
-  </div> -->

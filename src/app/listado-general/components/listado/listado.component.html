@@ -1,12 +1,12 @@
 <div class="content">
   <aside class="AsideListado">
     <img class="logo" src="../../../../assets/imgs/Vivo Blanco 1.png" alt="Logo" />
-    <button class="imageButton">
+    <!-- <button class="imageButton">
       <img src="../../../../assets/icons/Vector.svg"
         alt="Mostrar/ocultar">
       <img src="../../../../assets/icons/🦆 icon _bell ringing_.svg"
         alt="Mostrar/ocultar">
-    </button>
+    </button> -->
     <div *ngIf="true">
       <nav>
         <li>
@@ -44,7 +44,7 @@
         </li>
       </nav>
     </div>
-    <div *ngIf="false">
+    <div *ngIf="true">
       <h2>Notificaciones</h2>
       <div ngbAccordion>
         <div ngbAccordionItem>
@@ -52,8 +52,8 @@
             <button ngbAccordionButton>No leídos</button>
           </h2>
           <div ngbAccordionCollapse>
-              <!-- <li *ngFor="let noLeido of noLeidos">{{noLeido}}</li> -->
-              <label *ngFor="let noLeido of noLeidos">{{noLeido}}</label>
+              <li *ngFor="let noLeido of noLeidos">{{noLeido}}</li> -->
+              <!-- <label *ngFor="let noLeido of noLeidos">{{noLeido}}</label>
           </div>
         </div>
       </div>
@@ -64,12 +64,12 @@
             <button ngbAccordionButton>Mensajes</button>
           </h2>
           <div ngbAccordionCollapse>
-            <!-- <li *ngFor="let msj of mensajes">{{msj}}</li> -->
-            <label *ngFor="let msj of mensajes">{{msj}}</label>
+            <li *ngFor="let msj of mensajes">{{msj}}</li> -->
+            <!-- <label *ngFor="let msj of mensajes">{{msj}}</label>
         </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </aside>
 
   <div *ngIf="flagContent">
