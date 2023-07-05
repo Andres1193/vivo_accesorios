@@ -39,6 +39,7 @@ const routes: Routes = [
     // { path: 'register', component: SignInComponent },
 
     { path: '**', redirectTo: '/home' }
+    
   ];
 
 @NgModule({
