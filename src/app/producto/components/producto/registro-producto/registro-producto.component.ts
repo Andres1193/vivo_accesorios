@@ -6,6 +6,7 @@ import {
   NgbModal,
   ModalDismissReasons,
 } from '@ng-bootstrap/ng-bootstrap';
+import { Categoria } from 'src/app/producto/interfaces/categoria.interface';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
 import { ProductoService } from 'src/app/producto/services/producto.service';
 
@@ -20,6 +21,8 @@ export class RegistroComponentProducto {
 
   closeResult = '';
 
+  public categoria: Categoria;
+
   public producto: Producto = {
     idProducto: 0,
     codigoProducto: '',
@@ -28,11 +31,11 @@ export class RegistroComponentProducto {
     porcent_Utilidad: 0,
     precio_Producto: 0,
     stock: 0,
-    estado: 'a',
+    estado: 'Activo',
     categoria: {
       codigoCategoria: 0,
       desc_categoria: '',
-      estado: 'a',
+      estado: 'Activo',
     },
   };
 

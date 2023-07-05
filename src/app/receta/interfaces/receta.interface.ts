@@ -1,6 +1,6 @@
 export interface Receta {
-    codigo_mp: string;
-    descripcion_mp: string;
+    cod_interno: string;
+    desc_mp: string;
     cantidad: number;
     unidad_medida: string;
     costo_unitario: number;
