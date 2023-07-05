@@ -46,7 +46,66 @@
       </label> -->
 
       <label id="crear-mp" (click)="open(content)">Seleccionar Materia Prima</label>
-      <ng-template #content let-modal>
+
+        <ng-template #content let-modal >
+          <div class="cmodal modal-lg modalCategoria" >
+            <div class="custom-modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Materias Primas</h4>
+                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+              </div>
+              <div class="modal-body">
+                <article >
+                  <table class="estilo-tabla">
+                    <thead>
+                      <tr>
+                        <th>codigo interno</th>
+                        <th>Tipo de materia prima</th>
+                        <th>Descripción</th>
+                        <th>Cantidad Línea</th>
+                        <th>Precio Línea</th>
+                        <th>Unidad de medida</th>
+                        <th>Costo Unitario</th>
+                        <th>Costo Total Unitario</th>
+                        <th>Costo Baño Línea</th>
+                        <th>Cantidad Bañada</th>
+                        <th>Costo Baño Unitario</th>
+                        <th>Bodega</th>
+                        <th>Stock</th>
+                        <th>Nombre Proveedor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let mp of crudas">
+                        <td>{{ mp.cod_interno}}</td>
+                        <td>{{ mp.tipo_materia_prima}}</td>
+                        <td>{{ mp.desc_mp}}</td>
+                        <td>{{ mp.cant_linea}}</td>
+                        <td>{{ mp.precio_linea}}</td>
+                        <td>{{ mp.unidad_medida}}</td>
+                        <td>{{ mp.costo_unitario}}</td>
+                        <td>{{ mp.costo_total_unitario}}</td>
+                        <td>{{ mp.costo_banio_linea}}</td>
+                        <td>{{ mp.cantidad_banada}}</td>
+                        <td>{{ mp.costo_banio_un}}</td>
+                        <td>{{ mp.bodega}}</td>
+                        <td>{{ mp.stock}}</td>
+                        <td>{{ mp.nomProveedor}}</td>
+                      </tr>
+                    </tbody>
+                  </table>   
+                </article>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Guardar selección</button>
+              </div>
+            </div>
+            </div>
+          </div>
+        </ng-template>
+
+      <!-- <ng-template #content let-modal>
         <div class="modal-dialog modal-lg modalCategoria">
           <div class="modal-content">
             <div class="modal-header">
@@ -100,7 +159,7 @@
             </div>
           </div>
         </div>
-      </ng-template>
+      </ng-template> -->
 
 
     </div>

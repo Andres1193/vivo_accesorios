@@ -7,10 +7,12 @@
   background-color: #efefef;
 }
 
-.modal-lg {
-  width: 1000px; /* Ajusta el ancho según tus necesidades */
+.cmodal{
+  position: relative;
+  left: -200px;
+  width: 1200px;
+  max-width: 1800px;
 }
-
 
 .estilo-tabla { 
   border-collapse: collapse;
@@ -73,13 +75,6 @@ select{
   border-radius: 10px;
   padding: 1.8%;
   margin: 10px 70px 15px 80px;
-}
-
-
-.modal-lg, .modal-header, .modal-body, .modal-footer{
-  width: 1000px;
-  height: 40x;
-
 }
 
 option:checked{
