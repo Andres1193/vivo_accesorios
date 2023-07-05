@@ -68,6 +68,7 @@ export class RegistroComponentProducto {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       }
     );
+    
   }
 
   private getDismissReason(reason: any): string {
