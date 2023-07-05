@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Receta } from '../../interfaces/receta.interface';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MateriasPrimasService } from 'src/app/materias/services/materias-primas.service';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './registro-receta.component.html', 
   styleUrls: ['./registro-receta.component.css']
 })
-export class RegistroRecetaComponent {
+export class RegistroRecetaComponent implements OnInit {
 
   
   closeResult = '';
@@ -39,6 +39,10 @@ export class RegistroRecetaComponent {
       costo_unitario: new FormControl(0),
       costo_total_unitario: new FormControl(0)
     });
+  }
+
+  ngOnInit(): void {
+    this.getMp();  
   }
 
   getMp() {
