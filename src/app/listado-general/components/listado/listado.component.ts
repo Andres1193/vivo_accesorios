@@ -1,13 +1,13 @@
-import { Component, EventEmitter, Input, Output, Type } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Proveedor } from '../../../proveedor/interfaces/proveedor.interface';
 import { Cliente } from 'src/app/cliente/interfaces/cliente.interfaces';
 import { Producto } from 'src/app/producto/interfaces/producto.interface';
-import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute, Router } from '@angular/router';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { Receta } from 'src/app/receta/interfaces/receta.interface';
 import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
 import { ProveedorService } from 'src/app/proveedor/services/proveedor.service';
 import { ClienteService } from 'src/app/cliente/services/cliente.service';
+
 import { MateriasPrimas } from 'src/app/materias/interfaces/materias-primas.interface';
 import { MateriasPrimasService } from 'src/app/materias/services/materias-primas.service';
 @Component({
@@ -18,6 +18,8 @@ import { MateriasPrimasService } from 'src/app/materias/services/materias-primas
 })
 
 export class ListadoComponent {
+
+
 
   constructor(config: NgbModalConfig, private modalService: NgbModal,
     private proveedorService: ProveedorService,  private clienteService: ClienteService,
@@ -37,7 +39,7 @@ export class ListadoComponent {
 
   public isCollapsed = true;
 
-  public frontActual: string = ''; // frontActual
+  public frontActual: string = '';
 
   flagContent: boolean = false;
 
@@ -69,6 +71,7 @@ export class ListadoComponent {
     return this.proveedorService.getProveeedores().subscribe(
       (proveedores: Proveedor[]) => {
         this.proveedores = proveedores;
+        
       }
     );
   }
@@ -77,6 +80,8 @@ export class ListadoComponent {
     return this.clienteService.getClientes().subscribe(
       (clientes: Cliente[]) => {
         this.clientes = clientes;
+        
+        
       }
     );
   }
@@ -106,7 +111,7 @@ export class ListadoComponent {
     //   listados = this.columnReceta;
     // } else if (this.frontActual.match('Pedido')) {
     //   listados = this.columnPedido;
-    // } 
+    // }
     else if (this.frontActual.match('Crudas')) {
       this.listados = this.crudas;
     }
@@ -175,7 +180,12 @@ export class ListadoComponent {
     precio_Producto: 0,
     estado: 'Activo',
     stock: 0,
-    idPedido: '' // TODO: acceder a la base de datos para consultar el pedido
+    idPedido: '', // TODO: acceder a la base de datos para consultar el pedido
+    categoria:{
+      codigoCategoria: 0,
+      desc_categoria: '',
+      estado: 'a'
+    }
   };
 
   @Input() productos: Producto[] = [];

@@ -14,7 +14,6 @@
   position: relative;
   box-shadow: 0 0 5px 0.2px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-
 }
 
 .componente {
@@ -38,7 +37,10 @@ input {
   margin: 10px 200px 4px 40px;
 }
 
-#nombre, #direccion, #ciudad, #cod_proveedor{
+#nombre,
+#direccion,
+#ciudad,
+#cod_proveedor {
   display: flex;
   position: relative;
   width: 600px;
@@ -46,10 +48,11 @@ input {
   padding: 1.5%;
 }
 
-.otroComponente{
-  display: flexbox;
-  flex-direction: column;
-  
+.otroComponente {
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(2%, auto);
 }
 
 .bloque {
@@ -91,15 +94,15 @@ input:focus {
 #cancelar {
   top: 30px;
   background-color: white;
-  left: 75%;
+  left: 65%;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
 }
 
-#guardar:active{
+#guardar:active {
   background-color: #90726C;
 }
 
@@ -118,19 +121,14 @@ a{
 
 @media (max-width: 768px) {
   .formulario {
-    width: 70%;
-    height: 84%;
+    width: 90%;
+    height: auto;
   }
 
   input {
-    width: 200px;
-    height: 41px;
+    width: 100%;
+    height: 40px;
   }
-
-  .principal {
-    width: 265%;
-  }
-
 }
 
 @media (max-width: 480px) {
