@@ -13,12 +13,12 @@
         <input type="text" formControlName="desc_mp" id="descripcion">
       </div>
 
-      <div class="componente">
+      <!-- <div class="componente">
         <label for="categoria">Categoria:</label>
         <select [(ngModel)]="opcionSeleccionadaCategoria" (change)="seleccionarOpcionCategoria(opcionSeleccionadaCategoria)">
           <option *ngFor="let unidad of materiasCrudas.categoria_mp" [value]="">{{ "" }}</option>
         </select>
-      </div>
+      </div> -->
 
       <div class="componente">
         <label for="cantidad">Cantidad linea:</label>
@@ -48,13 +48,6 @@
         <label for="costo">Costo total unitario:</label>
         <input type="number" [readonly]="true" formControlName="costo_total_unitario"
           id="costo">
-      </div>
-
-      <div class="componente">
-        <label for="costo">Proveedor:</label>
-        <select [(ngModel)]="opcionSeleccionadaUnidad" (change)="seleccionarOpcionUnidad(opcionSeleccionadaUnidad)">
-          <option *ngFor="let unidad of materiasCrudas.proveedores" [value]="">{{ "" }}</option>
-        </select>
       </div>
 
       <div class="componente">

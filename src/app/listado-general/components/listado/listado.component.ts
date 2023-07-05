@@ -244,22 +244,20 @@ export class ListadoComponent {
     'Productos'
   ];
 
-  public lista: MateriasListas = {
-    cod_interno: '',
-    desc_mp: '',
-    categoria_mp: [],
-    cant_linea: 0,
-    precio_linea: 0,
-    unidad_medida: '',
-    costo_unitario: 0,
-    costo_total_unitario: 0,
-    estado: '',
-    costo_banio_linea: 0,
-    cantidad_banada: 0,
-    costo_banio_un: 0,
-    proveedores: [],
-    stock: 0
-  }
+  // public lista: MateriasListas = {
+  //   cod_interno: '',
+  //   tipo_materia_prima: [],
+  //   desc_mp: '',
+  //   cant_linea: 0,
+  //   precio_linea: 0,
+  //   unidad_medida: '',
+  //   costo_unitario: 0,
+  //   costo_total_unitario: 0,
+  //   bodega: '',
+  //   proveedores: [],
+  //   stock: 0,
+  //   estado: 'Activo'
+  // }
 
   @Input() listas: MateriasListas[] = [];
 
@@ -281,16 +279,16 @@ export class ListadoComponent {
 
   public cruda: MateriasCrudas = {
     cod_interno: '',
+    tipo_materia_prima: '',
     desc_mp: '',
-    categoria_mp: [],
     cant_linea: 0,
     precio_linea: 0,
     unidad_medida: '',
     costo_unitario: 0,
     costo_total_unitario: 0,
-    estado: 'Activo',
-    proveedores: [],
-    stock: 0
+    bodega: '',
+    stock: 0,
+    estado: 'Activo'
   }
 
   @Input() crudas: MateriasCrudas[] = [];

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { MateriasCrudas } from '../interfaces/materias-crudas.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -8,26 +9,24 @@ export class MateriasPrimasService {
 
   constructor(private http: HttpClient) {}
 
+  apiUrl = "http://127.0.0.1:8000/mp/api/materiasPrimas/"
 
 
-  apiUrl = "http://127.0.0.1:8000/usuarios/api/usuarios/"
+  getMateriasPrimas() {
+    return this.http.get<MateriasCrudas[]>(this.apiUrl);
+  }
 
+  crearMateriasPrimas(mp: MateriasCrudas) {
+    return this.http.post(this.apiUrl, mp);
+  }
 
-  // getUsuarios() {
-  //   return this.http.get<Usuario[]>(this.apiUrl);
-  // }
+  actualizarMateriasPrimas(mpId: number, mp: MateriasCrudas) {
+    const url = `${this.apiUrl}${mpId}/`;
+    return this.http.put(url, mp);
+  }
 
-  // crearUsuario(usuario: Usuario) {
-  //   return this.http.post(this.apiUrl, usuario);
-  // }
-
-  // actualizarUsuario(usuarioId: number, usuario: Usuario) {
-  //   const url = `${this.apiUrl}${usuarioId}/`;
-  //   return this.http.put(url, usuario);
-  // }
-
-  // eliminarUsuario(usuarioId: number) {
-  //   const url = `${this.apiUrl}${usuarioId}/`;
-  //   return this.http.delete(url);
-  // }
+  eliminarMateriasPrimas(mpId: number) {
+    const url = `${this.apiUrl}${mpId}/`;
+    return this.http.delete(url);
+  }
 }

@@ -3,27 +3,31 @@
 
 <div class="principal">
   <h1>Nueva materia cruda</h1>
-  <div id="cancelar"><a href="/home">Cancelar</a></div>
-  <div id="guardar">Guardar</div>
-  <div class="formulario">
-    <h2 class="bloque">INFORMACIÓN GENERAL</h2>
-    <form [formGroup]="materiaCrudasForm" (ngSubmit)="crearMateriasCrudas()">
+  <form [formGroup]="materiaCrudasForm" (ngSubmit)="crearMateriasCrudas()">
+    <button type="submit" id="cancelar"><a href="/home">Cancelar</a></button>
+    <button type="submit" id="guardar">Guardar</button>
+    <div class="formulario">
+      <h2 class="bloque">INFORMACIÓN GENERAL</h2>
+
+      <div class="componente">
+        <label for="descripcion"> </label>
+        <input type="text" [readonly]="true"
+          formControlName="tipo_materia_prima" id="tipo_materia_prima">
+      </div>
+
+      <div class="componente">
+        <label for="descripcion">codigo interno:</label>
+        <input type="text" formControlName="cod_interno" id="descripcion">
+      </div>
+
       <div class="componente">
         <label for="descripcion">Descripción:</label>
         <input type="text" formControlName="desc_mp" id="descripcion">
       </div>
 
       <div class="componente">
-        <label for="categoria">Categoria:</label>
-        <select [(ngModel)]="opcionSeleccionadaCategoria" (change)="seleccionarOpcionCategoria(opcionSeleccionadaCategoria)">
-          <option *ngFor="let unidad of materiasCrudas.categoria_mp" [value]="">{{ "" }}</option>
-        </select>
-      </div>
-
-      <div class="componente">
         <label for="cantidad">Cantidad linea:</label>
-        <input type="number" [readonly]="true" formControlName="cant_linea"
-          id="cantidad">
+        <input type="number" formControlName="cant_linea" id="cantidad">
       </div>
 
       <div class="componente">
@@ -33,31 +37,46 @@
 
       <div class="componente">
         <label for="unidad">Unidad medida:</label>
-        <select [(ngModel)]="opcionSeleccionadaProveedor" (change)="seleccionarOpcionUnidad(opcionSeleccionadaProveedor)">
-          <option *ngFor="let unidad of materiasCrudas.unidad_medida" [value]="">{{ "" }}</option>
+        <select formControlName="unidad_medida" id="unidad">
+          <option value disabled selected>Seleccionar</option>
+          <option value="Centimetros">Centimetros</option>
+          <option value="Pulgadas">Pulgadas</option>
+          <option value="Milimetros">Milimetros</option>
         </select>
       </div>
 
       <div class="componente">
+        <label for="precio">Bodega:</label>
+        <input type="text" formControlName="bodega" id="descripcion">
+      </div>
+
+      <div class="componente">
+        <label for="precio">Stock:</label>
+        <input type="number" formControlName="stock" id="descripcion">
+      </div>
+
+      <!-- <div class="componente">
         <label for="costo">Proveedor:</label>
         <select [(ngModel)]="opcionSeleccionadaUnidad" (change)="seleccionarOpcionUnidad(opcionSeleccionadaUnidad)">
           <option *ngFor="let unidad of materiasCrudas.proveedores" [value]="">{{ "" }}</option>
         </select>
-      </div>
+      </div> -->
 
       <div class="division_costo">
         <h2 class="bloque">COSTO</h2>
         <div class="componente">
           <label for="costo">Costo unitario:</label>
-          <input type="number" [readonly]="true" formControlName="costo_unitario"
+          <input type="number" [readonly]="true"
+            formControlName="costo_unitario"
             id="costo">
         </div>
-        
-      <div class="componente">
-        <label for="costo">Costo total unitario:</label>
-        <input type="number" [readonly]="true" formControlName="costo_total_unitario"
-          id="costo">
-      </div>
+
+        <div class="componente">
+          <label for="costo">Costo total unitario:</label>
+          <input type="number" [readonly]="true"
+            formControlName="costo_total_unitario"
+            id="costo">
+        </div>
       </div>
 
       <div class="mensaje" [innerHtml]='msg' *ngIf="msg"></div>
@@ -66,11 +85,10 @@
         <input type="file" id="file-input" (change)="selectFile($event)">
       </label>
 
-    </form>
+    </div>
+  </form>
 
-  </div>
 </div>
-
 
 <!-- <div class='wrap'>
     <h2>Registro</h2>

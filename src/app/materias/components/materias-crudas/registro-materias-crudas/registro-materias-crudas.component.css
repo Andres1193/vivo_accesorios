@@ -3,22 +3,21 @@
 
 .principal {
   width: 100%;
-  height: 150%;
+  height: 140%;
   background-color: #efefef;
 }
 
 .formulario,
 .division_costo {
-  top: 30px;
+  top: 10px;
   background-color: #ffffff;
   width: 85%;
-  height: 510px;
+  height: 580px;
   max-width: 100%;
   margin: auto;
   position: relative;
   box-shadow: 0 0 5px 0.2px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  
 }
 
 .componente {
@@ -30,7 +29,7 @@
 .division_costo {
   width: 100%;
   top: 108%;
-  height: 50%;
+  height: 40%;
   position: absolute;
 }
 
@@ -38,14 +37,37 @@ label {
   margin: 30px 0px 0px 80px;
 }
 
-input,
-select {
+input {
   width: 300px;
   height: 30px;
   border: 1.5px solid black;
   border-radius: 10px;
   padding: 4%;
   margin: 10px 70px 15px 80px;
+}
+
+select{
+  width: 300px;
+  height: 37.6px;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  padding: 1.8%;
+  margin: 10px 70px 15px 80px;
+}
+
+option:checked{
+  background-color: #ae837b7d;
+}
+
+#tipo_materia_prima, #costo{
+ cursor: default;
+ border: 1.5px solid #AE837B;
+}
+
+#tipo_materia_prima{
+  color: #AE837B ;
+  margin: 16.5px 70px 15px 80px;
+  padding: 4%;
 }
 
 .bloque {
@@ -65,6 +87,12 @@ input:focus {
   outline: none;
 }
 
+select:focus {
+  border: 1.5px solid #AE837B;
+  outline: none;
+}
+
+
 #guardar,
 #cancelar {
   position: relative; 
@@ -74,6 +102,7 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-color: transparent;
 }
 
 #guardar {
@@ -93,18 +122,13 @@ a{
   color: black;
 }
 
-#cancelar:active,
-#cancelar:focus {
-  background-color: #D3D3D3;
-  transition: 50ms;
-}
-
-#guardar:active,
-#guardar:focus {
+#guardar:active{
   background-color: #90726C;
-  transition: 50ms;
 }
 
+#cancelar:active {
+  background-color: #D3D3D3;
+}
 .custom-file-input {
   top: 18%;
   left: 63%;
