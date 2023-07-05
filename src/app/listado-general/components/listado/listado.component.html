@@ -74,14 +74,7 @@
 
   <div *ngIf="flagContent">
     <div [ngSwitch]="frontActual">
-      <div *ngSwitchCase="'Listas'">
-        <div *ngIf="opcion == '1'">
-          <app-registro-materias-listas></app-registro-materias-listas>
-        </div>
-        <div *ngIf="opcion == '2'">
-          <app-editar-materias-listas></app-editar-materias-listas>
-        </div>
-      </div>
+      
       <div *ngSwitchCase="'Crudas'">
         <div *ngIf="opcion == '1'">
           <app-registro-materias-crudas></app-registro-materias-crudas>

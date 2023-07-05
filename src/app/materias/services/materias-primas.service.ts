@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MateriasCrudas } from '../interfaces/materias-crudas.interfaces';
+import { MateriasPrimas } from '../interfaces/materias-primas.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +11,21 @@ export class MateriasPrimasService {
 
   apiUrl = "http://127.0.0.1:8000/mp/api/materiasPrimas/"
 
-
-  getMateriasPrimas() {
-    return this.http.get<MateriasCrudas[]>(this.apiUrl);
+  
+  obtenerDatosFiltrados(valor: string) {
+    let params = { valor: valor };
+    return this.http.get<MateriasPrimas>(this.apiUrl, { params });
   }
 
-  crearMateriasPrimas(mp: MateriasCrudas) {
+  getMateriasPrimas() {
+    return this.http.get<MateriasPrimas[]>(this.apiUrl);
+  }
+
+  crearMateriasPrimas(mp: MateriasPrimas) {
     return this.http.post(this.apiUrl, mp);
   }
 
-  actualizarMateriasPrimas(mpId: number, mp: MateriasCrudas) {
+  actualizarMateriasPrimas(mpId: number, mp: MateriasPrimas) {
     const url = `${this.apiUrl}${mpId}/`;
     return this.http.put(url, mp);
   }
@@ -29,4 +34,6 @@ export class MateriasPrimasService {
     const url = `${this.apiUrl}${mpId}/`;
     return this.http.delete(url);
   }
+
+
 }

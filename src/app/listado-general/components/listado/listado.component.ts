@@ -6,10 +6,9 @@ import { NgbActiveModal, NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-boots
 import { ActivatedRoute, Router } from '@angular/router';
 import { Receta } from 'src/app/receta/interfaces/receta.interface';
 import { Pedido } from 'src/app/pedido/interfaces/pedido.interface';
-import { MateriasListas } from 'src/app/materias/interfaces/materias-listas.interface';
-import { MateriasCrudas } from 'src/app/materias/interfaces/materias-crudas.interfaces';
 import { ProveedorService } from 'src/app/proveedor/services/proveedor.service';
 import { ClienteService } from 'src/app/cliente/services/cliente.service';
+import { MateriasPrimas } from 'src/app/materias/interfaces/materias-primas.interface';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -84,7 +83,7 @@ export class ListadoComponent {
 
   getPropiedades(objecto: object) {
     const keys = Object.keys(objecto);
-    return keys.slice(1, keys.length - 1);
+    return keys.slice(0, keys.length - 1);
   }
 
  
@@ -259,25 +258,8 @@ export class ListadoComponent {
   //   estado: 'Activo'
   // }
 
-  @Input() listas: MateriasListas[] = [];
 
-  public columnMateriasListas: string[] = [
-    'Código Materia Lista',
-    'Descripcion',
-    'Categoria',
-    'Cantidad Linea',
-    'Precio Linea',
-    'Unidad de Medida',
-    'Costo Unitario',
-    'Costo Total Unitario',
-    'Costo Baño Linea',
-    'Cantidad Bañada',
-    'Costo Baño Unidad',
-    'Proveedores',
-    'Stock',
-  ];
-
-  public cruda: MateriasCrudas = {
+  public cruda: MateriasPrimas = {
     cod_interno: '',
     tipo_materia_prima: '',
     desc_mp: '',
@@ -286,12 +268,15 @@ export class ListadoComponent {
     unidad_medida: '',
     costo_unitario: 0,
     costo_total_unitario: 0,
+    costo_banio_linea: 0,
+    cantidad_banada: 0,
+    costo_banio_un: 0,
     bodega: '',
     stock: 0,
     estado: 'Activo'
   }
 
-  @Input() crudas: MateriasCrudas[] = [];
+  @Input() crudas: MateriasPrimas[] = [];
 
   public columnMateriasCrudas: string[] = [
     'Código Materia Lista',
@@ -326,8 +311,6 @@ export class ListadoComponent {
       atributos = this.columnReceta;
     } else if (this.frontActual.match('Pedido')) {
       atributos = this.columnPedido;
-    } else if (this.frontActual.match('Listas')) {
-      atributos = this.columnMateriasListas;
     } else if (this.frontActual.match('Crudas')) {
       atributos = this.columnMateriasCrudas;
     }

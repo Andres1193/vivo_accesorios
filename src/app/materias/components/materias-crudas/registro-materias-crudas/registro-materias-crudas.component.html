@@ -10,19 +10,17 @@
       <h2 class="bloque">INFORMACIÓN GENERAL</h2>
 
       <div class="componente">
-        <label for="descripcion"> </label>
-        <input type="text" [readonly]="true"
-          formControlName="tipo_materia_prima" id="tipo_materia_prima">
-      </div>
+        <label for="unidad">Tipo Materia Prima:</label>
+        <select formControlName="tipo_materia_prima">
+          <option value disabled selected>Seleccionar</option>
+          <option value="mp_cruda">Mat. Prima Cruda</option>
+          <option value="mp_lista">Mat. Prima Lista</option>
+        </select>
+      </div>      
 
       <div class="componente">
         <label for="descripcion">codigo interno:</label>
         <input type="text" formControlName="cod_interno" id="descripcion">
-      </div>
-
-      <div class="componente">
-        <label for="descripcion">Descripción:</label>
-        <input type="text" formControlName="desc_mp" id="descripcion">
       </div>
 
       <div class="componente">
@@ -36,16 +34,6 @@
       </div>
 
       <div class="componente">
-        <label for="unidad">Unidad medida:</label>
-        <select formControlName="unidad_medida" id="unidad">
-          <option value disabled selected>Seleccionar</option>
-          <option value="Centimetros">Centimetros</option>
-          <option value="Pulgadas">Pulgadas</option>
-          <option value="Milimetros">Milimetros</option>
-        </select>
-      </div>
-
-      <div class="componente">
         <label for="precio">Bodega:</label>
         <input type="text" formControlName="bodega" id="descripcion">
       </div>
@@ -53,6 +41,11 @@
       <div class="componente">
         <label for="precio">Stock:</label>
         <input type="number" formControlName="stock" id="descripcion">
+      </div>
+
+      <div class="componente">
+        <label for="descripcion">Descripción:</label>
+        <input type="text" formControlName="desc_mp" id="descripcion">
       </div>
 
       <!-- <div class="componente">
@@ -64,17 +57,27 @@
 
       <div class="division_costo">
         <h2 class="bloque">COSTO</h2>
+
         <div class="componente">
-          <label for="costo">Costo unitario:</label>
-          <input type="number" [readonly]="true"
-            formControlName="costo_unitario"
-            id="costo">
+          <label for="unidad">Unidad medida:</label>
+          <select formControlName="unidad_medida">
+            <option value disabled selected>Seleccionar</option>
+            <option value="Centimetros">Centimetros</option>
+            <option value="Pulgadas">Pulgadas</option>
+            <option value="Milimetros">Milimetros</option>
+          </select>
+        </div>
+
+
+        <div class="componente">
+          <label for="cantidad">Cantidad bañada:</label>
+          <input type="number" formControlName="cantidad_banada"
+            id="cantidad">
         </div>
 
         <div class="componente">
-          <label for="costo">Costo total unitario:</label>
-          <input type="number" [readonly]="true"
-            formControlName="costo_total_unitario"
+          <label for="costo">Costo baño línea:</label>
+          <input type="number" formControlName="costo_banio_linea"
             id="costo">
         </div>
       </div>
