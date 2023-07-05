@@ -19,8 +19,6 @@ import { MateriasPrimasService } from 'src/app/materias/services/materias-primas
 
 export class ListadoComponent {
 
-
-
   constructor(config: NgbModalConfig, private modalService: NgbModal,
     private proveedorService: ProveedorService,  private clienteService: ClienteService,
     private MateriasPrimasService: MateriasPrimasService) {
@@ -48,6 +46,9 @@ export class ListadoComponent {
   searchItem: string = '';
 
   ngOnInit(): void {
+    this.getProveedores();
+    this.getClientes();
+    this.getMp(); 
   }
 
   public noLeidos: string[] = ['No hay stock en primas', 'Ya no queda espacio en listas'];
@@ -68,11 +69,7 @@ export class ListadoComponent {
     return this.proveedorService.getProveeedores().subscribe(
       (proveedores: Proveedor[]) => {
         this.proveedores = proveedores;
-        
       }
-      // (error: any) => {
-      // // Manejar el error
-      // }
     );
   }
 
@@ -80,34 +77,22 @@ export class ListadoComponent {
     return this.clienteService.getClientes().subscribe(
       (clientes: Cliente[]) => {
         this.clientes = clientes;
-        
-        
       }
-      // (error: any) => {
-      // // Manejar el error
-      // }
     );
   }
-
 
   getMp() {
     return this.MateriasPrimasService.getMateriasPrimas().subscribe(
       (crudas: MateriasPrimas[]) => {
-        console.log(crudas)
-        // console.log(proveedores)
         this.crudas = crudas;
       }
-      // (error: any) => {
-      // // Manejar el error
-      // }
     );
   }
 
-  getPropiedades(objecto: object) {
+  getPropiedades(objecto: any) {
     const keys = Object.keys(objecto);
-    return keys.slice(0, keys.length - 1);
+    return keys.slice(1, keys.length - 1);
   }
-
 
   imprimirListados(){
     if (this.frontActual.match('Cliente')) {
@@ -126,7 +111,6 @@ export class ListadoComponent {
       this.listados = this.crudas;
     }
 
-    console.log(this.crudas)
 
   }
 
@@ -206,10 +190,10 @@ export class ListadoComponent {
   ];
 
   public receta: Receta = {
-    codigo_mp: 0,
+    codigo_mp: '',
     descripcion_mp: '',
     cantidad: 0,
-    unidad_medida: [],
+    unidad_medida: '',
     costo_unitario: 0,
     costo_total_unitario: 0
   }
@@ -260,6 +244,7 @@ export class ListadoComponent {
     costo_banio_un: 0,
     bodega: '',
     stock: 0,
+    nomProveedor: '',
     estado: 'Activo'
   }
 
@@ -278,7 +263,8 @@ export class ListadoComponent {
     'Cantidad bañada',
     'Costo Baño Unitario',
     'Bodega',
-    'Stock'
+    'Stock',
+    'Proveedor'
   ];
 
   selectLista(name: string): void {

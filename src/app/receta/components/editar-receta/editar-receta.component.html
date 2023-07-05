@@ -3,11 +3,12 @@
 
 <div class="principal">
   <h1>Editar receta</h1>
-  <div id="cancelar"><a href="/home">Cancelar</a></div>
-  <div id="guardar">Guardar</div>
-  <div class="formulario">
-    <h2 class="bloque">INFORMACIÓN GENERAL</h2>
-    <form [formGroup]="recetaForm" (ngSubmit)="actualizarReceta()">
+  <form [formGroup]="recetaForm" (ngSubmit)="actualizarReceta()">
+    <button type="submit" id="cancelar"><a href="/home">Cancelar</a></button>
+    <button type="submit" id="guardar">Guardar</button>
+    <div class="formulario">
+      <h2 class="bloque">INFORMACIÓN GENERAL</h2>
+
       <div class="componente">
         <label for="codigo">Codigo materia prima:</label>
         <input type="text" formControlName="codigo_mp" id="codigo">
@@ -15,7 +16,7 @@
 
       <div class="componente">
         <label for="descripcion">Descripción materia prima:</label>
-        <input type="text" formControlName="descripcion_mp" id="descripcion">
+        <input type="text" formControlName="descripcion_mp" id="descripcion" [readonly]="true">
       </div>
 
       <div class="componente">
@@ -24,20 +25,18 @@
       </div>
 
       <div class="componente">
-        <label for="unidad">Unidad de medida:</label>
-        <select [(ngModel)]="opcionSeleccionada" (change)="seleccionarOpcion(opcionSeleccionada)">
-          <option *ngFor="let unidad of receta.unidad_medida" [value]="unidad">{{ unidad }}</option>
+        <label for="unidad">Unidad medida:</label>
+        <select formControlName="unidad_medida">
+          <option value disabled selected>Seleccionar</option>
+          <option value="Centimetros">Centimetros</option>
+          <option value="Pulgadas">Pulgadas</option>
+          <option value="Milimetros">Milimetros</option>
         </select>
       </div>
 
       <div class="componente">
         <label for="costo">Costo unitario:</label>
-        <input type="text" formControlName="costo_unitario" id="costo">
-      </div>
-
-      <div class="componente">
-        <label for="costo">Costo total unitario:</label>
-        <input type="text" formControlName="costo_total_unitario" id="costo">
+        <input type="text" formControlName="costo_unitario" id="costo" [readonly]="true">
       </div>
 
       <!-- <div [innerHtml]='msg' *ngIf="msg"></div>
@@ -46,7 +45,5 @@
         <input type="file" id="file-input" (change)="selectFile($event)">
       </label> -->
 
-    </form>
-
-  </div>
-</div>
+    </div>
+  </form>

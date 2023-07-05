@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MateriasPrimas } from 'src/app/materias/interfaces/materias-primas.interface';
 import { MateriasPrimasService } from 'src/app/materias/services/materias-primas.service';
+import { Proveedor } from 'src/app/proveedor/interfaces/proveedor.interface';
+import { ProveedorService } from 'src/app/proveedor/services/proveedor.service';
 
 @Component({
   selector: 'app-registro-materias-crudas',
   templateUrl: './registro-materias-crudas.component.html',
   styleUrls: ['./registro-materias-crudas.component.css']
 })
-export class RegistroComponentMateriasCrudas {
+export class RegistroComponentMateriasCrudas implements OnInit {
 
+  proveedores: Proveedor[] = [];
   public materiaCrudasForm: FormGroup;
   public materiasCrudas: MateriasPrimas = {
     cod_interno: '',
@@ -25,8 +28,15 @@ export class RegistroComponentMateriasCrudas {
     costo_banio_un: 0,
     bodega: '',
     stock: 0,
+    nomProveedor: '',
     estado: ''
   }
+  opciones: Proveedor[];
+
+  ngOnInit(): void {
+    this.getProveedores();
+  }
+
 
   // opcionSeleccionadaProveedor: string = '';
 
@@ -35,7 +45,8 @@ export class RegistroComponentMateriasCrudas {
   // }
 
 
-  constructor(private formBuilder: FormBuilder, private mpService: MateriasPrimasService) {
+  constructor(private formBuilder: FormBuilder, private mpService: MateriasPrimasService,
+    private proveedorService: ProveedorService) {
     this.materiaCrudasForm = this.formBuilder.group({
       cod_interno: new FormControl(''),
       tipo_materia_prima: new FormControl(''),
@@ -50,26 +61,32 @@ export class RegistroComponentMateriasCrudas {
       costo_banio_un: new FormControl(0),
       bodega: new FormControl(''),
       stock: new FormControl(''),
-      estado: new FormControl('Activo')
+      estado: new FormControl('Activo'),
+      nomProveedor: new FormControl(''),
+      opcionSeleccionada: new FormControl(null)
 
     });
   }
 
+  getProveedores() {
+    return this.proveedorService.getProveeedores().subscribe(
+      (proveedores: Proveedor[]) => {
+        this.proveedores = proveedores;
+        this.opciones = this.proveedores;
+      }
+    );
+  }
+
   crearMateriasCrudas() {
+    this.materiaCrudasForm.value.nomProveedor = this.materiaCrudasForm.value.opcionSeleccionada.nombre
     //    // if (this.materiaCrudasForm.valid) {
 
-    //     // Acciones para crear el producto utilizando this.materiasListas
     this.mpService.crearMateriasPrimas(this.materiaCrudasForm.value).subscribe(
       (response) => {
         // Manejar la respuesta exitosa
         console.log('Materia prima creada:', response);
       }
-      // (error) => {
-      //   // Manejar el error
-      //   console.error('Error al crear el producto:', error);
-      // }
     );
-
   }
 
   //Seleccionar una imagen;

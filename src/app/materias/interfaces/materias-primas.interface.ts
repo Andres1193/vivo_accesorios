@@ -12,5 +12,6 @@ export interface MateriasPrimas {
     costo_banio_un: number;
     bodega: string;
     stock: number;
+    nomProveedor: string;
     estado: string;
 }
