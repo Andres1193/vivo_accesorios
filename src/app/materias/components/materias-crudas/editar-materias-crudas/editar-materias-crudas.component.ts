@@ -12,16 +12,17 @@ export class EditarComponentMateriasCrudas {
   public materiaCrudasForm: FormGroup;
   public materiasCrudas: MateriasCrudas = {
     cod_interno: '',
+    tipo_materia_prima: '',
     desc_mp: '',
-    categoria_mp: [],
     cant_linea: 0,
     precio_linea: 0,
     unidad_medida: '',
     costo_unitario: 0,
     costo_total_unitario: 0,
-    estado: '',
-    proveedores: [],
-    stock: 0
+    bodega: '',
+    stock: 0,
+    estado: ''
+
   }
 
   opcionSeleccionadaCategoria: string = '';

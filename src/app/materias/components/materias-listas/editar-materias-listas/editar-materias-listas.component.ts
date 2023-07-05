@@ -13,7 +13,9 @@ export class EditarComponentMateriasListas {
   public materiasListas: MateriasListas = {
     cod_interno: '',
     desc_mp: '',
-    categoria_mp: [],
+    // categoria_mp: [],
+    
+    tipo_materia_prima: '',
     cant_linea: 0,
     precio_linea: 0,
     unidad_medida: '',
@@ -23,7 +25,7 @@ export class EditarComponentMateriasListas {
     costo_banio_linea: 0,
     cantidad_banada: 0,
     costo_banio_un: 0,
-    proveedores: [],
+    bodega: '',
     stock: 0
   }
 
