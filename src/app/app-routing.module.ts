@@ -17,6 +17,7 @@ import { EditarComponentMateriasCrudas } from './materias/components/materias-cr
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent, pathMatch:'full' },
+
     { path: '', redirectTo: '/home', pathMatch:'full'},
     { path: 'home', component: ListadoComponent, pathMatch:'full'},
     { path: 'registro_producto', component: RegistroComponentProducto, pathMatch:'full'},
@@ -35,7 +36,7 @@ const routes: Routes = [
     // { path: 'register', component: SignInComponent },
 
     { path: '**', redirectTo: '/home' }
-    
+
   ];
 
 @NgModule({

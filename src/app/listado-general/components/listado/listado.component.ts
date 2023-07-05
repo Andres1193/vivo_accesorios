@@ -51,7 +51,7 @@ export class ListadoComponent {
   ngOnInit(): void {
     this.getProveedores();
     this.getClientes();
-    this.getMp(); 
+    this.getMp();
   }
 
   public noLeidos: string[] = ['No hay stock en primas', 'Ya no queda espacio en listas'];
@@ -72,7 +72,7 @@ export class ListadoComponent {
     return this.proveedorService.getProveeedores().subscribe(
       (proveedores: Proveedor[]) => {
         this.proveedores = proveedores;
-        
+
       }
     );
   }
@@ -81,8 +81,8 @@ export class ListadoComponent {
     return this.clienteService.getClientes().subscribe(
       (clientes: Cliente[]) => {
         this.clientes = clientes;
-        
-        
+
+
       }
     );
   }
