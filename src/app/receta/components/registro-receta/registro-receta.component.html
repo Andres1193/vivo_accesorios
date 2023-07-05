@@ -11,6 +11,8 @@
 
       <div class="componente">
         <label for="codigo">Codigo materia prima:</label>
+        
+      <label id="crear-mp" (click)="open(content)">Seleccionar Materia Prima</label>
         <input type="text" formControlName="cod_interno" id="codigo">
       </div>
 
@@ -45,7 +47,6 @@
         <input type="file" id="file-input" (change)="selectFile($event)">
       </label> -->
 
-      <label id="crear-mp" (click)="open(content)">Seleccionar Materia Prima</label>
 
         <ng-template #content let-modal >
           <div class="cmodal modal-lg modalCategoria" >
@@ -57,7 +58,8 @@
               </div>
               <div class="modal-body">
                 <article >
-                  <table class="estilo-tabla">
+                  
+                  <table >
                     <thead>
                       <tr>
                         <th>codigo interno</th>
