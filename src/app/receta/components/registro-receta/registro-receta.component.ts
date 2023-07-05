@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro-receta',
-  templateUrl: './registro-receta.component.html', 
+  templateUrl: './registro-receta.component.html',
   styleUrls: ['./registro-receta.component.css']
 })
 export class RegistroRecetaComponent implements OnInit {
 
-  
+
   closeResult = '';
 
   public recetaForm: FormGroup;
@@ -28,7 +28,7 @@ export class RegistroRecetaComponent implements OnInit {
   }
   crudas: MateriasPrimas[]
 
-  constructor(private formBuilder: FormBuilder,private mpService: MateriasPrimasService,
+  constructor(private formBuilder: FormBuilder, private mpService: MateriasPrimasService,
     private recetaService: RecetaService, private router: Router, config: NgbModalConfig,
     private modalService: NgbModal) {
     this.recetaForm = this.formBuilder.group({
@@ -42,7 +42,7 @@ export class RegistroRecetaComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getMp();  
+    this.getMp();
   }
 
   getMp() {
@@ -52,7 +52,7 @@ export class RegistroRecetaComponent implements OnInit {
       }
     );
   }
-  
+
   flag = true;
 
   open<Type>(content: Type): void {
@@ -78,7 +78,7 @@ export class RegistroRecetaComponent implements OnInit {
       return 'by clicking on a backdrop';
     } else {
       return `with: ${reason}`;
-    } 
+    }
   }
 
   showModal(): void {
@@ -87,12 +87,18 @@ export class RegistroRecetaComponent implements OnInit {
 
   @Output() lanzarModal = new EventEmitter<void>();
 
-  crearReceta(){
-    this.recetaService.crearReceta(this.recetaForm.value).subscribe(
-      (response) => {
-        // Manejar la respuesta exitosa
-        console.log('Receta creada:', response);
-      }
-    );
+  crearReceta() {
+    if (this.recetaForm.valid) {
+      this.recetaService.crearReceta(this.recetaForm.value).subscribe(
+        (response) => {
+          // Manejar la respuesta exitosa
+          console.log('Receta creada:', response);
+        }
+      );
+    } else {
+      alert('Faltan llenar campos');
+    }
   }
+
+
 }

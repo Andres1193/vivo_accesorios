@@ -1,6 +1,6 @@
 
 .AsideListado {
-  position: relative;
+  position:relative;
   flex-flow: row wrap;
   background: #AE837B;
   text-align: center;
@@ -44,7 +44,7 @@ nav li label:active, #listItems:active{
   display: flex;
   flex-flow: row wrap;
   align-items: left;
-  flex-direction: column;
+  flex-direction: row;
   background: #E1E1E1;
 }
 

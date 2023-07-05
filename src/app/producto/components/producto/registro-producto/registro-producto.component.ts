@@ -103,6 +103,8 @@ export class RegistroComponentProducto {
   crearProducto() {
     if (this.productoForm.valid) {
       // Acciones para crear el producto utilizando this.producto
+    } else{
+      alert('Faltan llenar campos' );
     }
   }
 

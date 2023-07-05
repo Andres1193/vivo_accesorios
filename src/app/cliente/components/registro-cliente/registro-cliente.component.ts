@@ -14,7 +14,7 @@ export class RegistroClienteComponent implements OnInit {
   public cliente: Cliente = {
     identificacion: '',
     nombres: '',
-    apellidos: '', 
+    apellidos: '',
     correo: '',
     telefono: '',
     direccion: '',
@@ -31,7 +31,7 @@ export class RegistroClienteComponent implements OnInit {
       direccion:      new FormControl(''),
       telefono:       new FormControl(''),
       ciudad:         new FormControl(''),
-      estado:         new FormControl('Activo') 
+      estado:         new FormControl('Activo')
     });
   }
 
@@ -51,6 +51,8 @@ export class RegistroClienteComponent implements OnInit {
         //   console.error('Error al crear el producto:', error);
         // }
       );
+    } else{
+      alert('Faltan llenar campos' );
     }
   }
 }
