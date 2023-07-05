@@ -10,12 +10,10 @@ import { RegistroUsuarioComponent } from './usuario/components/registro-usuario/
 import { RegistroRecetaComponent } from './receta/components/registro-receta/registro-receta.component';
 import { RegistroComponentMateriasCrudas } from './materias/components/materias-crudas/registro-materias-crudas/registro-materias-crudas.component';
 import { RegistroClienteComponent } from './cliente/components/registro-cliente/registro-cliente.component';
-import { RegistroComponentMateriasListas } from './materias/components/materias-listas/registro-materias-listas/registro-materias-listas.component';
 import { RegistroComponentProducto } from './producto/components/producto/registro-producto/registro-producto.component';
 import { EditarUsuarioComponent } from './usuario/components/editar-usuario/editar-usuario.component';
 import { EditarClienteComponent } from './cliente/components/editar-cliente/editar-cliente.component';
 import { EditarComponentMateriasCrudas } from './materias/components/materias-crudas/editar-materias-crudas/editar-materias-crudas.component';
-import { EditarComponentMateriasListas } from './materias/components/materias-listas/editar-materias-listas/editar-materias-listas.component';
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent, pathMatch:'full' },
@@ -33,8 +31,6 @@ const routes: Routes = [
     { path: 'editar_cliente', component: EditarClienteComponent, pathMatch:'full'},
     { path: 'registro_mp_crudas', component: RegistroComponentMateriasCrudas, pathMatch:'full'},
     { path: 'editar_mp_crudas', component: EditarComponentMateriasCrudas, pathMatch:'full'},
-    { path: 'registro_mp_listas', component: RegistroComponentMateriasListas, pathMatch:'full'},
-    { path: 'editar_mp_listas', component: EditarComponentMateriasListas, pathMatch:'full'},
 
     // { path: 'register', component: SignInComponent },
 

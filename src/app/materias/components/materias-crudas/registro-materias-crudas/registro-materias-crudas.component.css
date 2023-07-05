@@ -59,7 +59,7 @@ option:checked{
   background-color: #ae837b7d;
 }
 
-#tipo_materia_prima, #costo{
+#tipo_materia_prima{
  cursor: default;
  border: 1.5px solid #AE837B;
 }
