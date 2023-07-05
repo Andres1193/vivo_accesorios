@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import {
   NgbModalConfig,
@@ -44,7 +45,8 @@ export class RegistroComponentProducto {
     private productoService: ProductoService,
     private router: Router,
     config: NgbModalConfig,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private sanitizer: DomSanitizer
   ) {
     this.productoForm = this.formBuilder.group({
       codigoProducto: ['', Validators.required],
@@ -53,6 +55,13 @@ export class RegistroComponentProducto {
       porcent_Utilidad: [0, Validators.required],
       precio_Producto: [0, Validators.required],
     });
+  }
+
+  iframeUrl: SafeResourceUrl;
+
+  ngOnInit() {
+    const url = '/login'; // Aquí debes especificar la URL del sitio web que deseas cargar en el iframe
+    this.iframeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   flag = true;
@@ -71,7 +80,7 @@ export class RegistroComponentProducto {
         this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
       }
     );
-    
+
   }
 
   private getDismissReason(reason: any): string {

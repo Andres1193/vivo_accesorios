@@ -41,6 +41,8 @@
         <input type="file" id="file-input" (change)="selectFile($event)">
       </label>
 
+      <iframe [src]="iframeUrl" width="400" height="400"></iframe>
+
       <label id="crear-categoria" (click)="open(content)">Crear categoria</label>
 
       <ng-template #content let-modal>
