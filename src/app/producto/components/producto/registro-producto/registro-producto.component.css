@@ -33,6 +33,9 @@
   grid-auto-rows: minmax(60px, auto);
 }
 
+.modal-lg {
+  width: 600px; /* Ajusta el ancho según tus necesidades */
+}
 .componente label {
   margin-left:  80px;
   padding: 1%;

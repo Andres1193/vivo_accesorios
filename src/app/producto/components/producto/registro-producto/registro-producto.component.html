@@ -21,8 +21,7 @@
 
       <div class="componente">
         <label for="costo">Costo producto:</label>
-        <input type="number"  formControlName="costo_Producto"
-          id="costo">
+        <input type="number" formControlName="costo_Producto" id="costo">
       </div>
 
       <div class="componente">
@@ -32,8 +31,7 @@
 
       <div class="componente">
         <label for="precio">Precio producto:</label>
-        <input type="number" formControlName="precio_Producto"
-          id="precio">
+        <input type="number" formControlName="precio_Producto" id="precio">
       </div>
 
       <div class="mensaje" [innerHtml]='msg' *ngIf="msg"></div>
@@ -43,7 +41,27 @@
         <input type="file" id="file-input" (change)="selectFile($event)">
       </label>
 
-      <label id="crear-categoria">Crear categoria</label>
+      <label id="crear-categoria" (click)="open(content)">Crear categoria</label>
+
+      <ng-template #content let-modal>
+        <div class="modal-dialog modal-lg modalCategoria">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Nueva Categoría</h4>
+              <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+              <article>
+                <label for="descripcionCategoria">Descripción: </label>
+                <input type="text" id="descripcionCategoria" />
+              </article>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+            </div>
+          </div>
+        </div>
+      </ng-template>
 
     </form>
 

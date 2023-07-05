@@ -10,41 +10,40 @@
     <div *ngIf="true">
       <nav>
         <li>
-          <button type="button" class="btnColapse"
-            (click)="isCollapsed = ! isCollapsed"
+          <button type="button" class="btnColapse" (click)="isCollapsed = ! isCollapsed"
             [attr.aria-expanded]="!isCollapsed">
             <span>Materias Primas</span>
           </button>
           <div id="listItems" [(ngbCollapse)]="isCollapsed">
-            <li>
-              <label (click)="selectLista('Listas')">Listas</label>
-            </li>
-            <li>
-              <label (click)="selectLista('Crudas')">Crudas</label>
-            </li>
-          </div>
-        </li>
-        <!-- <li>
-          <label>Material de empaques</label>
+        <li>
+          <label (click)="selectLista('Listas')">Listas</label>
         </li>
         <li>
-          <label (click)="selectLista('Producto')">Productos</label>
+          <label (click)="selectLista('Crudas')">Crudas</label>
         </li>
-        <li>
-          <label (click)="selectLista('Provedor')">Proveedores</label>
-        </li>
-        <li>
-          <label (click)="selectLista('Cliente')">Clientes</label>
-        </li>
-        <li>
-          <label (click)="selectLista('Receta')">Receta</label>
-        </li>
-        <li>
-          <label (click)="selectLista('Pedido')">Pedido</label>
-        </li>
-      </nav>
     </div>
-    <div *ngIf="true">
+    </li>
+    <!-- <li>
+          <label>Material de empaques</label>
+        </li> -->
+    <li>
+      <label (click)="selectLista('Producto')">Productos</label>
+    </li>
+    <li>
+      <label (click)="selectLista('Provedor')">Proveedores</label>
+    </li>
+    <li>
+      <label (click)="selectLista('Cliente')">Clientes</label>
+    </li>
+    <li>
+      <label (click)="selectLista('Receta')">Receta</label>
+    </li>
+    <li>
+      <label (click)="selectLista('Pedido')">Pedido</label>
+    </li>
+    </nav>
+</div>
+<!-- <div *ngIf="false">
       <h2>Notificaciones</h2>
       <div ngbAccordion>
         <div ngbAccordionItem>
@@ -53,10 +52,10 @@
           </h2>
           <div ngbAccordionCollapse>
               <li *ngFor="let noLeido of noLeidos">{{noLeido}}</li> -->
-              <!-- <label *ngFor="let noLeido of noLeidos">{{noLeido}}</label>
+<!-- <label *ngFor="let noLeido of noLeidos">{{noLeido}}</label>
           </div>
-        </div>
-      </div>
+        </div> -->
+<!-- </div>
 
       <div ngbAccordion>
         <div ngbAccordionItem>
@@ -64,159 +63,145 @@
             <button ngbAccordionButton>Mensajes</button>
           </h2>
           <div ngbAccordionCollapse>
-            <li *ngFor="let msj of mensajes">{{msj}}</li> -->
-            <!-- <label *ngFor="let msj of mensajes">{{msj}}</label>
+            <li *ngFor="let msj of mensajes">{{msj}}</li> --> -->
+<!-- <label *ngFor="let msj of mensajes">{{msj}}</label>
         </div>
         </div>
       </div>
     </div> -->
-  </aside>
+</aside>
 
-  <div *ngIf="flagContent">
-    <div [ngSwitch]="frontActual">
-      <div *ngSwitchCase="'Listas'">
-        <div *ngIf="opcion == '1'">
-          <app-registro-materias-listas></app-registro-materias-listas>
-        </div>
-        <div *ngIf="opcion == '2'">
-          <app-editar-materias-listas></app-editar-materias-listas>
-        </div>
+<div *ngIf="flagContent" class="container">
+  <div [ngSwitch]="frontActual">
+    <div *ngSwitchCase="'Listas'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-materias-listas></app-registro-materias-listas>
       </div>
-      <div *ngSwitchCase="'Crudas'">
-        <div *ngIf="opcion == '1'">
-          <app-registro-materias-crudas></app-registro-materias-crudas>
-        </div>
-        <div *ngIf="opcion == '2'">
-          <app-editar-materias-crudas></app-editar-materias-crudas>
-        </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-materias-listas></app-editar-materias-listas>
       </div>
-      <div *ngSwitchCase="'Producto'">
-        <div *ngIf="opcion == '1'">
-          <app-registro-producto></app-registro-producto>
-        </div>
-        <div *ngIf="opcion == '2'">
-          <app-editar-producto></app-editar-producto>
-        </div>
+    </div>
+    <div *ngSwitchCase="'Crudas'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-materias-crudas></app-registro-materias-crudas>
       </div>
-      <div *ngSwitchCase="'Provedor'">
-        <div *ngIf="opcion == '1'">
-          <app-registro-proveedor></app-registro-proveedor>
-        </div>
-        <div *ngIf="opcion == '2'">
-          <app-editar-proveedor></app-editar-proveedor>
-        </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-materias-crudas></app-editar-materias-crudas>
       </div>
-      <div *ngSwitchCase="'Cliente'">
-        <div *ngIf="opcion == '1'">
-          <app-registro-cliente></app-registro-cliente>
-        </div>
-        <div *ngIf="opcion == '2'">
-          <app-editar-cliente></app-editar-cliente>
-        </div>
+    </div>
+    <div *ngSwitchCase="'Producto'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-producto></app-registro-producto>
       </div>
-      <div *ngSwitchCase="'Receta'">
-        <div *ngIf="opcion == '1'">
-          <app-registro-receta></app-registro-receta>
-        </div>
-        <div *ngIf="opcion == '2'">
-          <app-editar-receta></app-editar-receta>
-        </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-producto></app-editar-producto>
       </div>
-      <div *ngSwitchCase="'Pedido'">
-        <div *ngIf="opcion == '1'">
-          <app-registro-pedido></app-registro-pedido>
-        </div>
-        <div *ngIf="opcion == '2'">
-          <app-editar-pedido></app-editar-pedido>
-        </div>
+    </div>
+    <div *ngSwitchCase="'Provedor'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-proveedor></app-registro-proveedor>
       </div>
-      <div *ngSwitchDefault>
-
-        <p>Opción no válida.</p>
+      <div *ngIf="opcion == '2'">
+        <app-editar-proveedor></app-editar-proveedor>
+      </div>
+    </div>
+    <div *ngSwitchCase="'Cliente'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-cliente></app-registro-cliente>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-cliente></app-editar-cliente>
+      </div>
+    </div>
+    <div *ngSwitchCase="'Receta'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-receta></app-registro-receta>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-receta></app-editar-receta>
+      </div>
+    </div>
+    <div *ngSwitchCase="'Pedido'">
+      <div *ngIf="opcion == '1'">
+        <app-registro-pedido></app-registro-pedido>
+      </div>
+      <div *ngIf="opcion == '2'">
+        <app-editar-pedido></app-editar-pedido>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="container" *ngIf="!flagContent">
-    <div class="Top">
-      <div class="head">
-        <h2>{{ frontActual }}</h2>
-        <div class="searchBox" id="search">
-          <img src="../../../../assets/icons/🦆 icon _search_.svg"
-            alt="searchIcon">
-          <input type="text" [(ngModel)]="searchItem" />
-        </div>
-      </div>
-      <div class="TopButtons">
-        <div id="export"><img
-            src="../../../../assets/icons/🦆 icon _download_.svg" alt>Exportar</div>
-        <div id="create" (click)="showCreate('1')"><img
-            src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt>Crear</div>
-
+<div class="container" *ngIf="!flagContent">
+  <div class="Top">
+    <div class="head">
+      <h2>{{ frontActual }}</h2>
+      <div class="searchBox" id="search">
+        <img src="../../../../assets/icons/🦆 icon _search_.svg" alt="searchIcon">
+        <input type="text" [(ngModel)]="searchItem" />
       </div>
     </div>
-    <div class="table-responsive">
-      <table class="custom-table">
-        <thead>
+    <div class="TopButtons">
+      <div id="export"><img src="../../../../assets/icons/🦆 icon _download_.svg" alt>Exportar</div>
+      <div id="create" (click)="showCreate('1')"><img src="../../../../assets/icons/🦆 icon _plus circle_.svg" alt>Crear
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="custom-table">
+      <thead>
+        <tr>
+          <th class="columns" *ngFor="let atributo of getAtributos()">{{
+            atributo }}</th>
+          <th class="columns">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <ng-container *ngFor="let item of listados">
           <tr>
-            <th class="columns" *ngFor="let atributo of getAtributos()">{{
-              atributo }}</th>
-            <th class="columns">Acciones</th>
+            <td *ngFor="let key of getPropiedades(item)">{{ item[key] }}</td>
+            <td>
+              <ul class="actionsButton">
+                <li>
+                  <button class="imageButton">
+                    <img src="../../../../assets/icons/🦆 icon _eye_.svg" alt="Mostrar/ocultar">
+                  </button>
+                </li>
+                <li>
+                  <button class="imageButton" (click)="showCreate('2')">
+                    <img src="../../../../assets/icons/🦆 icon _pen_.svg" alt="Mostrar/ocultar">
+                  </button>
+                </li>
+                <li>
+                  <button class="imageButton">
+                    <img src="../../../../assets/icons/🦆 icon _lightbulb on_.svg" alt="Mostrar/ocultar">
+                  </button>
+                </li>
+                <li>
+                  <button class="imageButton" (click)="open(content)">
+                    <img src="../../../../assets/icons/🦆 icon _cross_.svg" alt="Mostrar/ocultar">
+                  </button>
+
+                  <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                      <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+                      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Hello, World!</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+                    </div>
+                  </ng-template>
+
+                </li>
+              </ul>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-
-          <ng-container *ngFor="let item of listados">
-            <tr>
-              <td *ngFor="let key of getPropiedades(item)">{{ item[key] }}</td>
-              <td>
-                <ul class="actionsButton">
-                  <li>
-                    <button class="imageButton">
-                      <img src="../../../../assets/icons/🦆 icon _eye_.svg"
-                        alt="Mostrar/ocultar">
-                    </button>
-                  </li>
-                  <li>
-                    <button class="imageButton" (click)="showCreate('2')">
-                      <img src="../../../../assets/icons/🦆 icon _pen_.svg"
-                        alt="Mostrar/ocultar">
-                    </button>
-                  </li>
-                  <li>
-                    <button class="imageButton">
-                      <img
-                        src="../../../../assets/icons/🦆 icon _lightbulb on_.svg"
-                        alt="Mostrar/ocultar">
-                    </button>
-                  </li>
-                  <li>
-                    <button class="imageButton" (click)="open(content)">
-                      <img src="../../../../assets/icons/🦆 icon _cross_.svg"
-                        alt="Mostrar/ocultar">
-                    </button>
-
-                    <ng-template #content let-c="close" let-d="dismiss">
-                      <div class="modal-header">
-                        <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
-                        <button type="button" class="btn-close"
-                          aria-label="Close" (click)="d('Cross click')"></button>
-                      </div>
-                      <div class="modal-body">
-                        <p>Hello, World!</p>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-dark"
-                          (click)="c('Save click')">Save</button>
-                      </div>
-                    </ng-template>
-
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </ng-container>
-        </tbody>
-      </table>
-    </div>
+        </ng-container>
+      </tbody>
+    </table>
   </div>
+</div>

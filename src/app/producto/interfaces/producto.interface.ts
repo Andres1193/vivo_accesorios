@@ -1,4 +1,4 @@
-import { Pedido } from "src/app/pedido/interfaces/pedido.interface";
+import { Categoria } from './categoria.interface';
 
 export interface Producto {
     idProducto: number;
@@ -7,7 +7,8 @@ export interface Producto {
     costo_Producto: number;
     porcent_Utilidad: number;
     precio_Producto: number;
-    estado: string;
     stock: number;
     idPedido?: string;
+    estado: string;
+    categoria: Categoria;
 }
