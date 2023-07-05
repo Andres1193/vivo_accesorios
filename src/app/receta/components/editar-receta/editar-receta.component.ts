@@ -10,8 +10,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class EditarRecetaComponent {
   public recetaForm: FormGroup;
   public receta: Receta = {
-    codigo_mp: '',
-    descripcion_mp: '',
+    cod_interno: '',
+    desc_mp: '',
     cantidad: 0,
     unidad_medida: '',
     costo_unitario: 0,

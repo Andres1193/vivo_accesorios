@@ -10,6 +10,7 @@ import { ClienteService } from 'src/app/cliente/services/cliente.service';
 
 import { MateriasPrimas } from 'src/app/materias/interfaces/materias-primas.interface';
 import { MateriasPrimasService } from 'src/app/materias/services/materias-primas.service';
+import { Categoria } from '../../../producto/interfaces/categoria.interface';
 @Component({
   selector: 'app-listado',
   templateUrl: './listado.component.html',
@@ -171,6 +172,12 @@ export class ListadoComponent {
     'Ciudad'
   ];
 
+  public categoria: Categoria = {
+    codigoCategoria: 0,
+    desc_categoria: '',
+    estado: 'Activo'
+  }
+
   public producto: Producto = {
     idProducto: 0,
     codigoProducto: '',
@@ -181,11 +188,7 @@ export class ListadoComponent {
     estado: 'Activo',
     stock: 0,
     idPedido: '', // TODO: acceder a la base de datos para consultar el pedido
-    categoria:{
-      codigoCategoria: 0,
-      desc_categoria: '',
-      estado: 'a'
-    }
+    categoria: this.categoria
   };
 
   @Input() productos: Producto[] = [];
@@ -200,8 +203,8 @@ export class ListadoComponent {
   ];
 
   public receta: Receta = {
-    codigo_mp: '',
-    descripcion_mp: '',
+    cod_interno: '',
+    desc_mp: '',
     cantidad: 0,
     unidad_medida: '',
     costo_unitario: 0,
